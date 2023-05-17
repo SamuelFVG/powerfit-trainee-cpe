@@ -1,8 +1,5 @@
-import {Titulo} from "./Styles"
-import {BotaoGenerico}  from "../../components"
-import {LinkGenerico} from "../../components"
-import { Header } from "../../components"
-import { LinhaDaTabelaGenerica } from "../../components"
+import {Titulo,} from "./Styles"
+import {BotaoGenerico,InputGenerico,LinkGenerico,Header,LinhaDaTabelaGenerica }  from "../../components"
 
 export default function Home() {
     return (
@@ -12,6 +9,7 @@ export default function Home() {
             <BotaoGenerico/>
             <LinkGenerico/> */}
             <LinhaDaTabelaGenerica/>
+            <InputGenerico/>
         </div>
     )
 }
