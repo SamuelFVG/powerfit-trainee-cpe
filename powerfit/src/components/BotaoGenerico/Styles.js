@@ -10,4 +10,8 @@ export const BotaoG = styled.button`
         color: white;
         cursor: pointer;
     }
+
+    @media (max-width: 700px) {
+        background-color: red;
+    }
 `;  
