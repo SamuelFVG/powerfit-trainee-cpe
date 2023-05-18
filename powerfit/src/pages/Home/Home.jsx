@@ -1,24 +1,36 @@
 import {Titulo,} from "./Styles"
 import {BotaoGenerico,InputGenerico,LinkGenerico,Header,LinhaDaTabelaGenerica }  from "../../components"
 
+const obj =  { //vetor de objetos no final
+    nome: 'Nome genérico',
+    cargo: 'Cargo genérico',
+    cor_doodle: '#aaa',
+    atividade: 'Atividade Genérica',
+    horas: '12:34'
+}
 
 export default function Home() {
-    const obj =  { //vetor de objetos no final
-        nome: 'Nome genérico',
-        cargo: 'Cargo genérico',
-        cor_doodle: '#aaa',
-        atividade: 'Atividade Genérica',
-        horas: '12:34'
-    }
+    // <Tabela>
+    //     <TopoTabela>
+    //         <DivGenerico>Perfil</DivGenerico>
+    //         <DivGenerico>Atividade</DivGenerico>
+    //         <DivGenerico>Tempo</DivGenerico>
+    //     </TopoTabela>
+    //     <LinhaDaTabelaGenerica dados={obj}/>
+    //     <LinhaDaTabelaGenerica dados={obj}/>
+    //     <LinhaDaTabelaGenerica dados={obj}/>
+    //     <LinhaDaTabelaGenerica dados={obj}/>
+    //     <LinhaDaTabelaGenerica dados={obj}/>
+    //     <LinhaDaTabelaGenerica dados={obj}/>
+    // </Tabela>
     
     return (<div>
-        {/* <Header/>
-        <Titulo>Home</Titulo>
-        <BotaoGenerico/>
-        <LinkGenerico/> 
-        <InputGenerico/>*/}
-        <LinhaDaTabelaGenerica dados={obj}/>
-        
+        <LinhaDaTabelaGenerica dados={obj}/>    
     </div>)
-           
 }
+
+{/* <Header/>
+<Titulo>Home</Titulo>
+<BotaoGenerico/>
+<LinkGenerico/> 
+<InputGenerico/> */}

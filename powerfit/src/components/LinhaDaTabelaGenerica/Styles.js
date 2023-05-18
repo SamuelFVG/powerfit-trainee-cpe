@@ -8,13 +8,13 @@ export const LinhaDaTabelaG = styled.div`
     height: 50px;
     width: 78%; 
     display: flex;
-    justify-content: space-between      ;
+    gap: 18%;
 `;  
 
 export const Perfil = styled.div`
     width: 180px;
     gap: 3%;
-    
+
     display: flex;
     justify-content: left;
 `;

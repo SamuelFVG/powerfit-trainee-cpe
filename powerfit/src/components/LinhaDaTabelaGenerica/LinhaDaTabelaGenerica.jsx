@@ -16,10 +16,9 @@ export default function LinhaDaTabelaGenerica({ dados }) {
           </InformacoesPerfil>
         </Perfil>
 
-        
         <DivGenerico>{dados.atividade}</DivGenerico>
-        
-        <DivGenerico>{dados.horas}</DivGenerico> 
+
+        <DivGenerico>{dados.horas}</DivGenerico>
       </LinhaDaTabelaG>
     </>
   );
