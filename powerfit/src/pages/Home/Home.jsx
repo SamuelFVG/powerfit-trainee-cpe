@@ -15,9 +15,10 @@ export default function Home() {
         {/* <Header/>
         <Titulo>Home</Titulo>
         <BotaoGenerico/>
-        <LinkGenerico/> */}
+        <LinkGenerico/> 
+        <InputGenerico/>*/}
         <LinhaDaTabelaGenerica dados={obj}/>
-        <InputGenerico/>
+        
     </div>)
            
 }

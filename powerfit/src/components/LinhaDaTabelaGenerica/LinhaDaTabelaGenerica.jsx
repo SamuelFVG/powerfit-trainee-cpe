@@ -1,16 +1,28 @@
-import {LinhaDaTabelaG} from "./Styles"
-import { DivPerfil } from "./Styles"
-import { DoodleUsuario } from "./Styles"
+import { LinhaDaTabelaG } from "./Styles";
+import { Perfil } from "./Styles";
+import { Doodle } from "./Styles";
+import { InformacoesPerfil } from "./Styles";
+import { DivGenerico } from "./Styles";
 
-export default function LinhaDaTabelaGenerica({dados}) {
-    return (<>
-        <LinhaDaTabelaG><DoodleUsuario/></LinhaDaTabelaG>
-        <div>{dados.nome}</div>
-        <div>{dados.cargo}</div>
-        <div>{dados.cor_doodle}</div>
-        <div>{dados.atividade}</div>
-        <div>{dados.horas}</div>
-    </>)
+export default function LinhaDaTabelaGenerica({ dados }) {
+  return (
+    <>
+      <LinhaDaTabelaG>
+        <Perfil>
+          <Doodle />
+          <InformacoesPerfil>
+            <DivGenerico> {dados.nome} </DivGenerico>
+            <DivGenerico> {dados.cargo} </DivGenerico>
+          </InformacoesPerfil>
+        </Perfil>
+
+        
+        <DivGenerico>{dados.atividade}</DivGenerico>
+        
+        <DivGenerico>{dados.horas}</DivGenerico> 
+      </LinhaDaTabelaG>
+    </>
+  );
 }
 
 // nome: 'Nome genérico',
