@@ -5,6 +5,7 @@ import { InformacoesPerfil } from "./Styles";
 import { DivGenerico } from "./Styles";
 
 export default function LinhaDaTabelaGenerica({ dados }) {
+  let nome = dados.nome;
   return (
     <>
       <LinhaDaTabelaG>

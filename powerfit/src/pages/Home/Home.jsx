@@ -1,5 +1,10 @@
 import {Titulo,} from "./Styles"
+import { Tabela } from "./Styles"
+import { TopoTabela } from "./Styles"
+import { DivGenerico } from "../../components/LinhaDaTabelaGenerica/Styles"
+
 import {BotaoGenerico,InputGenerico,LinkGenerico,Header,LinhaDaTabelaGenerica }  from "../../components"
+
 
 const obj =  { //vetor de objetos no final
     nome: 'Nome genérico',
@@ -10,22 +15,22 @@ const obj =  { //vetor de objetos no final
 }
 
 export default function Home() {
-    // <Tabela>
-    //     <TopoTabela>
-    //         <DivGenerico>Perfil</DivGenerico>
-    //         <DivGenerico>Atividade</DivGenerico>
-    //         <DivGenerico>Tempo</DivGenerico>
-    //     </TopoTabela>
-    //     <LinhaDaTabelaGenerica dados={obj}/>
-    //     <LinhaDaTabelaGenerica dados={obj}/>
-    //     <LinhaDaTabelaGenerica dados={obj}/>
-    //     <LinhaDaTabelaGenerica dados={obj}/>
-    //     <LinhaDaTabelaGenerica dados={obj}/>
-    //     <LinhaDaTabelaGenerica dados={obj}/>
-    // </Tabela>
     
     return (<div>
-        <LinhaDaTabelaGenerica dados={obj}/>    
+    <Tabela>
+        <TopoTabela>
+            <DivGenerico>Perfil</DivGenerico>
+            <DivGenerico>Atividade</DivGenerico>
+            <DivGenerico>Tempo</DivGenerico>
+        </TopoTabela>
+        <LinhaDaTabelaGenerica dados={obj}/>
+        <LinhaDaTabelaGenerica dados={obj}/>
+        <LinhaDaTabelaGenerica dados={obj}/>
+        <LinhaDaTabelaGenerica dados={obj}/>
+        <LinhaDaTabelaGenerica dados={obj}/>
+        <LinhaDaTabelaGenerica dados={obj}/>
+    </Tabela>
+        
     </div>)
 }
 
