@@ -2,5 +2,5 @@ import {LogoG} from "./Styles"
 
 
 export default function LogoGenerica() {
-    return
+    return <LogoG/>
 }
