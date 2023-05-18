@@ -1,10 +1,10 @@
 import {LinhaDaTabelaG} from "./Styles"
-
+import { DivPerfil } from "./Styles"
+import { DoodleUsuario } from "./Styles"
 
 export default function LinhaDaTabelaGenerica({dados}) {
-    
-
-    return (<>  
+    return (<>
+        <LinhaDaTabelaG><DoodleUsuario/></LinhaDaTabelaG>
         <div>{dados.nome}</div>
         <div>{dados.cargo}</div>
         <div>{dados.cor_doodle}</div>
