@@ -1,11 +1,15 @@
 import {Titulo} from "./Styles"
 import { LogoGenerica } from "../../components"
+import { Footer } from "../../components"
+
 
 export default function Inicio() {
     return (
         <div>
-            <LogoGenerica/>  
+            
+            <LogoGenerica texto={"PowerFit"}/>  
             <Titulo>Inicio</Titulo> 
+            <Footer/>
                     
         </div>
     )
