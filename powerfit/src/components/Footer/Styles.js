@@ -8,7 +8,6 @@ export const FooterG = styled.div`
     align-items: center;
     justify-content: flex-end;
     padding: 20px;
-    position: fixed;
     left: 0;
     bottom: 0;
     height: 146px;
