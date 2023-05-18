@@ -1,10 +1,12 @@
 import styled from "styled-components"
-import Logo from "../../assets/Logo.png"
 
 export const LogoG = styled.div`
-
-background-color: green;
-height: 1000px;
-background-image: url(${Logo});
-
-`;  
+    
+    height: 60px;
+    width: 264px;
+    align-items: center;
+    background-color: #04040B;
+    color: white;
+    font-family: noto sans;
+    
+`;
