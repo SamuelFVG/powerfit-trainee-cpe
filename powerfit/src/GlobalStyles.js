@@ -2,6 +2,7 @@ import { createGlobalStyle } from "styled-components";
 
 export const GlobalStyles = createGlobalStyle`
   html, body {
+    font-family: "Noto Sans", sans-serif;
     background-color: #0A0A16;
     color: #F2F1FB;
 
