@@ -10,7 +10,7 @@ export default function LinhaDaTabelaGenerica({ dados }) {
     <>
       <LinhaDaTabelaG>
         <Perfil>
-          <Doodle />
+          <Doodle />{" "}
           <InformacoesPerfil>
             <DivGenerico> {dados.nome} </DivGenerico>
             <DivGenerico> {dados.cargo} </DivGenerico>
