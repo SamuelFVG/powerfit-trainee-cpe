@@ -1,25 +1,28 @@
-import { LinhaDaTabelaG } from "./Styles";
-import { Perfil } from "./Styles";
-import { Doodle } from "./Styles";
-import { InformacoesPerfil } from "./Styles";
-import { DivGenerico } from "./Styles";
+import {
+  LinhaDaTabelaG,
+  Perfil,
+  InformacoesPerfil,
+  Doodle,
+  DivGenericoTabela,
+  DivGenericoPerfil,
+  DivGenericoPerfilMenor,
+} from "./Styles";
 
 export default function LinhaDaTabelaGenerica({ dados }) {
-  let nome = dados.nome;
   return (
     <>
       <LinhaDaTabelaG>
         <Perfil>
-          <Doodle />{" "}
+          <Doodle color={dados.cor_doodle}></Doodle>
           <InformacoesPerfil>
-            <DivGenerico> {dados.nome} </DivGenerico>
-            <DivGenerico> {dados.cargo} </DivGenerico>
+            <DivGenericoPerfil> {dados.nome} </DivGenericoPerfil>
+            <DivGenericoPerfilMenor> {dados.cargo} </DivGenericoPerfilMenor>
           </InformacoesPerfil>
         </Perfil>
 
-        <DivGenerico>{dados.atividade}</DivGenerico>
+        <DivGenericoTabela>{dados.atividade}</DivGenericoTabela>
 
-        <DivGenerico>{dados.horas}</DivGenerico>
+        <DivGenericoTabela>{dados.horas}</DivGenericoTabela>
       </LinhaDaTabelaG>
     </>
   );

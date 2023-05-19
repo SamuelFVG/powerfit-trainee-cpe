@@ -1,17 +1,20 @@
 import styled from "styled-components";
+//import { Button } from "antd";
 
 export const BotaoG = styled.button`
-  background-color: green;
-  width: 100px;
-  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: #0a0a16;
+  border: 2px solid #f2f1fb;
+  color: #f2f1fb;
+  border-radius: 5px;
+  width: 120px;
+  height: 45px;
 
   :hover {
-    background-color: black;
-    color: white;
-    cursor: pointer;
-  }
-
-  @media (max-width: 700px) {
-    background-color: red;
+    border-color: #df5031;
+    color: #df5031;
   }
 `;
