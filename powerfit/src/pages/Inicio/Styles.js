@@ -8,12 +8,12 @@ export const ContentInicio = styled.div`
 
 `;
 
-export const Titulo = styled.div`
+export const TituloInicio = styled.div`
     font-size: 45px;
     font-weight: bold;
 `;
 
-export const SubTitulo = styled.div`
+export const SubTituloInicio = styled.div`
     font-size: 45px;
     font-weight: normal;
 `;
@@ -23,14 +23,14 @@ export const TextoInicio = styled.div`
     font-size: 35px;
 `;
 
-export const CaixaTexto = styled.div`
+export const CaixaTextoInicio = styled.div`
     
     width: 44%;
     margin-left: 11%;
 
 `;
 
-export const CaixaImagem = styled.div`
+export const CaixaImagemInicio = styled.div`
 
 margin-left: 9%;
 margin-right: 11%;

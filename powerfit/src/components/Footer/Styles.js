@@ -14,13 +14,13 @@ export const FooterG = styled.div`
     width: 100%;
 `;  
 
-export const ImageWrapper = styled.div`
+export const ImageWrapperFooter = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-left: 2%;
 `;
 
-export const LogoWrapper = styled.div`
+export const LogoWrapperFooter = styled.div`
   margin-bottom: 10px;
 `;

@@ -1,6 +1,6 @@
 import {FooterG} from "./Styles"
-import {ImageWrapper} from "./Styles"
-import {LogoWrapper} from "./Styles"
+import {ImageWrapperFooter} from "./Styles"
+import {LogoWrapperFooter} from "./Styles"
 import { LogoGenerica } from "../../components"
 import Icones from "../../assets/Icones_social_media.png"
 
@@ -10,12 +10,12 @@ export default function Footer() {
 
         <div>
             <FooterG>
-                <LogoWrapper>
+                <LogoWrapperFooter>
                     <LogoGenerica texto={"PowerFit"}/>
-                </LogoWrapper>
-                <ImageWrapper>
+                </LogoWrapperFooter>
+                <ImageWrapperFooter>
                 <img src={Icones} />
-                </ImageWrapper>
+                </ImageWrapperFooter>
             </FooterG>
         </div>
 
