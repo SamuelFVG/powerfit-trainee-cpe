@@ -11,7 +11,7 @@ import { Header } from "../../components";
 export default function Inicio() {
   return (
     <div>
-      <Header />
+      {/* <Header /> */}
       <ContentInicio>
         <CaixaTextoInicio>
           <TituloInicio>Mais que uma academia</TituloInicio>
@@ -24,7 +24,7 @@ export default function Inicio() {
           <img src={ImagemInicio} />
         </CaixaImagemInicio>
       </ContentInicio>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }
