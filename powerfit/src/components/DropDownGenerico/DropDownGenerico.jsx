@@ -1,6 +1,5 @@
-import {DropDownG} from "./Styles"
-
+import { DropDownG } from "./Styles";
 
 export default function DropDownGenerico() {
-    return
+  return;
 }

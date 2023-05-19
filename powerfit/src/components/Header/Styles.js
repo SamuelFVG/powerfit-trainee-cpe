@@ -1,14 +1,12 @@
-import styled from "styled-components"
+import styled from "styled-components";
 
 export const HeaderG = styled.div`
-
-    background-color: #04040B;
-    display: flex;
-    top: 0;
-    height: 105px;
-    width: 100%;
-
-`;  
+  background-color: #04040b;
+  display: flex;
+  top: 0;
+  height: 105px;
+  width: 100%;
+`;
 
 export const LogoWrapperHeader = styled.div`
   margin-left: 11%;

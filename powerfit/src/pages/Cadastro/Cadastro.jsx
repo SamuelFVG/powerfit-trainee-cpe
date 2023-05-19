@@ -1,9 +1,9 @@
-import {Titulo} from "./Styles"
+import { Titulo } from "./Styles";
 
 export default function Cadastro() {
-    return (
-        <div>
-            <Titulo>Cadastro</Titulo>
-        </div>
-    )
+  return (
+    <div>
+      <Titulo>Cadastro</Titulo>
+    </div>
+  );
 }

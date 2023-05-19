@@ -1,6 +1,5 @@
-import {BotaoG} from "./Styles"
-
+import { BotaoG } from "./Styles";
 
 export default function BotaoGenerico() {
-    return <BotaoG>Aperte aqui</BotaoG> 
+  return <BotaoG>Aperte aqui</BotaoG>;
 }

@@ -1,9 +1,9 @@
-import {Titulo} from "./Styles"
+import { Titulo } from "./Styles";
 
 export default function Editar() {
-    return (
-        <div>
-            <Titulo>Editar</Titulo>
-        </div>
-    )
+  return (
+    <div>
+      <Titulo>Editar</Titulo>
+    </div>
+  );
 }
