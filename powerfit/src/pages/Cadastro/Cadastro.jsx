@@ -1,6 +1,6 @@
 import { Link,useNavigate } from "react-router-dom"
 import React from "react"
-import { SingUpContainer,LogoCadastro,InputForm,CadastroContainer,SubmitButton } from "./Styles"
+import { SingUpContainer,LogoCadastro,InputForm,CadastroContainer,SubmitButton, PalavraLink} from "./Styles"
 
 
 
@@ -90,11 +90,9 @@ export default function CadastroPage() {
             <SubmitButton type="submit">Cadastrar</SubmitButton>
           </form>
           <Link to={"/login"}>
-            Já tem uma conta? Entre agora!
+            <PalavraLink>Já tem uma conta? Entre agora!</PalavraLink>
           </Link>
-
-
-        </CadastroContainer>
-        </SingUpContainer>
+          </CadastroContainer>
+      </SingUpContainer>
   )
 }
