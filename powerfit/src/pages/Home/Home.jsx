@@ -2,7 +2,6 @@ import { Titulo } from "./Styles";
 import { Tabela } from "./Styles";
 import { TopoTabela } from "./Styles";
 import { DivGenerico } from "../../components/LinhaDaTabelaGenerica/Styles";
-
 import {
   BotaoGenerico,
   InputGenerico,
@@ -36,6 +35,7 @@ export default function Home() {
         <LinhaDaTabelaGenerica dados={obj} />
         <LinhaDaTabelaGenerica dados={obj} />
       </Tabela>
+      <BotaoGenerico texto="Aperte Aqui" />
     </div>
   );
 }

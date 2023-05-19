@@ -1,5 +1,5 @@
 import { BotaoG } from "./Styles";
 
-export default function BotaoGenerico() {
-  return <BotaoG>Aperte aqui</BotaoG>;
+export default function BotaoGenerico({ texto }) {
+  return <BotaoG>{texto}</BotaoG>;
 }
