@@ -1,5 +1,6 @@
 import { Link,useNavigate } from "react-router-dom"
 import React from "react"
+import Logo from "../../assets/Logo.png";
 import { SingUpContainer,LogoCadastro,InputForm,CadastroContainer,SubmitButton, PalavraLink} from "./Styles"
 
 
@@ -42,10 +43,10 @@ export default function CadastroPage() {
   return (
     <SingUpContainer>
           <CadastroContainer>
-            <LogoCadastro>
-                  {/* <img src={LogoCadastroIMG}></img> */}
+            {<LogoCadastro>
+                  <img src={Logo} ></img>
                   <h2>Cadastro</h2>
-              </LogoCadastro>
+              </LogoCadastro>}
           <form onSubmit={efetuarCadastro}>
             <InputForm
                 placeholder="Email"
@@ -56,7 +57,7 @@ export default function CadastroPage() {
                 required    
             ></InputForm>
             <InputForm
-                placeholder="Nome"
+                placeholder="Nome de Usuário"
                 type="text"
                 name="nome"
                 value={form.nome}

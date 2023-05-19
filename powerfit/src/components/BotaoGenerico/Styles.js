@@ -17,4 +17,4 @@ export const BotaoG = styled.button`
     border-color: #df5031;
     color: #df5031;
   }
-`;
+`

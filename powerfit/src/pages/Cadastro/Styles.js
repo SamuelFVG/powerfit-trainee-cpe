@@ -7,10 +7,10 @@ export const LogoCadastro = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    /* img {
-        width: 70px;
-        height: 70px;
-    } */
+    img {
+        width: 60px;
+        height: 60px;
+    }
     h2{
         margin-left: 10px;
         color: white;
@@ -27,12 +27,13 @@ export const InputForm = styled.input`
         border-radius: 3px;
         height: 50px;
     width: 300px;
+        border-radius: 10px;
         margin-bottom: 25px;
         margin-top: 10px;
     color: white;
         padding: 0 10px;
-        font-family: 'Roboto';
-        font-size: 18px;
+        font-family: 'Noto sans', sans-serif;
+        font-size: 14px;
         display: flex;
         align-items: center;
         &::placeholder{
@@ -67,22 +68,27 @@ export const SingUpContainer = styled.section`
 
 export const SubmitButton = styled.button`
     background: #0A0A16;
-        border: 1px solid #D5D5D5;
-        border-radius: 3px;
-        height: 50px;
-    color: grey;
+        border: 2px solid #f2f1fb;
+        border-radius: 5px;
+        height: 45px;
+    color: #f2f1fb;
+        margin-left: 30%;
         margin-bottom: 25px;
         margin-top: 10px;
-    width: 300px;
+    width: 120px;
         padding: 0 10px;
-        font-family: 'Roboto';
-        font-size: 18px;
+        font-family: 'Noto sans', sans-serif;
+        font-size: 14px;
         display: flex;
         align-items: center;
-    justify-content: center;
+        justify-content: center;
         &::placeholder{
             font-style: italic;
         }
+        :hover {
+    border-color: #df5031;
+    color: #df5031;
+  }
 `
 export const PalavraLink = styled.div`
 
