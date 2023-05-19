@@ -33,7 +33,7 @@ export const InputForm = styled.input`
     color: white;
         padding: 0 10px;
         font-family: 'Noto sans', sans-serif;
-        font-size: 14px;
+        font-size: 15px;
         display: flex;
         align-items: center;
         &::placeholder{
@@ -44,7 +44,7 @@ export const InputForm = styled.input`
 export const CadastroContainer = styled.div`
   width: 450px;
   height: 600px;
-  border: 1px solid white;
+  border: 2px solid white;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -78,7 +78,7 @@ export const SubmitButton = styled.button`
     width: 120px;
         padding: 0 10px;
         font-family: 'Noto sans', sans-serif;
-        font-size: 14px;
+        font-size: 15px;
         display: flex;
         align-items: center;
         justify-content: center;
