@@ -1,7 +1,5 @@
-import { Titulo } from "./Styles";
-import { Tabela } from "./Styles";
-import { TopoTabela } from "./Styles";
-import { DivGenerico } from "../../components/LinhaDaTabelaGenerica/Styles";
+import { Titulo, Tabela, TopoTabela, DivGenericoTitulo } from "./Styles";
+
 import {
   BotaoGenerico,
   InputGenerico,
@@ -10,30 +8,51 @@ import {
   LinhaDaTabelaGenerica,
 } from "../../components";
 
-const obj = {
-  //vetor de objetos no final
-  nome: "Nome genérico",
-  cargo: "Cargo genérico",
-  cor_doodle: "#aaa",
-  atividade: "Atividade Genérica",
-  horas: "12:34",
-};
+let pessoas = [
+  {
+    nome: "João Maciel",
+    cargo: "Atendente",
+    cor_doodle: "#70A1D7",
+    atividade: "Atendendo clientes",
+    horas: "12:07",
+  },
+  {
+    nome: "Rafael Pereira",
+    cargo: "Cliente",
+    cor_doodle: "#A1DE93",
+    atividade: "Cardio",
+    horas: "11:10",
+  },
+  {
+    nome: "Mariana Julia",
+    cargo: "Contadora",
+    cor_doodle: "#F7F48B",
+    atividade: "Impostos",
+    horas: "23:59",
+  },
+  {
+    nome: "Juliana Avarenga",
+    cargo: "Cliente",
+    cor_doodle: "#E0BBE4",
+    atividade: "Musculação",
+    horas: "12:07",
+  },
+];
 
 export default function Home() {
   return (
     <div>
       <Tabela>
         <TopoTabela>
-          <DivGenerico>Perfil</DivGenerico>
-          <DivGenerico>Atividade</DivGenerico>
-          <DivGenerico>Tempo</DivGenerico>
+          <DivGenericoTitulo>Perfil</DivGenericoTitulo>
+          <DivGenericoTitulo>Atividade</DivGenericoTitulo>
+          <DivGenericoTitulo>Tempo</DivGenericoTitulo>
         </TopoTabela>
-        <LinhaDaTabelaGenerica dados={obj} />
-        <LinhaDaTabelaGenerica dados={obj} />
-        <LinhaDaTabelaGenerica dados={obj} />
-        <LinhaDaTabelaGenerica dados={obj} />
-        <LinhaDaTabelaGenerica dados={obj} />
-        <LinhaDaTabelaGenerica dados={obj} />
+
+        <LinhaDaTabelaGenerica dados={pessoas[0]} />
+        <LinhaDaTabelaGenerica dados={pessoas[1]} />
+        <LinhaDaTabelaGenerica dados={pessoas[2]} />
+        <LinhaDaTabelaGenerica dados={pessoas[3]} />
       </Tabela>
       <BotaoGenerico texto="Aperte Aqui" />
     </div>
