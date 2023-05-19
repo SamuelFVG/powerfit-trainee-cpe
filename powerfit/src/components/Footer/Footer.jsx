@@ -9,7 +9,7 @@ export default function Footer() {
     <div>
       <FooterG>
         <LogoWrapperFooter>
-          <LogoGenerica texto={"PowerFit"} />
+          <LogoGenerica texto={"PowerFit"} backgroundColor={"#04040B"} />
         </LogoWrapperFooter>
         <ImageWrapperFooter>
           <img src={Icones} />

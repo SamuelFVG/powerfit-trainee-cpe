@@ -6,7 +6,7 @@ export default function Header() {
   return (
     <HeaderG>
       <LogoWrapperHeader>
-        <LogoGenerica texto={"PowerFit"} />
+        <LogoGenerica texto={"PowerFit"} backgroundColor={"#04040B"} />
       </LogoWrapperHeader>
     </HeaderG>
   );
