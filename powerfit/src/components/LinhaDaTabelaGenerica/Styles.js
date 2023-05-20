@@ -1,5 +1,10 @@
 import styled from "styled-components";
 
+export const PerfilDoodle = styled.img`
+  height: inherit;
+  width: inherit;
+`;
+
 export const LinhaDaTabelaG = styled.div`
   /* border: solid 1px green ; */
   margin-top: 1.5rem;
@@ -51,6 +56,7 @@ export const DivGenericoPerfilMenor = styled(DivGenericoPerfil)`
 export const Doodle = styled.div`
   background-color: ${(props) => props.color};
   border-radius: 100%;
+  border: 3px solid black;
   height: 100%;
   aspect-ratio: 1 / 1;
 `;
