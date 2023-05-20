@@ -6,10 +6,8 @@ export const PerfilDoodle = styled.img`
 `;
 
 export const LinhaDaTabelaG = styled.div`
-  /* border: solid 1px green ; */
-  margin-top: 1.5rem;
-  margin-bottom: 1.5rem;
-
+  margin-top: 2rem;
+  margin-bottom: 2rem;
   height: 50px;
   width: 100%;
   display: flex;
@@ -19,20 +17,17 @@ export const LinhaDaTabelaG = styled.div`
 export const Perfil = styled.div`
   width: 33%;
   gap: 3%;
-
   display: flex;
   justify-content: center;
 `;
 
 export const InformacoesPerfil = styled.div`
-  //flex-grow: 1;
   display: flex;
   flex-direction: column;
 `;
 
 export const DivGenerico = styled.div`
   flex-grow: inherit;
-
   width: fit-content;
   display: flex;
   justify-content: center;

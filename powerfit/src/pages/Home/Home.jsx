@@ -1,10 +1,14 @@
-import { Titulo, Tabela, TopoTabela, DivGenericoTitulo } from "./Styles";
+import {
+  Tabela,
+  TopoTabela,
+  DivTituloTabelaHome,
+  DivGeralHome,
+  DivInputsHome,
+} from "./Styles";
 
 import {
   BotaoGenerico,
   InputGenerico,
-  LinkGenerico,
-  Header,
   LinhaDaTabelaGenerica,
 } from "../../components";
 
@@ -39,30 +43,31 @@ let pessoas = [
   },
 ];
 
-export default function Home() {
+function printaTabela() {
   return (
-    <div>
-      <Tabela>
-        <TopoTabela>
-          <DivGenericoTitulo>Perfil</DivGenericoTitulo>
-          <DivGenericoTitulo>Atividade</DivGenericoTitulo>
-          <DivGenericoTitulo>Tempo</DivGenericoTitulo>
-        </TopoTabela>
+    <Tabela>
+      <TopoTabela>
+        <DivTituloTabelaHome>Perfil</DivTituloTabelaHome>
+        <DivTituloTabelaHome>Atividade</DivTituloTabelaHome>
+        <DivTituloTabelaHome>Tempo</DivTituloTabelaHome>
+      </TopoTabela>
 
-        <LinhaDaTabelaGenerica dados={pessoas[0]} />
-        <LinhaDaTabelaGenerica dados={pessoas[1]} />
-        <LinhaDaTabelaGenerica dados={pessoas[2]} />
-        <LinhaDaTabelaGenerica dados={pessoas[3]} />
-      </Tabela>
-      <BotaoGenerico texto="Aperte Aqui" />
-    </div>
+      {pessoas.map((pessoa) => (
+        <LinhaDaTabelaGenerica dados={pessoa} key={pessoa.nome} />
+      ))}
+    </Tabela>
   );
 }
 
-{
-  /* <Header/>
-<Titulo>Home</Titulo>
-<BotaoGenerico/>
-<LinkGenerico/> 
-<InputGenerico/> */
+export default function Home() {
+  return (
+    <DivGeralHome>
+      <DivInputsHome>
+        <input></input> {/* placeholder, aqui vai o dropdown */}
+        <BotaoGenerico texto="Aperte Aqui" />
+      </DivInputsHome>
+
+      {printaTabela()}
+    </DivGeralHome>
+  );
 }
