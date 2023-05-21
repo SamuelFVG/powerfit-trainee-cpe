@@ -2,10 +2,11 @@ import styled from "styled-components";
 
 export const LogoEditar = styled.div`
     width: 300px;
-    height: 100px;
+    height: 60px;
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-top: 10%;
     img {
         width: 60px;
         height: 60px;
@@ -46,21 +47,25 @@ padding-bottom:10px;
 `
 
 export const Entrada = styled.input`
-    background: #0A0A16;
-        border: 1px solid #ffffff;
-        border-radius: 3px;
-        height: 50px;
-        width: 300px;
-        border-radius: 10px;
-        color: white;
-        padding: 0 10px;
-        font-family: 'Noto sans', sans-serif;
-        font-size: 15px;
-        display: flex;
-        align-items: center;
-        &::placeholder{
-            font-style: italic;
-        }
+background: #0A0A16;
+    border: 1px solid #D5D5D5;
+    border-radius: 3px;
+    height: 50px;
+width: 300px;
+    border-radius: 10px;
+color: white;
+    padding: 0 10px;
+    font-family: 'Noto sans', sans-serif;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    &::placeholder{
+        font-style: italic;
+    }
+@media (max-width: 500px) {
+width: 95%;
+margin-left: 2.5%;
+}
 `
 export const BotãoSalvar = styled.button`
     background: #0A0A16;
