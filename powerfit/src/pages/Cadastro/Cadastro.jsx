@@ -1,8 +1,8 @@
 import { Link,useNavigate } from "react-router-dom"
 import React from "react"
 import Logo from "../../assets/Logo.png";
-import { DropDownGenerico } from "../../components";
-import { SingUpContainer,LogoCadastro,InputForm,CadastroContainer,SubmitButton, PalavraLink, Menu} from "./Styles"
+import { DropDownGenerico, LogoGenerica} from "../../components";
+import { SingUpContainer,InputForm,CadastroContainer,SubmitButton, PalavraLink, Menu} from "./Styles"
 
 
 
@@ -29,7 +29,6 @@ export default function CadastroPage() {
          email: form.email,
          nome: form.nome,
          senha: form.senha,
-         cargo: form.cargo
      }
 
 
@@ -45,10 +44,7 @@ export default function CadastroPage() {
   return (
     <SingUpContainer>
           <CadastroContainer>
-            {<LogoCadastro>
-                  <img src={Logo} ></img>
-                  <h2>Cadastro</h2>
-              </LogoCadastro>}
+            <LogoGenerica texto={"Cadastro"} backgroundColor={"#0A0A16"} />
           <form onSubmit={efetuarCadastro}>
             <InputForm
                 placeholder="Email"
