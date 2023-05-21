@@ -59,6 +59,7 @@ export const InputForm = styled.input`
 `
 
 export const CadastroContainer = styled.div`
+padding-top: 30px;
   width: 400px;
   height: 50%;
   border: 2px solid white;
@@ -69,7 +70,7 @@ export const CadastroContainer = styled.div`
   background-color: #0A0A16;
   border-radius: 20px;
   @media (max-width: 700px) {
-    width: 75%;
+    width: 65%;
   }
 `
 
@@ -116,7 +117,11 @@ export const SubmitButton = styled.button`
 export const PalavraLink = styled.div`
     margin-bottom: 15%;
     color: #DF5031;
-
+    
+  @media (max-width: 300px) {
+    width: 100%;
+    font-size: 11px;
+  }
 `
 export const Menu = styled.div`
     margin-bottom: 25px;
