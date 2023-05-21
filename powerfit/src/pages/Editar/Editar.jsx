@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import React from "react";
-import { DropDownGenerico } from "../../components";
+import { DropDownGenerico,LogoGenerica } from "../../components";
 import {
   LogoEditar,
   EditContainer,
@@ -44,12 +44,7 @@ export default function Editar() {
   return (
     <EditContainer>
       <EditorContainer>
-        {
-          <LogoEditar>
-            <h2>Editar</h2>
-          </LogoEditar>
-        }
-
+         <LogoGenerica texto={"Cadastro"} backgroundColor={"#0A0A16"} />          
         <DivField>
           <DivLabel>Nome</DivLabel>
           <Entrada

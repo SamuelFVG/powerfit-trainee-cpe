@@ -23,6 +23,7 @@ export const EditContainer = styled.section`
   background-color: #0A0A16;
   `
   export const EditorContainer = styled.div`
+padding-top:30px;
   width: 450px;
   height: 600px;
   border: 2px solid white;
