@@ -3,12 +3,11 @@ import styled from "styled-components";
 export const HeaderG = styled.div`
   background-color: #04040b;
   display: flex;
-  top: 0;
-  height: 105px;
+  align-items: center;
+  height: 7rem;
   width: 100%;
 `;
 
 export const LogoWrapperHeader = styled.div`
   margin-left: 11%;
-  margin-top: 2%;
 `;

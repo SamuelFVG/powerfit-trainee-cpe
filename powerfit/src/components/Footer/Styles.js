@@ -5,21 +5,13 @@ export const FooterG = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: center;
   padding: 20px;
-  left: 0;
-  bottom: 0;
-  height: 146px;
+  height: 8rem;
   width: 100%;
 `;
 
-export const ImageWrapperFooter = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-left: 2%;
-`;
-
-export const LogoWrapperFooter = styled.div`
-  margin-bottom: 10px;
+export const SocialMediaLogos = styled.img`
+  height: 1.8rem;
+  width: 8.2rem;
 `;
