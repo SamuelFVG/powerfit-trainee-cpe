@@ -49,7 +49,7 @@ export default function Editar() {
     <EditContainer>
       <form onSubmit={salvar}>
       <EditorContainer>
-         <LogoGenerica texto={"Cadastro"} backgroundColor={"#0A0A16"} /> 
+         <LogoGenerica texto={"Editar"} backgroundColor={"#0A0A16"} /> 
         <DivField>
           <DivLabel>Nome</DivLabel>
           <Entrada
