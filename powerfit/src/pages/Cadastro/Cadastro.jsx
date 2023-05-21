@@ -19,7 +19,7 @@ export default function CadastroPage() {
     event.preventDefault();
 
      if(form.senha !== form.confirmaSenha) {
-       return alert("senhas diferentes!")
+       return alert("Senhas diferentes!")
      }
     }
 
