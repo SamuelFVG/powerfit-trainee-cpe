@@ -66,4 +66,9 @@ export const Doodle = styled.div`
   border: 3px solid black;
   height: 100%;
   aspect-ratio: 1 / 1;
+
+  @media (max-width: 350px) {
+    height: 25px;
+    margin-left: -2%;
+  }
 `;
