@@ -33,6 +33,10 @@ export default function Editar() {
     setForm({ ...formulario, [event.target.name]: event.target.value });
   }
 
+  function salvar(event) {
+    event.preventDefault();
+  }
+
   const dados = { nome: formulario.nome };
 
   console.log(dados);
@@ -43,8 +47,9 @@ export default function Editar() {
 
   return (
     <EditContainer>
+      <form onSubmit={salvar}>
       <EditorContainer>
-         <LogoGenerica texto={"Cadastro"} backgroundColor={"#0A0A16"} />          
+         <LogoGenerica texto={"Cadastro"} backgroundColor={"#0A0A16"} /> 
         <DivField>
           <DivLabel>Nome</DivLabel>
           <Entrada
@@ -58,17 +63,22 @@ export default function Editar() {
         </DivField>
         <DivField>
           <DivLabel>Cargo</DivLabel>
-          <DropDownGenerico style default="Selecione o cargo" options={cargo} />
+          <DropDownGenerico 
+          required 
+          default="Selecione o cargo" 
+          options={cargo} />
         </DivField>
         <DivField>
           <DivLabel>Atividade</DivLabel>
-          <DropDownGenerico
+          <DropDownGenerico 
+            required
             default="Selecione a atividade"
             options={atividades}
           />
         </DivField>
-        <BotãoSalvar type="submit">Salvar</BotãoSalvar>
+        <BotãoSalvar type="submit">Salvar</BotãoSalvar> 
       </EditorContainer>
+      </form> 
     </EditContainer>
   );
 }
