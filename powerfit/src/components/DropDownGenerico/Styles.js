@@ -11,8 +11,6 @@ export const DivSelect = styled.select`
   color:#ffffff;
   size: 35px;
   padding: 0 10px;
-  margin-top:10px;
-  margin-bottom: 25px;
   &:hover {
     border-color: #ffffff  ;
   }
@@ -28,5 +26,5 @@ export const DivOption = styled.option`
 export const DivDefault = styled.option`
     background-color:#0a0a16;
     color:blue;
-    height: 50px;   
+    height: 50px;  
 `;
