@@ -37,17 +37,24 @@ export const DivOption = styled.option`
     width: 100%;
     margin-left: 2.5%;
   }
+  &:invalid {
+    font-style:italic;
+    color: #7D7D7D;
+  }
     `;
 export const DivDefault = styled.option`
     background-color:#0a0a16;
-    color:blue;
     height: 50px;  
     font-family: "Noto Sans", sans-serif;
     font-size: 15px;
-    color: #F2F1FB;
+    color: #7D7D7D;
     @media (max-width: 500px) {
     font-size: 11px;
     width: 100%;
     margin-left: 2.5%;
+  }
+  &:invalid {
+    font-style:italic;
+    color: #7D7D7D;
   }
 `;
