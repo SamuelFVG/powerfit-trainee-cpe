@@ -16,6 +16,9 @@ export const LinhaDaTabelaG = styled.div`
   @media (max-width: 700px) {
     height: 35px;
   }
+  @media (max-width: 290px) {
+    height: 30px;
+  }
 `;
 
 export const Perfil = styled.div`
@@ -66,9 +69,4 @@ export const Doodle = styled.div`
   border: 3px solid black;
   height: 100%;
   aspect-ratio: 1 / 1;
-
-  @media (max-width: 350px) {
-    height: 25px;
-    margin-left: -2%;
-  }
 `;

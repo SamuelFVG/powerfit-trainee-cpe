@@ -5,6 +5,10 @@ export const Tabela = styled.div`
   border: solid 2px #6e6d9c;
   border-radius: 5px;
   width: 78%;
+
+  @media (max-width: 500px) {
+    width: 90%;
+  }
 `;
 
 export const TopoTabela = styled.div`
@@ -29,6 +33,9 @@ export const DivInputsHome = styled.form`
   align-items: center;
   gap: 2%;
   width: 78%;
+  @media (max-width: 500px) {
+    width: 90%;
+  }
 `;
 
 export const DivGeralHome = styled(DivGenerico)`

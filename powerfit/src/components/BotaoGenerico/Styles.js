@@ -11,10 +11,12 @@ export const BotaoG = styled.button`
   color: #f2f1fb;
   border-radius: 5px;
   width: 120px;
-  height: 45px;
+  height: 50px;
 
+  font-family: "Noto Sans", sans-serif;
   :hover {
     border-color: #df5031;
-    color: #df5031;
+    color: #f2f1fb;
+    background-color: #df5031;
   }
-`
+`;
