@@ -23,6 +23,9 @@ export const Perfil = styled.div`
   gap: 3%;
   display: flex;
   justify-content: center;
+  @media (max-width: 500px) {
+    gap: 0;
+  }
 `;
 
 export const InformacoesPerfil = styled.div`
@@ -40,6 +43,7 @@ export const DivGenerico = styled.div`
 
 export const DivGenericoTabela = styled(DivGenerico)`
   width: 33%;
+  text-align: center;
 `;
 
 export const DivGenericoPerfil = styled(DivGenerico)`
@@ -53,6 +57,7 @@ export const DivGenericoPerfil = styled(DivGenerico)`
 
 export const DivGenericoPerfilMenor = styled(DivGenericoPerfil)`
   font-size: 0.8rem;
+  margin-top: 0.3rem;
 `;
 
 export const Doodle = styled.div`
