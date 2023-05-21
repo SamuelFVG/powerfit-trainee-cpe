@@ -1,5 +1,5 @@
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination } from "swiper";
+import { Navigation, Pagination, Autoplay } from "swiper";
 import falcao from "../../assets/falcao.jpg";
 import raposa from "../../assets/raposa.jpg";
 import tartaruga from "../../assets/tartaruga.jpg";
@@ -28,11 +28,15 @@ export default function Carrossel() {
   return (
     <div className="swiperContainer">
       <Swiper
-        modules={[Navigation, Pagination]}
+        modules={[Autoplay, Navigation, Pagination]}
         navigation
         pagination={{ clickable: true }}
-        slidesPerView={1}
-        centeredSlides={true}
+        loop
+        autoplay={{ delay: 5000, disableOnInteraction: false }}
+        style={{
+          "--swiper-navigation-color": "#F2F1FB",
+          "--swiper-pagination-color": "#DF5031",
+        }}
       >
         {montaSlides()}
       </Swiper>
