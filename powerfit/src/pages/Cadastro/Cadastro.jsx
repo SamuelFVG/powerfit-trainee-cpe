@@ -1,7 +1,8 @@
 import { Link,useNavigate } from "react-router-dom"
 import React from "react"
 import Logo from "../../assets/Logo.png";
-import { SingUpContainer,LogoCadastro,InputForm,CadastroContainer,SubmitButton, PalavraLink} from "./Styles"
+import { DropDownGenerico } from "../../components";
+import { SingUpContainer,LogoCadastro,InputForm,CadastroContainer,SubmitButton, PalavraLink, Menu} from "./Styles"
 
 
 
@@ -9,6 +10,7 @@ export default function CadastroPage() {
 
   const [form, setForm] = React.useState({nome: "", email: "", senha: "", x: "", cargo: ""})
   const navigate = useNavigate();
+  const cargo = ["Cliente", "Personal Trainer", "Contador", "Atendente"];
 
 
   function atualizaForm(event){
@@ -80,14 +82,9 @@ export default function CadastroPage() {
                 onChange={(event) => atualizaForm(event)}
                 required    
             ></InputForm>
-            <InputForm
-                placeholder="Selecione o cargo"
-                type="text"
-                name="cargo"
-                value={form.cargo}
-                onChange={(event) => atualizaForm(event)}
-                required   
-            ></InputForm>
+            <Menu>
+            <DropDownGenerico default="Selecione o cargo" options={cargo}/>
+            </Menu>
             <SubmitButton type="submit">Cadastrar</SubmitButton>
           </form>
           <Link to={"/login"}>

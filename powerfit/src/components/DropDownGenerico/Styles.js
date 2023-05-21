@@ -6,16 +6,21 @@ export const DivSelect = styled.select`
   width: 300px;
   height: 50px; 
   border: 1px solid;
-  border-color: #ffffff;
+  border-color: #D5D5D5;
   border-radius: 10px;
-  color:#ffffff;
+  color: #D5D5D5;
   size: 35px;
   padding: 0 10px;
+  
   &:hover {
     border-color: #ffffff  ;
   }
   &:invalid {
     color: #7D7D7D;
+  }
+  @media (max-width: 500px) {
+    width: 100%;
+    margin-left: 2.5%;
   }
 `;
 export const DivOption = styled.option`
