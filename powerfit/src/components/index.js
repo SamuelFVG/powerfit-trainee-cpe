@@ -6,3 +6,4 @@ export { default as InputGenerico } from "./InputGenerico/InputGenerico";
 export { default as LinhaDaTabelaGenerica } from "./LinhaDaTabelaGenerica/LinhaDaTabelaGenerica";
 export { default as LinkGenerico } from "./LinkGenerico/LinkGenerico";
 export { default as LogoGenerica } from "./LogoGenerica/LogoGenerica";
+export { default as Carrossel } from "./Carrossel/Carrossel";
