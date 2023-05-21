@@ -8,17 +8,10 @@ export const DivSelect = styled.select`
   border: 1px solid;
   border-color: #D5D5D5;
   border-radius: 10px;
-<<<<<<< HEAD
   size: 35px;
   padding: 0 10px;
   font-family: "Noto Sans", sans-serif;
   font-size: 15px;
-=======
-  color: #D5D5D5;
-  size: 35px;
-  padding: 0 10px;
-  
->>>>>>> main
   &:hover {
     border-color: #ffffff  ;
   }
