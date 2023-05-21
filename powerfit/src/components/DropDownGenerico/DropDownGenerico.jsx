@@ -7,7 +7,7 @@ function DropDownGenerico(props) {return(
   
   <DivSelect required>
   <DivDefault value="" selected disabled hidden>{props.default}</DivDefault>
-  {props.nome.map((item, index) =>   {
+  {props.options.map((item, index) =>   {
     return(
         <DivOption value={item}>{item}</DivOption>
     )

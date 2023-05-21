@@ -3,12 +3,16 @@ import styled from "styled-components";
 export const DropDownG = styled.div``;  
 export const DivSelect = styled.select`
   background-color: #0a0a16;
-  width: 50%;
-  height: 30px; 
-  border: 2px solid;
+  width: 300px;
+  height: 50px; 
+  border: 1px solid;
   border-color: #ffffff;
-  border-radius: 5px;
+  border-radius: 10px;
   color:#ffffff;
+  size: 35px;
+  padding: 0 10px;
+  margin-top:10px;
+  margin-bottom: 25px;
   &:hover {
     border-color: #ffffff  ;
   }
@@ -19,10 +23,10 @@ export const DivSelect = styled.select`
 export const DivOption = styled.option`
     background-color:#0a0a16;
     color:#ffffff;
-    height: 30px;   
-`;
+    height: 50px;
+    `;
 export const DivDefault = styled.option`
     background-color:#0a0a16;
     color:blue;
-    height: 30px;   
+    height: 50px;   
 `;
