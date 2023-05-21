@@ -26,6 +26,7 @@ export const DivInputsHome = styled.form`
   margin-top: 5%;
   display: flex;
   justify-content: right;
+  align-items: center;
   gap: 2%;
   width: 78%;
 `;

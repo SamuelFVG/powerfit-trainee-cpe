@@ -12,6 +12,10 @@ export const LinhaDaTabelaG = styled.div`
   width: 100%;
   display: flex;
   justify-content: center;
+
+  @media (max-width: 700px) {
+    height: 35px;
+  }
 `;
 
 export const Perfil = styled.div`
@@ -42,6 +46,9 @@ export const DivGenericoPerfil = styled(DivGenerico)`
   height: 50%;
   width: 100px;
   text-align: center;
+  @media (max-width: 500px) {
+    width: 50px;
+  }
 `;
 
 export const DivGenericoPerfilMenor = styled(DivGenericoPerfil)`

@@ -11,6 +11,7 @@ import {
   InputGenerico,
   LinhaDaTabelaGenerica,
   Carrossel,
+  DropDownGenerico,
 } from "../../components";
 
 let pessoas = [
@@ -44,6 +45,20 @@ let pessoas = [
   },
 ];
 
+const atividades = [
+  "Cardio",
+  "Musculação",
+  "Acompanhamento de clientes (manhã)",
+  "Recepção de clientes (manhã)",
+  "Pagamento de impostos (manhã)",
+  "Acompanhamento de clientes (tarde)",
+  "Recepção de clientes (tarde)",
+  "Pagamento de impostos (tarde)",
+  "Acompanhamento de clientes (noite)",
+  "Recepção de clientes (noite)",
+  "Pagamento de impostos (noite)",
+];
+
 function printaTabela() {
   return (
     <Tabela>
@@ -65,7 +80,10 @@ export default function Home() {
     <DivGeralHome>
       <Carrossel />
       <DivInputsHome>
-        <input></input> {/* placeholder, aqui vai o dropdown */}
+        <DropDownGenerico
+          default="Selecione a atividade"
+          options={atividades}
+        />
         <BotaoGenerico texto="Aperte Aqui" />
       </DivInputsHome>
 

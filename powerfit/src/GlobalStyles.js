@@ -9,6 +9,9 @@ export const GlobalStyles = createGlobalStyle`
 
     padding: 0;
     margin: 0;
+    @media (max-width: 700px) {
+      font-size: 11px;
+    }
   }
 
   a {
