@@ -1,19 +1,13 @@
-import { FooterG } from "./Styles";
-import { ImageWrapperFooter } from "./Styles";
-import { LogoWrapperFooter } from "./Styles";
+import { FooterG, SocialMediaLogos } from "./Styles";
 import { LogoGenerica } from "../../components";
-import Icones from "../../assets/Icones_social_media.png";
+import Icones from "../../assets/Icones_social_media.svg";
 
 export default function Footer() {
   return (
     <div>
       <FooterG>
-        <LogoWrapperFooter>
-          <LogoGenerica texto={"PowerFit"} backgroundColor={"#04040B"} />
-        </LogoWrapperFooter>
-        <ImageWrapperFooter>
-          <img src={Icones} />
-        </ImageWrapperFooter>
+        <LogoGenerica texto={"PowerFit"} backgroundColor={"#04040B"} />
+        <SocialMediaLogos src={Icones} />
       </FooterG>
     </div>
   );
