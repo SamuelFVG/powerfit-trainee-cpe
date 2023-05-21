@@ -7,20 +7,21 @@ import { LogoEditar,EditContainer, EditorContainer,DivLabel,Entrada,BotãoSalvar
 export default function Editar() {
 
   const atividades = ["Cardio", "Musculação", "Acompanhamento de clientes (manhã)", "Recepção de clientes (manhã)",  "Pagamento de impostos (manhã)", "Acompanhamento de clientes (tarde)", "Recepção de clientes (tarde)",  "Pagamento de impostos (tarde)", "Acompanhamento de clientes (noite)", "Recepção de clientes (noite)",  "Pagamento de impostos (noite)"];
-
   const cargo = ["Cliente", "Personal Trainer", "Contador", "Atendente"];
 
-  const [EntradaD, setForm] = React.useState({nome: ""})
+  const [formulario, setForm] = React.useState({nome: ""})
   const navigate = useNavigate();
+  function entradaDeDados(event){
+    setForm({...formulario, [event.target.name]: event.target.value})
+  }
 
-  const dados = {nome: EntradaD.Name};
+  const dados = {nome: formulario.nome};
 
   console.log(dados);
 
-  function entradaDeDados(event){
-     setForm({...EntradaD, [event.target.name]: event.target.value})
-   }
-
+  function goTo(page) {
+    navigate(page)
+ }
 
   return (
     <EditContainer>
@@ -35,8 +36,8 @@ export default function Editar() {
         <Entrada
         placeholder = "Nome"
         type="text"
-        Name="nome"
-        value={EntradaD.Name}
+        name="nome"
+        value={formulario.nome}
         onChange={(event) => entradaDeDados(event)}
         required    
         />
@@ -49,7 +50,7 @@ export default function Editar() {
       <DivLabel>Atividade</DivLabel>
       <DropDownGenerico default="Selecione a atividade" options={atividades}/>
       </DivField>
-      <BotãoSalvar>Salvar</BotãoSalvar>
+      <BotãoSalvar type="submit">Salvar</BotãoSalvar>
       </EditorContainer>
       </EditContainer>
   );
