@@ -14,3 +14,8 @@ export const LogoText = styled.div`
   font-size: 2.5rem;
   margin-left: 2%;
 `;
+
+export const LogoImagem = styled.img`
+  height: 2.5rem;
+  width: 2.5rem;
+`;
