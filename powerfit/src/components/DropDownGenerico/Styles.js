@@ -11,7 +11,7 @@ export const DivSelect = styled.select`
   text-decoration-color:#ffffff;
   color:#ffffff;
   &:hover {
-    border-color: orange;
+    border-color: orange    ;
   }
 `;
 export const DivOption = styled.option`
