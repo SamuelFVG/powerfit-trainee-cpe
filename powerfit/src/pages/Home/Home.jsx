@@ -10,6 +10,7 @@ import {
   BotaoGenerico,
   InputGenerico,
   LinhaDaTabelaGenerica,
+  Carrossel,
 } from "../../components";
 
 let pessoas = [
@@ -62,6 +63,7 @@ function printaTabela() {
 export default function Home() {
   return (
     <DivGeralHome>
+      <Carrossel />
       <DivInputsHome>
         <input></input> {/* placeholder, aqui vai o dropdown */}
         <BotaoGenerico texto="Aperte Aqui" />
