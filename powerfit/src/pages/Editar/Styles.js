@@ -88,8 +88,5 @@ export const BotãoSalvar = styled.button`
 export const DivField = styled.div`
 display:flex;
 flex-direction:column;
-:first-child {
-    margin-bottom: 10px;
-}
 `
 ;
