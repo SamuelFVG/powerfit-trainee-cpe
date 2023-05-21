@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import React from "react";
 import { DropDownGenerico } from "../../components";
 import Logo from "../../assets/Logo.png";
@@ -9,7 +10,8 @@ export default function Editar() {
 
   const cargo = ["Cliente", "Personal Trainer", "Contador", "Atendente"];
 
-  const [EntradaD, setForm] = React.useState({nome: ""});
+  const [EntradaD, setForm] = React.useState({nome: ""})
+  const navigate = useNavigate();
 
   const dados = {nome: EntradaD.Name};
 
@@ -34,14 +36,14 @@ export default function Editar() {
         placeholder = "Nome"
         type="text"
         Name="nome"
-        value={EntradaD.nome}
-        onChange={(event) => entradaDeDdados(event)}
+        value={EntradaD.Name}
+        onChange={(event) => entradaDeDados(event)}
         required    
         />
       </DivField>
       <DivField>
       <DivLabel>Cargo</DivLabel>
-      <DropDownGenerico default="Selecione o cargo" options={cargo}/>
+      <DropDownGenerico style default="Selecione o cargo" options={cargo}/>
       </DivField>
       <DivField>
       <DivLabel>Atividade</DivLabel>

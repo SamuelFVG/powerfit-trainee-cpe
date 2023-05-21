@@ -21,6 +21,7 @@ export const DivSelect = styled.select`
     color: #7D7D7D;
   }
   @media (max-width: 500px) {
+    font-size: 11px;
     width: 100%;
     margin-left: 2.5%;
   }
@@ -31,6 +32,11 @@ export const DivOption = styled.option`
     height: 50px;
     font-family: "Noto Sans", sans-serif;
     font-size: 15px;
+    @media (max-width: 500px) {
+    font-size: 11px;
+    width: 100%;
+    margin-left: 2.5%;
+  }
     `;
 export const DivDefault = styled.option`
     background-color:#0a0a16;
@@ -39,4 +45,9 @@ export const DivDefault = styled.option`
     font-family: "Noto Sans", sans-serif;
     font-size: 15px;
     color: #F2F1FB;
+    @media (max-width: 500px) {
+    font-size: 11px;
+    width: 100%;
+    margin-left: 2.5%;
+  }
 `;
