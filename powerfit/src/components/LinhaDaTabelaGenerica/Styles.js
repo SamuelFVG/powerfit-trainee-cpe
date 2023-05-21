@@ -53,6 +53,7 @@ export const DivGenericoPerfil = styled(DivGenerico)`
   height: 50%;
   width: 100px;
   text-align: center;
+  line-height: 99%;
   @media (max-width: 500px) {
     width: 50px;
   }

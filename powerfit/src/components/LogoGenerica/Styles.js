@@ -3,7 +3,6 @@ import styled from "styled-components";
 export const LogoG = styled.div`
   display: flex;
   height: 60px;
-  width: 264px;
   align-items: center;
 `;
 
@@ -13,4 +12,9 @@ export const LogoText = styled.div`
   font-family: noto sans;
   font-size: 2.5rem;
   margin-left: 2%;
+`;
+
+export const LogoImagem = styled.img`
+  height: 2.5rem;
+  width: 2.5rem;
 `;

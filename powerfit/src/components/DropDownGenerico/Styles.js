@@ -23,7 +23,11 @@ export const DivSelect = styled.select`
   @media (max-width: 500px) {
     font-size: 11px;
     width: 100%;
-    margin-left: 2.5%;
+    /* margin-left: 2.5%; */
+  }
+  @media (max-width: 300px) {
+    width: 80%;
+    margin-left: 10%;
   }
 `;
 export const DivOption = styled.option`
