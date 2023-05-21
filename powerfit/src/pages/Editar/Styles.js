@@ -46,12 +46,11 @@ padding-bottom:10px;
 export const Entrada = styled.input`
 background: #0A0A16;
     border: 1px solid #D5D5D5;
-    border-radius: 3px;
+    border-radius: 10px;
+    padding-left: 10px;
     height: 50px;
 width: 300px;
-    border-radius: 10px;
 color: white;
-    padding: 0 10px;
     font-family: 'Noto sans', sans-serif;
     font-size: 15px;
     display: flex;
@@ -90,5 +89,7 @@ export const BotãoSalvar = styled.button`
 export const DivField = styled.div`
 display:flex;
 flex-direction:column;
+align-items:stretch;
+justify-content: left;
 `
 ;

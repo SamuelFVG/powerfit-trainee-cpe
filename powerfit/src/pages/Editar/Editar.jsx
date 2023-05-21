@@ -47,9 +47,13 @@ export default function Editar() {
 
   return (
     <EditContainer>
+
       <form onSubmit={salvar}>
+
       <EditorContainer>
+
          <LogoGenerica texto={"Editar"} backgroundColor={"#0A0A16"} /> 
+         
         <DivField>
           <DivLabel>Nome</DivLabel>
           <Entrada
@@ -61,6 +65,7 @@ export default function Editar() {
             required
           />
         </DivField>
+
         <DivField>
           <DivLabel>Cargo</DivLabel>
           <DropDownGenerico 
@@ -68,6 +73,7 @@ export default function Editar() {
           default="Selecione o cargo" 
           options={cargo} />
         </DivField>
+
         <DivField>
           <DivLabel>Atividade</DivLabel>
           <DropDownGenerico 
@@ -76,9 +82,13 @@ export default function Editar() {
             options={atividades}
           />
         </DivField>
+
         <BotãoSalvar type="submit">Salvar</BotãoSalvar> 
+
       </EditorContainer>
+
       </form> 
+
     </EditContainer>
   );
 }
