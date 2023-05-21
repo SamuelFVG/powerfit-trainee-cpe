@@ -39,24 +39,31 @@ export const InputForm = styled.input`
         &::placeholder{
             font-style: italic;
         }
+    @media (max-width: 500px) {
+    width: 95%;
+    margin-left: 2.5%;
+  }
 `
 
 export const CadastroContainer = styled.div`
-  width: 450px;
-  height: 600px;
+  width: 30%;
+  height: 50%;
   border: 2px solid white;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   background-color: #0A0A16;
   border-radius: 20px;
+  @media (max-width: 600px) {
+    width: 80%;
+  }
 `
 
 
 
 export const SingUpContainer = styled.section`
-  height: 100vh;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -72,10 +79,10 @@ export const SubmitButton = styled.button`
         border-radius: 5px;
         height: 45px;
     color: #f2f1fb;
-        margin-left: 30%;
+        margin-left: 25%;
         margin-bottom: 25px;
         margin-top: 10px;
-    width: 120px;
+    width: 50%;
         padding: 0 10px;
         font-family: 'Noto sans', sans-serif;
         font-size: 15px;
@@ -89,9 +96,20 @@ export const SubmitButton = styled.button`
     border-color: #df5031;
     color: #df5031;
   }
+  @media (max-width: 500px) {
+    margin-left: 25%;
+  }
 `
 export const PalavraLink = styled.div`
-
+    margin-bottom: 15%;
     color: #DF5031;
 
+`
+export const Menu = styled.div`
+    margin-bottom: 25px;
+
+    @media (max-width: 500px) {
+    width: 95%;
+    
+  }
 `
