@@ -7,10 +7,6 @@ export const LogoEditar = styled.div`
     align-items: center;
     justify-content: center;
     margin-top: 10%;
-    img {
-        width: 60px;
-        height: 60px;
-    }
     h2{
         margin-left: 10px;
         color: white;

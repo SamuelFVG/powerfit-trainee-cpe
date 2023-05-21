@@ -46,7 +46,6 @@ export default function Editar() {
       <EditorContainer>
         {
           <LogoEditar>
-            <img src={Logo}></img>
             <h2>Editar</h2>
           </LogoEditar>
         }
