@@ -23,6 +23,7 @@ export const DivTituloTabelaHome = styled(DivGenerico)`
 `;
 
 export const DivInputsHome = styled.form`
+  margin-top: 5%;
   display: flex;
   justify-content: right;
   gap: 2%;

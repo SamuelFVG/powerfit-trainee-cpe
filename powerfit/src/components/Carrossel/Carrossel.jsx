@@ -5,19 +5,20 @@ import raposa from "../../assets/raposa.jpg";
 import tartaruga from "../../assets/tartaruga.jpg";
 import tigre from "../../assets/tigre.jpg";
 
-import "./Style.css";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
-const slides = [falcao, raposa, tartaruga, tigre];
+import { ImagemCarrossel, SwiperContainer } from "./Style";
+
+const slides = [raposa, tartaruga];
 
 function montaSlides() {
   let saidaSlides = [];
   for (let i = 0; i < slides.length; i++) {
     saidaSlides.push(
       <SwiperSlide key={i}>
-        <img className="imagemCarrossel" src={slides[i]} />
+        <ImagemCarrossel src={slides[i]} />
       </SwiperSlide>
     );
   }
@@ -26,7 +27,7 @@ function montaSlides() {
 
 export default function Carrossel() {
   return (
-    <div className="swiperContainer">
+    <SwiperContainer>
       <Swiper
         modules={[Autoplay, Navigation, Pagination]}
         navigation
@@ -35,11 +36,19 @@ export default function Carrossel() {
         autoplay={{ delay: 5000, disableOnInteraction: false }}
         style={{
           "--swiper-navigation-color": "#F2F1FB",
+          "--swiper-navigation-size": "2rem",
+
           "--swiper-pagination-color": "#DF5031",
+          "--swiper-pagination-bullet-inactive-color": "#F2F1FB",
+          "--swiper-pagination-bullet-inactive-opacity": 1,
+          "--swiper-pagination-bullet-opacity": 1,
+          "--swiper-pagination-bullet-horizontal-gap": "1rem",
+          "--swiper-pagination-bullet-width": "0.7rem",
+          "--swiper-pagination-bullet-height": "0.7rem",
         }}
       >
         {montaSlides()}
       </Swiper>
-    </div>
+    </SwiperContainer>
   );
 }
