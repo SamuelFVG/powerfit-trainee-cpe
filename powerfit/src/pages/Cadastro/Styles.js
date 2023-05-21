@@ -1,24 +1,32 @@
 import styled from "styled-components"
 
 
-export const LogoCadastro = styled.div`
-    width: 300px;
-    height: 100px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    img {
-        width: 60px;
-        height: 60px;
-    }
-    h2{
-        margin-left: 10px;
-        color: white;
-        font-weight: 700;
-        font-size: 40px;
-    }
-`
+// export const LogoCadastro = styled.div`
+//     width: 300px;
+//     height: 100px;
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
+//     img {
+//         width: 60px;
+//         height: 60px;
+//     }
+//     h2{
+//         margin-left: 10px;
+//         color: white;
+//         font-weight: 700;
+//         font-size: 40px;
+//     }
+// `
 
+export const DivLabel = styled.label`
+flex-direction: line;
+justify-content: left;
+align-items: left;
+width: 67%;
+height: 13 px;
+padding-bottom:10px;
+`
 
 
 export const InputForm = styled.input`
@@ -40,13 +48,18 @@ export const InputForm = styled.input`
             font-style: italic;
         }
     @media (max-width: 500px) {
-    width: 95%;
-    margin-left: 2.5%;
+    width: 100%;
+    font-size: 11px;
+    /* margin-left: 2.5%; */
+  }
+    @media (max-width: 300px) {
+    width: 80%;
+    margin-left: 10%;
   }
 `
 
 export const CadastroContainer = styled.div`
-  width: 30%;
+  width: 400px;
   height: 50%;
   border: 2px solid white;
   display: flex;
@@ -55,8 +68,8 @@ export const CadastroContainer = styled.div`
   align-items: center;
   background-color: #0A0A16;
   border-radius: 20px;
-  @media (max-width: 600px) {
-    width: 80%;
+  @media (max-width: 700px) {
+    width: 75%;
   }
 `
 
@@ -96,7 +109,7 @@ export const SubmitButton = styled.button`
     border-color: #df5031;
     color: #df5031;
   }
-  @media (max-width: 500px) {
+  @media (max-width: 1000px) {
     margin-left: 25%;
   }
 `
@@ -107,9 +120,8 @@ export const PalavraLink = styled.div`
 `
 export const Menu = styled.div`
     margin-bottom: 25px;
-
-    @media (max-width: 500px) {
-    width: 95%;
-    
-  }
+`
+export const DivField = styled.div`
+display:flex;
+flex-direction:column;
 `
