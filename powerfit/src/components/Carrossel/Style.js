@@ -7,4 +7,8 @@ export const ImagemCarrossel = styled.img`
 
 export const SwiperContainer = styled.div`
   width: 60%;
+
+  @media (max-width: 500px) {
+    width: 90%;
+  }
 `;
