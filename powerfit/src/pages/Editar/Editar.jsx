@@ -41,11 +41,11 @@ export default function Editar() {
       </DivField>
       <DivField>
       <DivLabel>Cargo</DivLabel>
-      <DropDownGenerico default="selecione o cargo" options={cargo}/>
+      <DropDownGenerico default="Selecione o cargo" options={cargo}/>
       </DivField>
       <DivField>
       <DivLabel>Atividade</DivLabel>
-      <DropDownGenerico default="selecione a atividade" options={atividades}/>
+      <DropDownGenerico default="Selecione a atividade" options={atividades}/>
       </DivField>
       <BotãoSalvar>Salvar</BotãoSalvar>
       </EditorContainer>

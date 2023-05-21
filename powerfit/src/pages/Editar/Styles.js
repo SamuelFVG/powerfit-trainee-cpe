@@ -19,7 +19,6 @@ export const LogoEditar = styled.div`
 `
 
 export const EditContainer = styled.section`
-  height: 60vh;
   display: flex;
   flex-direction: column;
   justify-content:top;
@@ -43,6 +42,7 @@ justify-content: left;
 align-items: left;
 width: 67%;
 height: 13 px;
+padding-bottom:10px;
 `
 
 export const Entrada = styled.input`
