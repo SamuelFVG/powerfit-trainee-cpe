@@ -5,8 +5,8 @@ import { DivDefault } from "./Styles";
 
 function DropDownGenerico(props) {return(
   
-  <DivSelect  required>
-  <DivDefault value="" selected disabled hidden>{props.default}</DivDefault>
+  <DivSelect defaultValue={props.default} required>
+    <DivDefault hidden invalid id="default" value={props.default}>{props.default}</DivDefault>
   {props.options.map((item, index) =>   {
     return(
         <DivOption key={index}value={item}>{item}</DivOption>
