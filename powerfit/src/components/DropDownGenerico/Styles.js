@@ -12,6 +12,7 @@ export const DivSelect = styled.select`
   padding: 0 10px;
   font-family: "Noto Sans", sans-serif;
   font-size: 15px;
+  color:#ffffff;
   &:hover {
     border-color: #ffffff  ;
   }
