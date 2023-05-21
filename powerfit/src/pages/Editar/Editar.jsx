@@ -1,7 +1,7 @@
 import React from "react";
 import { DropDownGenerico } from "../../components";
 import Logo from "../../assets/Logo.png";
-import { LogoEditar,EditContainer, EditorContainer,DivLabel,Entrada,BotãoSalvar} from "./Styles";
+import { LogoEditar,EditContainer, EditorContainer,DivLabel,Entrada,BotãoSalvar,DivField} from "./Styles";
 
 export default function Editar() {
 
@@ -27,6 +27,8 @@ export default function Editar() {
                   <img src={Logo} ></img>
                   <h2>Editar</h2>
               </LogoEditar>}
+
+      <DivField>
       <DivLabel>Nome</DivLabel>
         <Entrada
         placeholder = "Nome"
@@ -36,10 +38,15 @@ export default function Editar() {
         onChange={(event) => entradaDeDdados(event)}
         required    
         />
+      </DivField>
+      <DivField>
       <DivLabel>Cargo</DivLabel>
       <DropDownGenerico default="selecione o cargo" options={cargo}/>
+      </DivField>
+      <DivField>
       <DivLabel>Atividade</DivLabel>
       <DropDownGenerico default="selecione a atividade" options={atividades}/>
+      </DivField>
       <BotãoSalvar>Salvar</BotãoSalvar>
       </EditorContainer>
       </EditContainer>

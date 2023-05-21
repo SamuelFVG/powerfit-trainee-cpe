@@ -32,7 +32,7 @@ export const EditContainer = styled.section`
   border: 2px solid white;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content:space-between;
   align-items: center;
   background-color: #0A0A16;
   border-radius: 20px;
@@ -52,8 +52,6 @@ export const Entrada = styled.input`
         height: 50px;
         width: 300px;
         border-radius: 10px;
-        margin-bottom: 25px;
-        margin-top: 10px;
         color: white;
         padding: 0 10px;
         font-family: 'Noto sans', sans-serif;
@@ -70,8 +68,8 @@ export const BotãoSalvar = styled.button`
         border-radius: 5px;
         height: 45px;
     color: #f2f1fb;
-        margin-bottom: 25px;
-        margin-top: 10px;
+        margin-bottom: 50px;
+        margin-top: 20px;
     width: 120px;
         padding: 0 10px;
         font-family: 'Noto sans', sans-serif;
@@ -86,5 +84,9 @@ export const BotãoSalvar = styled.button`
     border-color: #df5031;
     color: #df5031;
   }
+`
+export const DivField = styled.div`
+display:flex;
+flex-direction:column;
 `
 ;
