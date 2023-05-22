@@ -2,12 +2,13 @@ import { Link, useNavigate } from "react-router-dom";
 import React from "react";
 import {
   SingUpContainer,
-  LogoCadastro,
   InputForm,
   CadastroContainer,
   SubmitButton,
   PalavraLink,
+  Texto
 } from "./Styles";
+import { LogoGenerica } from "../../components";
 
 export default function CadastroPage() {
   const [form, setForm] = React.useState({ email: "", senha: "" });
@@ -16,14 +17,6 @@ export default function CadastroPage() {
   function atualizaForm(event) {
     setForm({ ...form, [event.target.name]: event.target.value });
   }
-
-  //  function efetuarCadastro(event){
-  //     event.preventDefault();
-
-  //      if(form.senha !== form.confirmaSenha) {
-  //        return alert("senhas diferentes!")
-  //      }
-  //     }
 
   const body = {
     email: form.email,
@@ -40,22 +33,21 @@ export default function CadastroPage() {
     <SingUpContainer>
       <CadastroContainer>
         {
-          <LogoCadastro>
-            <img src={Logo}></img>
-            <h2>Login</h2>
-          </LogoCadastro>
+        <LogoGenerica texto={"Login"} backgroundColor={"#0A0A16"} />
         }
         <form>
+        <Texto>Email:</Texto>
           <InputForm
-            placeholder="Email"
+            placeholder="exemplo@*****.com"
             type="email"
             name="email"
             value={form.email}
             onChange={(event) => atualizaForm(event)}
             required
           ></InputForm>
+          <Texto>Senha:</Texto>
           <InputForm
-            placeholder="Senha"
+            placeholder="********"
             type="password"
             name="senha"
             value={form.senha}

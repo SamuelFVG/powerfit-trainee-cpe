@@ -8,6 +8,7 @@ import {
   SubmitButton,
   PalavraLink,
   Menu,
+  Texto
 } from "./Styles";
 
 export default function CadastroPage() {
@@ -50,14 +51,16 @@ export default function CadastroPage() {
       <CadastroContainer>
         <LogoGenerica texto={"Cadastro"} backgroundColor={"#0A0A16"} />
         <form onSubmit={efetuarCadastro}>
+        <Texto>Email:</Texto>
           <InputForm
-            placeholder="Email"
+            placeholder="exemplo@*****.com"
             type="email"
             name="email"
             value={form.email}
             onChange={(event) => atualizaForm(event)}
             required
           ></InputForm>
+          <Texto>Nome de Usuário:</Texto>
           <InputForm
             placeholder="Nome de Usuário"
             type="text"
@@ -66,22 +69,25 @@ export default function CadastroPage() {
             onChange={(event) => atualizaForm(event)}
             required
           ></InputForm>
+          <Texto>Senha:</Texto>
           <InputForm
-            placeholder="Senha"
+            placeholder="********"
             type="password"
             name="senha"
             value={form.senha}
             onChange={(event) => atualizaForm(event)}
             required
           ></InputForm>
+          <Texto>Confirme sua senha:</Texto>
           <InputForm
-            placeholder="Confirme a senha"
+            placeholder="********"
             type="password"
             name="confirmaSenha"
             value={form.confirmaSenha}
             onChange={(event) => atualizaForm(event)}
             required
           ></InputForm>
+          <Texto>Cargo:</Texto>
           <Menu>
             <DropDownGenerico default="Selecione o cargo" options={cargo} />
           </Menu>

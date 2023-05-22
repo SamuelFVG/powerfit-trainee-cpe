@@ -1,33 +1,20 @@
 import styled from "styled-components"
 
 
-// export const LogoCadastro = styled.div`
-//     width: 300px;
-//     height: 100px;
-//     display: flex;
-//     align-items: center;
-//     justify-content: center;
-//     img {
-//         width: 60px;
-//         height: 60px;
-//     }
-//     h2{
-//         margin-left: 10px;
-//         color: white;
-//         font-weight: 700;
-//         font-size: 40px;
-//     }
-// `
+export const Texto = styled.div`
+    font-size: 15px;
 
-export const DivLabel = styled.label`
-flex-direction: line;
-justify-content: left;
-align-items: left;
-width: 67%;
-height: 13 px;
-padding-bottom:10px;
+    @media (max-width: 500px) {
+    width: 100%;
+    font-size: 11px;
+  }
+  @media (max-width: 300px) {
+    width: 100%;
+    margin-left: 20px;
+    font-size: 11px;
+  }
+
 `
-
 
 export const InputForm = styled.input`
     background: #0A0A16;
@@ -50,7 +37,6 @@ export const InputForm = styled.input`
     @media (max-width: 500px) {
     width: 100%;
     font-size: 11px;
-    /* margin-left: 2.5%; */
   }
     @media (max-width: 300px) {
     width: 80%;
@@ -69,6 +55,7 @@ padding-top: 30px;
   align-items: center;
   background-color: #0A0A16;
   border-radius: 20px;
+  
   @media (max-width: 700px) {
     width: 65%;
   }
@@ -110,9 +97,9 @@ export const SubmitButton = styled.button`
     border-color: #df5031;
     color: #df5031;
   }
-  @media (max-width: 1000px) {
+  /* @media (max-width: 500px) {
     margin-left: 25%;
-  }
+  } */
 `
 export const PalavraLink = styled.div`
     margin-bottom: 15%;
@@ -124,9 +111,6 @@ export const PalavraLink = styled.div`
   }
 `
 export const Menu = styled.div`
+    margin-top: 10px;
     margin-bottom: 25px;
-`
-export const DivField = styled.div`
-display:flex;
-flex-direction:column;
 `
