@@ -1,12 +1,14 @@
-import { TituloInicio } from "./Styles";
-import { SubTituloInicio } from "./Styles";
-import { TextoInicio } from "./Styles";
-import { CaixaTextoInicio } from "./Styles";
-import { CaixaImagemInicio } from "./Styles";
-import { ContentInicio } from "./Styles";
+import {
+  TituloInicio,
+  SubTituloInicio,
+  TextoInicio,
+  CaixaTextoInicio,
+  CaixaImagemInicio,
+  ContentInicio,
+  ImagemApresentacao,
+} from "./Styles";
+
 import ImagemInicio from "../../assets/Imagem_home_sem_login_1.svg";
-import { Footer } from "../../components";
-import { Header } from "../../components";
 
 export default function Inicio() {
   return (
@@ -21,7 +23,7 @@ export default function Inicio() {
           </TextoInicio>
         </CaixaTextoInicio>
         <CaixaImagemInicio>
-          <img src={ImagemInicio} />
+          <ImagemApresentacao src={ImagemInicio} />
         </CaixaImagemInicio>
       </ContentInicio>
       {/* <Footer /> */}

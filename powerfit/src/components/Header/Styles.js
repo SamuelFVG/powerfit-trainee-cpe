@@ -25,7 +25,7 @@ export const LogoWrapperHeader = styled.div`
 `;
 
 export const BotoesHeader = styled.div`
-  margin-left: 50%;
+  //margin-left: 50%;
   display: grid;
   grid-template-columns: auto auto;
   gap: 11%;
