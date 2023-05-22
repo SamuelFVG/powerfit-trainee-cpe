@@ -4,7 +4,7 @@ import { TextoInicio } from "./Styles";
 import { CaixaTextoInicio } from "./Styles";
 import { CaixaImagemInicio } from "./Styles";
 import { ContentInicio } from "./Styles";
-import ImagemInicio from "../../assets/Imagem_inicio.png";
+import ImagemInicio from "../../assets/Imagem_home_sem_login_1.svg";
 import { Footer } from "../../components";
 import { Header } from "../../components";
 
