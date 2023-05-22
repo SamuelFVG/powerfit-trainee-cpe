@@ -1,95 +1,95 @@
 import styled from "styled-components";
 
 export const LogoEditar = styled.div`
-    width: 300px;
-    height: 60px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 10%;
-    h2{
-        margin-left: 10px;
-        color: white;
-        font-weight: 700;
-        font-size: 40px;
-    }
-`
+  width: 300px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  //margin-top: 10%;
+  h2 {
+    margin-left: 10px;
+    color: white;
+    font-weight: 700;
+    font-size: 40px;
+  }
+`;
 
 export const EditContainer = styled.section`
   display: flex;
   flex-direction: column;
-  justify-content:top;
+  justify-content: top;
   align-items: center;
-  background-color: #0A0A16;
-  `
-  export const EditorContainer = styled.div`
-padding-top:30px;
+  background-color: #0a0a16;
+`;
+export const EditorContainer = styled.div`
+  //padding-top: 30px;
   width: 450px;
   height: 600px;
   border: 2px solid white;
   display: flex;
   flex-direction: column;
-  justify-content:space-between;
+  justify-content: space-evenly;
   align-items: center;
-  background-color: #0A0A16;
+  background-color: #0a0a16;
   border-radius: 20px;
-`
+`;
 export const DivLabel = styled.label`
-flex-direction: line;
-justify-content: left;
-align-items: left;
-width: 67%;
-height: 13 px;
-padding-bottom:10px;
-`
+  flex-direction: line;
+  justify-content: left;
+  align-items: left;
+  width: 67%;
+  height: 13 px;
+  padding-bottom: 10px;
+`;
 
 export const Entrada = styled.input`
-background: #0A0A16;
-    border: 1px solid #D5D5D5;
-    border-radius: 10px;
-    padding-left: 10px;
-    height: 50px;
-width: 300px;
-color: white;
-    font-family: 'Noto sans', sans-serif;
-    font-size: 15px;
-    display: flex;
-    align-items: center;
-    &::placeholder{
-        font-style: italic;
-    }
-@media (max-width: 500px) {
-width: 95%;
-margin-left: 2.5%;
-}
-`
-export const BotãoSalvar = styled.button`
-    background: #0A0A16;
-        border: 2px solid #f2f1fb;
-        border-radius: 5px;
-        height: 45px;
-    color: #f2f1fb;
-        margin-bottom: 50px;
-        margin-top: 20px;
-    width: 120px;
-        padding: 0 10px;
-        font-family: 'Noto sans', sans-serif;
-        font-size: 15px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        &::placeholder{
-            font-style: italic;
-        }
-        :hover {
-    border-color: #df5031;
-    color: #df5031;
+  background: #0a0a16;
+  border: 1px solid #d5d5d5;
+  border-radius: 10px;
+  padding-left: 10px;
+  height: 50px;
+  width: 300px;
+  color: white;
+  font-family: "Noto sans", sans-serif;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  &::placeholder {
+    font-style: italic;
   }
-`
+  @media (max-width: 500px) {
+    width: 95%;
+    margin-left: 2.5%;
+  }
+`;
+// export const BotãoSalvar = styled.button`
+//     background: #0A0A16;
+//         border: 2px solid #f2f1fb;
+//         border-radius: 5px;
+//         height: 45px;
+//     color: #f2f1fb;
+//         margin-bottom: 50px;
+//         margin-top: 20px;
+//     width: 120px;
+//         padding: 0 10px;
+//         font-family: 'Noto sans', sans-serif;
+//         font-size: 15px;
+//         display: flex;
+//         align-items: center;
+//         justify-content: center;
+//         &::placeholder{
+//             font-style: italic;
+//         }
+//         :hover {
+//     border-color: #df5031;
+//     color: #df5031;
+//   }
+// `
+
 export const DivField = styled.div`
-display:flex;
-flex-direction:column;
-align-items:stretch;
-justify-content: left;
-`
-;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: left;
+`;

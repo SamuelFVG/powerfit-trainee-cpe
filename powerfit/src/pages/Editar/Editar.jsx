@@ -1,13 +1,16 @@
 import { useNavigate } from "react-router-dom";
 import React from "react";
-import { DropDownGenerico,LogoGenerica } from "../../components";
+import {
+  DropDownGenerico,
+  LogoGenerica,
+  BotaoGenerico,
+} from "../../components";
 import {
   LogoEditar,
   EditContainer,
   EditorContainer,
   DivLabel,
   Entrada,
-  BotãoSalvar,
   DivField,
 } from "./Styles";
 
@@ -47,48 +50,43 @@ export default function Editar() {
 
   return (
     <EditContainer>
-
       <form onSubmit={salvar}>
+        <EditorContainer>
+          <LogoGenerica texto={"Editar"} backgroundColor={"#0A0A16"} />
 
-      <EditorContainer>
+          <DivField>
+            <DivLabel>Nome:</DivLabel>
+            <Entrada
+              placeholder="Nome"
+              type="text"
+              name="nome"
+              value={formulario.nome}
+              onChange={(event) => entradaDeDados(event)}
+              required
+            />
+          </DivField>
 
-         <LogoGenerica texto={"Editar"} backgroundColor={"#0A0A16"} /> 
-         
-        <DivField>
-          <DivLabel>Nome</DivLabel>
-          <Entrada
-            placeholder="Nome"
-            type="text"
-            name="nome"
-            value={formulario.nome}
-            onChange={(event) => entradaDeDados(event)}
-            required
-          />
-        </DivField>
+          <DivField>
+            <DivLabel>Cargo:</DivLabel>
+            <DropDownGenerico
+              required
+              default="Selecione o cargo"
+              options={cargo}
+            />
+          </DivField>
 
-        <DivField>
-          <DivLabel>Cargo</DivLabel>
-          <DropDownGenerico 
-          required 
-          default="Selecione o cargo" 
-          options={cargo} />
-        </DivField>
+          <DivField>
+            <DivLabel>Atividade:</DivLabel>
+            <DropDownGenerico
+              required
+              default="Selecione a atividade"
+              options={atividades}
+            />
+          </DivField>
 
-        <DivField>
-          <DivLabel>Atividade</DivLabel>
-          <DropDownGenerico 
-            required
-            default="Selecione a atividade"
-            options={atividades}
-          />
-        </DivField>
-
-        <BotãoSalvar type="submit">Salvar</BotãoSalvar> 
-
-      </EditorContainer>
-
-      </form> 
-
+          <BotaoGenerico texto="Salvar" />
+        </EditorContainer>
+      </form>
     </EditContainer>
   );
 }

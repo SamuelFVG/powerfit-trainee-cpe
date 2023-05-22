@@ -4,11 +4,11 @@ import {
   SingUpContainer,
   InputForm,
   CadastroContainer,
-  SubmitButton,
+  DivSubmitButton,
   PalavraLink,
-  Texto
+  Texto,
 } from "./Styles";
-import { LogoGenerica } from "../../components";
+import { LogoGenerica, BotaoGenerico } from "../../components";
 
 export default function CadastroPage() {
   const [form, setForm] = React.useState({ email: "", senha: "" });
@@ -32,11 +32,9 @@ export default function CadastroPage() {
   return (
     <SingUpContainer>
       <CadastroContainer>
-        {
-        <LogoGenerica texto={"Login"} backgroundColor={"#0A0A16"} />
-        }
+        {<LogoGenerica texto={"Login"} backgroundColor={"#0A0A16"} />}
         <form>
-        <Texto>Email:</Texto>
+          <Texto>Email:</Texto>
           <InputForm
             placeholder="exemplo@*****.com"
             type="email"
@@ -54,7 +52,10 @@ export default function CadastroPage() {
             onChange={(event) => atualizaForm(event)}
             required
           ></InputForm>
-          <SubmitButton type="submit">Login</SubmitButton>
+
+          <DivSubmitButton>
+            <BotaoGenerico texto="Login" />
+          </DivSubmitButton>
         </form>
         <Link to={"/cadastro"}>
           <PalavraLink>Não possui conta? Cadastre-se!</PalavraLink>

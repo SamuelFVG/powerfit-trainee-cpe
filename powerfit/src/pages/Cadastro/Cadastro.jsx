@@ -1,14 +1,18 @@
 import { Link, useNavigate } from "react-router-dom";
 import React from "react";
-import { DropDownGenerico, LogoGenerica } from "../../components";
+import {
+  DropDownGenerico,
+  LogoGenerica,
+  BotaoGenerico,
+} from "../../components";
 import {
   SingUpContainer,
   InputForm,
   CadastroContainer,
-  SubmitButton,
+  DivSubmitButton,
   PalavraLink,
   Menu,
-  Texto
+  Texto,
 } from "./Styles";
 
 export default function CadastroPage() {
@@ -51,7 +55,7 @@ export default function CadastroPage() {
       <CadastroContainer>
         <LogoGenerica texto={"Cadastro"} backgroundColor={"#0A0A16"} />
         <form onSubmit={efetuarCadastro}>
-        <Texto>Email:</Texto>
+          <Texto>Email:</Texto>
           <InputForm
             placeholder="exemplo@*****.com"
             type="email"
@@ -91,7 +95,9 @@ export default function CadastroPage() {
           <Menu>
             <DropDownGenerico default="Selecione o cargo" options={cargo} />
           </Menu>
-          <SubmitButton type="submit">Cadastrar</SubmitButton>
+          <DivSubmitButton>
+            <BotaoGenerico texto="Cadastrar" />
+          </DivSubmitButton>
         </form>
         <Link to={"/login"}>
           <PalavraLink>Já tem uma conta? Entre agora!</PalavraLink>
