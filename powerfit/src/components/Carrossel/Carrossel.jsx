@@ -1,9 +1,9 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper";
-import falcao from "../../assets/falcao.jpg";
-import raposa from "../../assets/raposa.jpg";
-import tartaruga from "../../assets/tartaruga.jpg";
-import tigre from "../../assets/tigre.jpg";
+
+import Slide_1 from "../../assets/Slide_1.svg";
+import Slide_2 from "../../assets/Slide_2.svg";
+import Slide_3 from "../../assets/Slide_3.svg";
 
 import "swiper/css";
 import "swiper/css/navigation";
@@ -11,7 +11,7 @@ import "swiper/css/pagination";
 
 import { ImagemCarrossel, SwiperContainer } from "./Style";
 
-const slides = [raposa, tartaruga];
+const slides = [Slide_1, Slide_2, Slide_3];
 
 function montaSlides() {
   let saidaSlides = [];
