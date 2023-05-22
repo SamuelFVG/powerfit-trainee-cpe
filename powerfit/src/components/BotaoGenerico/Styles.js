@@ -10,9 +10,9 @@ export const BotaoG = styled.button`
   border: 2px solid #f2f1fb;
   color: #f2f1fb;
   border-radius: 5px;
-  width: 120px;
-  height: 50px;
-
+  width: 8rem;
+  height: 3.4rem;
+  font-size: 1rem;
   font-family: "Noto Sans", sans-serif;
   :hover {
     border-color: #df5031;
