@@ -1,17 +1,11 @@
 import styled from "styled-components";
 
-export const LogoEditar = styled.div`
-  width: 300px;
-  height: 60px;
-  display: flex;
+export const DivFakeBody = styled.div`
+@media (max-width: 500px) {
+    display: flex;
+  flex-direction: column;
+  justify-content: top;
   align-items: center;
-  justify-content: center;
-  //margin-top: 10%;
-  h2 {
-    margin-left: 10px;
-    color: white;
-    font-weight: 700;
-    font-size: 40px;
   }
 `;
 
@@ -21,9 +15,17 @@ export const EditContainer = styled.section`
   justify-content: top;
   align-items: center;
   background-color: #0a0a16;
+  @media (max-width: 500px) {
+    width: 85%;
+    height:50%;
+    display: flex;
+  flex-direction: column;
+  justify-content: top;
+  align-items: stretch;
+  }
 `;
+
 export const EditorContainer = styled.div`
-  //padding-top: 30px;
   width: 450px;
   height: 600px;
   border: 2px solid white;
@@ -33,7 +35,12 @@ export const EditorContainer = styled.div`
   align-items: center;
   background-color: #0a0a16;
   border-radius: 20px;
+  @media (max-width: 500px) {
+    width: 100%;
+    height:45rem;
+  }
 `;
+
 export const DivLabel = styled.label`
   flex-direction: line;
   justify-content: left;
@@ -59,37 +66,32 @@ export const Entrada = styled.input`
     font-style: italic;
   }
   @media (max-width: 500px) {
-    width: 95%;
-    margin-left: 2.5%;
+    font-size: 11px;
+    width: 100%;
   }
 `;
-// export const BotãoSalvar = styled.button`
-//     background: #0A0A16;
-//         border: 2px solid #f2f1fb;
-//         border-radius: 5px;
-//         height: 45px;
-//     color: #f2f1fb;
-//         margin-bottom: 50px;
-//         margin-top: 20px;
-//     width: 120px;
-//         padding: 0 10px;
-//         font-family: 'Noto sans', sans-serif;
-//         font-size: 15px;
-//         display: flex;
-//         align-items: center;
-//         justify-content: center;
-//         &::placeholder{
-//             font-style: italic;
-//         }
-//         :hover {
-//     border-color: #df5031;
-//     color: #df5031;
-//   }
-// `
 
 export const DivField = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: stretch;
+  align-items: right;
   justify-content: left;
+  @media (max-width: 500px) {
+    width: 80%;
+  }
+`;
+
+export const DivFieldBotão = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;    
+  padding: 5%;
+  @media (max-width: 500px) {
+    display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: center;    
+  padding: 15%;
+  }
 `;
