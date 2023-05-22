@@ -6,7 +6,6 @@ import {
   BotaoGenerico,
 } from "../../components";
 import {
-  LogoEditar,
   EditContainer,
   EditorContainer,
   DivLabel,
@@ -86,7 +85,7 @@ export default function Editar() {
               options={atividades}
             />
           </DivField>
-          
+
           <DivFieldBotão><BotaoGenerico texto="Salvar" /></DivFieldBotão>
           
         </EditorContainer>
