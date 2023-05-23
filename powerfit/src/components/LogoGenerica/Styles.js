@@ -11,7 +11,7 @@ export const LogoText = styled.div`
   color: white;
   font-family: noto sans;
   font-size: 2.5rem;
-  margin-left: 2%;
+  margin-left: 0.5rem;
 `;
 
 export const LogoImagem = styled.img`

@@ -10,7 +10,7 @@ export default function Header() {
         <LogoGenerica texto={"PowerFit"} backgroundColor={"#04040B"} />
       </LogoWrapperHeader>
       <BotoesHeader>
-        <BotaoGenerico texto={"textoHeader1"} />
+        <BotaoGenerico texto={"Entrar"} />
         <BotaoGenerico texto={"Cadastro"} />
       </BotoesHeader>
     </HeaderG>

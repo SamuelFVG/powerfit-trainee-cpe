@@ -17,7 +17,7 @@ export const HeaderG = styled.div`
 `;
 
 export const LogoWrapperHeader = styled.div`
-  margin-left: 11%;
+  margin-left: 3rem;
   display: flex;
 
   @media (max-width: 768px) {
@@ -28,8 +28,8 @@ export const LogoWrapperHeader = styled.div`
 
 export const BotoesHeader = styled.div`
   display: flex;
-  gap: 11%;
-  margin-right: 8%;
+  gap: 1.5rem;
+  margin-right: 3rem;
 
   @media (max-width: 768px) {
     display: flex;
@@ -37,5 +37,9 @@ export const BotoesHeader = styled.div`
     margin-right: 1rem;
     flex-direction: row;
     align-items: center;
+  }
+
+  @media (max-width: 300px) {
+    flex-direction: column;
   }
 `;

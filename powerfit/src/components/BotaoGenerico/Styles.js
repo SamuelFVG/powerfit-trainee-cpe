@@ -19,4 +19,14 @@ export const BotaoG = styled.button`
     color: #f2f1fb;
     background-color: #df5031;
   }
+
+  @media (max-width: 400px) {
+    font-size: 11px;
+    width: fit-content;
+  }
+
+  @media (max-width: 300px) {
+    font-size: 11px;
+    width: 6rem;
+  }
 `;
