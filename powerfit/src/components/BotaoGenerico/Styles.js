@@ -6,7 +6,7 @@ export const BotaoG = styled.button`
   align-items: center;
   justify-content: center;
 
-  background-color: #0a0a16;
+  background-color: #04040B;
   border: 2px solid #f2f1fb;
   color: #f2f1fb;
   border-radius: 5px;
