@@ -9,15 +9,18 @@ export default function Header() {
   //const navigate = useNavigate();
   return (
     <div>
-    <HeaderG>
-      <LogoWrapperHeader>
-        <LogoGenerica texto={"PowerFit"} backgroundColor={"#04040B"} />
-      </LogoWrapperHeader>
-      <BotoesHeader>
-        <LinkGenerico texto={"Entrar"} /*onClick = {()=> }*//>
-        <BotaoGenerico texto={"Cadastro"}/>
-      </BotoesHeader>
-    </HeaderG>
+      <HeaderG>
+        <LogoWrapperHeader>
+          <LogoGenerica texto={"PowerFit"} backgroundColor={"#04040B"} />
+        </LogoWrapperHeader>
+        <BotoesHeader>
+          <LinkGenerico
+            texto={"Entrar"}
+            rota={"/login"} /*onClick = {()=> }*/
+          />
+          <BotaoGenerico texto={"Cadastro"} />
+        </BotoesHeader>
+      </HeaderG>
     </div>
   );
 }
