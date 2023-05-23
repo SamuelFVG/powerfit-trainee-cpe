@@ -6,12 +6,13 @@ import {
   BotaoGenerico,
 } from "../../components";
 import {
-  LogoEditar,
   EditContainer,
   EditorContainer,
   DivLabel,
   Entrada,
   DivField,
+  DivFakeBody,
+  DivFieldBotão
 } from "./Styles";
 
 export default function Editar() {
@@ -49,6 +50,7 @@ export default function Editar() {
   }
 
   return (
+    <DivFakeBody>
     <EditContainer>
       <form onSubmit={salvar}>
         <EditorContainer>
@@ -84,9 +86,11 @@ export default function Editar() {
             />
           </DivField>
 
-          <BotaoGenerico texto="Salvar" />
+          <DivFieldBotão><BotaoGenerico texto="Salvar" /></DivFieldBotão>
+          
         </EditorContainer>
       </form>
     </EditContainer>
+    </DivFakeBody>
   );
 }
