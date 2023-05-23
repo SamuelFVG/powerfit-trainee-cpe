@@ -1,7 +1,7 @@
-import { HeaderG, BotoesHeader } from "./Styles";
-import { LogoWrapperHeader } from "./Styles";
+import { HeaderG, BotoesHeader, LogoWrapperHeader } from "./Styles";
 import { LogoGenerica } from "../../components";
 import { BotaoGenerico } from "../../components";
+//import { LinkGenerico } from "../../components";
 
 export default function Header() {
   return (
@@ -11,7 +11,7 @@ export default function Header() {
       </LogoWrapperHeader>
       <BotoesHeader>
         <BotaoGenerico texto={"textoHeader1"} />
-        <BotaoGenerico texto={"textoHeader2"} />
+        <BotaoGenerico texto={"Cadastro"} />
       </BotoesHeader>
     </HeaderG>
   );
