@@ -1,6 +1,10 @@
 import styled from "styled-components";
 
 export const DropDownG = styled.div``;  
+
+export const CustomSelector = styled.div`
+position: relative;
+`;
 export const DivSelect = styled.select`
   background-color: #0a0a16;
   width: 300px;

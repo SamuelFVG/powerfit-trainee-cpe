@@ -48,6 +48,10 @@ export const DivLabel = styled.label`
   width: 67%;
   height: 13 px;
   padding-bottom: 10px;
+  font-size:13px;
+  @media (max-width: 500px) {
+    font-size: 1rem;
+  }
 `;
 
 export const Entrada = styled.input`
