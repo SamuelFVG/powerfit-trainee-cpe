@@ -13,7 +13,7 @@ import {
   LinhaDaTabelaGenerica,
   Carrossel,
   DropDownGenerico,
-  Header,
+  HeaderLogado,
 } from "../../components";
 
 let pessoas = [
@@ -80,7 +80,7 @@ function printaTabela() {
 export default function Home() {
   return (
     <div>
-      <Header />
+      <HeaderLogado />
       <EspacamentoHeaderHome />
       <DivGeralHome>
         <Carrossel />

@@ -4,7 +4,7 @@ import {
   DropDownGenerico,
   LogoGenerica,
   BotaoGenerico,
-  Header,
+  HeaderLogado,
 } from "../../components";
 import {
   EditContainer,
@@ -53,7 +53,7 @@ export default function Editar() {
 
   return (
     <div>
-      <Header />
+      <HeaderLogado />
       <EspacamentoHeaderEditar />
       <DivFakeBody>
         <EditContainer>
