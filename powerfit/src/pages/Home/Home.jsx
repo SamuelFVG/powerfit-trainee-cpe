@@ -84,7 +84,7 @@ export default function Home() {
           default="Selecione a atividade"
           options={atividades}
         />
-        <BotaoGenerico texto="Entrar" />
+        <BotaoGenerico texto="Entrar" rota={"---"} />
       </DivInputsHome>
 
       {printaTabela()}

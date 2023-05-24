@@ -12,7 +12,7 @@ import {
   Entrada,
   DivField,
   DivFakeBody,
-  DivFieldBotão
+  DivFieldBotão,
 } from "./Styles";
 
 export default function Editar() {
@@ -51,46 +51,47 @@ export default function Editar() {
 
   return (
     <DivFakeBody>
-    <EditContainer>
-      <form onSubmit={salvar}>
-        <EditorContainer>
-          <LogoGenerica texto={"Editar"} backgroundColor={"#0A0A16"} />
+      <EditContainer>
+        <form onSubmit={salvar}>
+          <EditorContainer>
+            <LogoGenerica texto={"Editar"} backgroundColor={"#0A0A16"} />
 
-          <DivField>
-            <DivLabel>Nome:</DivLabel>
-            <Entrada
-              placeholder="Nome"
-              type="text"
-              name="nome"
-              value={formulario.nome}
-              onChange={(event) => entradaDeDados(event)}
-              required
-            />
-          </DivField>
+            <DivField>
+              <DivLabel>Nome:</DivLabel>
+              <Entrada
+                placeholder="Nome"
+                type="text"
+                name="nome"
+                value={formulario.nome}
+                onChange={(event) => entradaDeDados(event)}
+                required
+              />
+            </DivField>
 
-          <DivField>
-            <DivLabel>Cargo:</DivLabel>
-            <DropDownGenerico
-              required
-              default="Selecione o cargo"
-              options={cargo}
-            />
-          </DivField>
+            <DivField>
+              <DivLabel>Cargo:</DivLabel>
+              <DropDownGenerico
+                required
+                default="Selecione o cargo"
+                options={cargo}
+              />
+            </DivField>
 
-          <DivField>
-            <DivLabel>Atividade:</DivLabel>
-            <DropDownGenerico
-              required
-              default="Selecione a atividade"
-              options={atividades}
-            />
-          </DivField>
+            <DivField>
+              <DivLabel>Atividade:</DivLabel>
+              <DropDownGenerico
+                required
+                default="Selecione a atividade"
+                options={atividades}
+              />
+            </DivField>
 
-          <DivFieldBotão><BotaoGenerico texto="Salvar" /></DivFieldBotão>
-          
-        </EditorContainer>
-      </form>
-    </EditContainer>
+            <DivFieldBotão>
+              <BotaoGenerico texto="Salvar" rota={"---"} />
+            </DivFieldBotão>
+          </EditorContainer>
+        </form>
+      </EditContainer>
     </DivFakeBody>
   );
 }

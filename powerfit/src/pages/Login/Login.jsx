@@ -54,7 +54,7 @@ export default function CadastroPage() {
           ></InputForm>
 
           <DivSubmitButton>
-            <BotaoGenerico texto="Login" />
+            <BotaoGenerico texto="Login" rota={"---"} />
           </DivSubmitButton>
         </form>
         <Link to={"/cadastro"}>

@@ -96,7 +96,7 @@ export default function CadastroPage() {
             <DropDownGenerico default="Selecione o cargo" options={cargo} />
           </Menu>
           <DivSubmitButton>
-            <BotaoGenerico texto="Cadastrar" />
+            <BotaoGenerico texto="Cadastrar" rota={"---"} />
           </DivSubmitButton>
         </form>
         <Link to={"/login"}>
