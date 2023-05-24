@@ -43,3 +43,9 @@ export const DivGeralHome = styled(DivGenerico)`
   width: 100%;
   gap: 1rem;
 `;
+
+export const EspacamentoHeaderHome = styled.div`
+  margin-top: 5%;
+  height = 10%;
+  width: 100%;
+`;

@@ -4,6 +4,7 @@ import {
   DropDownGenerico,
   LogoGenerica,
   BotaoGenerico,
+  Header,
 } from "../../components";
 import {
   SingUpContainer,
@@ -13,6 +14,7 @@ import {
   PalavraLink,
   Menu,
   Texto,
+  EspacamentoHeaderCadastro,
 } from "./Styles";
 
 export default function CadastroPage() {
@@ -51,58 +53,62 @@ export default function CadastroPage() {
   }
 
   return (
-    <SingUpContainer>
-      <CadastroContainer>
-        <LogoGenerica texto={"Cadastro"} backgroundColor={"#0A0A16"} />
-        <form onSubmit={efetuarCadastro}>
-          <Texto>Email:</Texto>
-          <InputForm
-            placeholder="exemplo@*****.com"
-            type="email"
-            name="email"
-            value={form.email}
-            onChange={(event) => atualizaForm(event)}
-            required
-          ></InputForm>
-          <Texto>Nome de Usuário:</Texto>
-          <InputForm
-            placeholder="Nome de Usuário"
-            type="text"
-            name="nome"
-            value={form.nome}
-            onChange={(event) => atualizaForm(event)}
-            required
-          ></InputForm>
-          <Texto>Senha:</Texto>
-          <InputForm
-            placeholder="********"
-            type="password"
-            name="senha"
-            value={form.senha}
-            onChange={(event) => atualizaForm(event)}
-            required
-          ></InputForm>
-          <Texto>Confirme sua senha:</Texto>
-          <InputForm
-            placeholder="********"
-            type="password"
-            name="confirmaSenha"
-            value={form.confirmaSenha}
-            onChange={(event) => atualizaForm(event)}
-            required
-          ></InputForm>
-          <Texto>Cargo:</Texto>
-          <Menu>
-            <DropDownGenerico default="Selecione o cargo" options={cargo} />
-          </Menu>
-          <DivSubmitButton>
-            <BotaoGenerico texto="Cadastrar" rota={"---"} />
-          </DivSubmitButton>
-        </form>
-        <Link to={"/login"}>
-          <PalavraLink>Já tem uma conta? Entre agora!</PalavraLink>
-        </Link>
-      </CadastroContainer>
-    </SingUpContainer>
+    <div>
+      <Header />
+      <EspacamentoHeaderCadastro />
+      <SingUpContainer>
+        <CadastroContainer>
+          <LogoGenerica texto={"Cadastro"} backgroundColor={"#0A0A16"} />
+          <form onSubmit={efetuarCadastro}>
+            <Texto>Email:</Texto>
+            <InputForm
+              placeholder="exemplo@*****.com"
+              type="email"
+              name="email"
+              value={form.email}
+              onChange={(event) => atualizaForm(event)}
+              required
+            ></InputForm>
+            <Texto>Nome de Usuário:</Texto>
+            <InputForm
+              placeholder="Nome de Usuário"
+              type="text"
+              name="nome"
+              value={form.nome}
+              onChange={(event) => atualizaForm(event)}
+              required
+            ></InputForm>
+            <Texto>Senha:</Texto>
+            <InputForm
+              placeholder="********"
+              type="password"
+              name="senha"
+              value={form.senha}
+              onChange={(event) => atualizaForm(event)}
+              required
+            ></InputForm>
+            <Texto>Confirme sua senha:</Texto>
+            <InputForm
+              placeholder="********"
+              type="password"
+              name="confirmaSenha"
+              value={form.confirmaSenha}
+              onChange={(event) => atualizaForm(event)}
+              required
+            ></InputForm>
+            <Texto>Cargo:</Texto>
+            <Menu>
+              <DropDownGenerico default="Selecione o cargo" options={cargo} />
+            </Menu>
+            <DivSubmitButton>
+              <BotaoGenerico texto="Cadastrar" rota={"---"} />
+            </DivSubmitButton>
+          </form>
+          <Link to={"/login"}>
+            <PalavraLink>Já tem uma conta? Entre agora!</PalavraLink>
+          </Link>
+        </CadastroContainer>
+      </SingUpContainer>
+    </div>
   );
 }

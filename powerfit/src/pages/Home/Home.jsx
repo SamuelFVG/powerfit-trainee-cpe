@@ -4,6 +4,7 @@ import {
   DivTituloTabelaHome,
   DivGeralHome,
   DivInputsHome,
+  EspacamentoHeaderHome,
 } from "./Styles";
 
 import {
@@ -12,6 +13,7 @@ import {
   LinhaDaTabelaGenerica,
   Carrossel,
   DropDownGenerico,
+  Header,
 } from "../../components";
 
 let pessoas = [
@@ -77,17 +79,21 @@ function printaTabela() {
 
 export default function Home() {
   return (
-    <DivGeralHome>
-      <Carrossel />
-      <DivInputsHome>
-        <DropDownGenerico
-          default="Selecione a atividade"
-          options={atividades}
-        />
-        <BotaoGenerico texto="Entrar" rota={"---"} />
-      </DivInputsHome>
+    <div>
+      <Header />
+      <EspacamentoHeaderHome />
+      <DivGeralHome>
+        <Carrossel />
+        <DivInputsHome>
+          <DropDownGenerico
+            default="Selecione a atividade"
+            options={atividades}
+          />
+          <BotaoGenerico texto="Entrar" rota={"---"} />
+        </DivInputsHome>
 
-      {printaTabela()}
-    </DivGeralHome>
+        {printaTabela()}
+      </DivGeralHome>
+    </div>
   );
 }

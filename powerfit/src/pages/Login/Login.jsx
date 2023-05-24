@@ -7,8 +7,9 @@ import {
   DivSubmitButton,
   PalavraLink,
   Texto,
+  EspacamentoHeaderLogin,
 } from "./Styles";
-import { LogoGenerica, BotaoGenerico } from "../../components";
+import { LogoGenerica, BotaoGenerico, Header } from "../../components";
 
 export default function CadastroPage() {
   const [form, setForm] = React.useState({ email: "", senha: "" });
@@ -30,37 +31,41 @@ export default function CadastroPage() {
   }
 
   return (
-    <SingUpContainer>
-      <CadastroContainer>
-        {<LogoGenerica texto={"Login"} backgroundColor={"#0A0A16"} />}
-        <form>
-          <Texto>Email:</Texto>
-          <InputForm
-            placeholder="exemplo@*****.com"
-            type="email"
-            name="email"
-            value={form.email}
-            onChange={(event) => atualizaForm(event)}
-            required
-          ></InputForm>
-          <Texto>Senha:</Texto>
-          <InputForm
-            placeholder="********"
-            type="password"
-            name="senha"
-            value={form.senha}
-            onChange={(event) => atualizaForm(event)}
-            required
-          ></InputForm>
+    <div>
+      <Header />
+      <EspacamentoHeaderLogin />
+      <SingUpContainer>
+        <CadastroContainer>
+          {<LogoGenerica texto={"Login"} backgroundColor={"#0A0A16"} />}
+          <form>
+            <Texto>Email:</Texto>
+            <InputForm
+              placeholder="exemplo@*****.com"
+              type="email"
+              name="email"
+              value={form.email}
+              onChange={(event) => atualizaForm(event)}
+              required
+            ></InputForm>
+            <Texto>Senha:</Texto>
+            <InputForm
+              placeholder="********"
+              type="password"
+              name="senha"
+              value={form.senha}
+              onChange={(event) => atualizaForm(event)}
+              required
+            ></InputForm>
 
-          <DivSubmitButton>
-            <BotaoGenerico texto="Login" rota={"---"} />
-          </DivSubmitButton>
-        </form>
-        <Link to={"/cadastro"}>
-          <PalavraLink>Não possui conta? Cadastre-se!</PalavraLink>
-        </Link>
-      </CadastroContainer>
-    </SingUpContainer>
+            <DivSubmitButton>
+              <BotaoGenerico texto="Login" rota={"---"} />
+            </DivSubmitButton>
+          </form>
+          <Link to={"/cadastro"}>
+            <PalavraLink>Não possui conta? Cadastre-se!</PalavraLink>
+          </Link>
+        </CadastroContainer>
+      </SingUpContainer>
+    </div>
   );
 }

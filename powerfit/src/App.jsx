@@ -8,7 +8,7 @@ function App() {
     <>
       <GlobalStyles />
       <DivGeralApp>
-        <Header />
+        {/* <Header /> */}
         <Routes />
         <Footer />
       </DivGeralApp>

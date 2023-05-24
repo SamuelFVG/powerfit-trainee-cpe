@@ -1,11 +1,11 @@
 import styled from "styled-components";
 
 export const DivFakeBody = styled.div`
-@media (max-width: 500px) {
+  @media (max-width: 500px) {
     display: flex;
-  flex-direction: column;
-  justify-content: top;
-  align-items: center;
+    flex-direction: column;
+    justify-content: top;
+    align-items: center;
   }
 `;
 
@@ -17,11 +17,11 @@ export const EditContainer = styled.section`
   background-color: #0a0a16;
   @media (max-width: 500px) {
     width: 85%;
-    height:50%;
+    height: 50%;
     display: flex;
-  flex-direction: column;
-  justify-content: top;
-  align-items: stretch;
+    flex-direction: column;
+    justify-content: top;
+    align-items: stretch;
   }
 `;
 
@@ -37,7 +37,7 @@ export const EditorContainer = styled.div`
   border-radius: 20px;
   @media (max-width: 500px) {
     width: 100%;
-    height:45rem;
+    height: 45rem;
   }
 `;
 
@@ -48,7 +48,7 @@ export const DivLabel = styled.label`
   width: 67%;
   height: 13 px;
   padding-bottom: 10px;
-  font-size:13px;
+  font-size: 13px;
   @media (max-width: 500px) {
     font-size: 1rem;
   }
@@ -89,13 +89,19 @@ export const DivFieldBotão = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;    
+  justify-content: center;
   padding: 5%;
   @media (max-width: 500px) {
     display: flex;
-  flex-direction: column;
-  align-items: stretch;
-  justify-content: center;    
-  padding: 15%;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: center;
+    padding: 15%;
   }
+`;
+
+export const EspacamentoHeaderEditar = styled.div`
+  margin-top: 5%;
+  height = 10%;
+  width: 100%;
 `;

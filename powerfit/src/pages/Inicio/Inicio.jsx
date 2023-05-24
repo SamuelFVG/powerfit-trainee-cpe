@@ -8,12 +8,14 @@ import {
   ImagemApresentacao,
 } from "./Styles";
 
+import { Header } from "../../components";
+
 import ImagemInicio from "../../assets/Imagem_home_sem_login_1.svg";
 
 export default function Inicio() {
   return (
     <div>
-      {/* <Header /> */}
+      <Header />
       <ContentInicio>
         <CaixaTextoInicio>
           <TituloInicio>Mais que uma academia</TituloInicio>

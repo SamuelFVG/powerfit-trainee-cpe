@@ -118,3 +118,9 @@ export const Menu = styled.div`
   margin-top: 10px;
   margin-bottom: 25px;
 `;
+
+export const EspacamentoHeaderCadastro = styled.div`
+  margin-top: 5%;
+  height = 10%;
+  width: 100%;
+`;
