@@ -17,7 +17,7 @@ export default function HeaderLogado() {
     <div>
       <HeaderLogadoG>
         <LogoWrapperHeaderLogado>
-          <LogoGenerica texto={"PowerFit"} backgroundColor={"#04040B"} />
+          <LogoGenerica texto={"PowerFit "} backgroundColor={"#04040B"} />
         </LogoWrapperHeaderLogado>
         <BotoesHeaderLogado>
           <LinkWrapperHeaderLogado>
