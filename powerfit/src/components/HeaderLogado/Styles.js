@@ -55,4 +55,8 @@ export const LinkWrapperHeaderLogado = styled.div`
   width: 7rem;
   display: flex;
   align-items: center;
+
+  @media (max-width: 400px) {
+    width: 4rem;
+  }
 `;
