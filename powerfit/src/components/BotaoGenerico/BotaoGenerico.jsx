@@ -1,5 +1,7 @@
 import { BotaoG } from "./Styles";
 
 export default function BotaoGenerico({ texto }) {
-  return <BotaoG>{texto}</BotaoG>;
+  return (
+    <BotaoG onClick={() => window.location.assign("/cadastro")}>{texto}</BotaoG>
+  );
 }

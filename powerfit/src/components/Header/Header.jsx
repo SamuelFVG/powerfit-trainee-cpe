@@ -18,6 +18,7 @@ export default function Header() {
             texto={"Entrar"}
             rota={"/login"} /*onClick = {()=> }*/
           />
+
           <BotaoGenerico texto={"Cadastro"} />
         </BotoesHeader>
       </HeaderG>
