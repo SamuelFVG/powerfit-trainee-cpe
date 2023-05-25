@@ -11,13 +11,17 @@ import { LinkGenerico } from "../../components";
 
 import Icone_sair from "../../assets/Icone_sair.svg";
 
-export default function HeaderLogado() {
+export default function HeaderLogado({ rota }) {
   //const navigate = useNavigate();
   return (
     <div>
       <HeaderLogadoG>
         <LogoWrapperHeaderLogado>
-          <LogoGenerica texto={"PowerFit "} backgroundColor={"#04040B"} />
+          <LogoGenerica
+            texto={"PowerFit"}
+            backgroundColor={"#04040B"}
+            rota={rota}
+          />
         </LogoWrapperHeaderLogado>
         <BotoesHeaderLogado>
           <LinkWrapperHeaderLogado>

@@ -5,13 +5,17 @@ import { BotaoGenerico } from "../../components";
 //import { useNavigate } from "react-router-dom";
 //import { LinkGenerico } from "../../components";
 
-export default function Header() {
+export default function Header({ rota }) {
   //const navigate = useNavigate();
   return (
     <div>
       <HeaderG>
         <LogoWrapperHeader>
-          <LogoGenerica texto={"PowerFit"} backgroundColor={"#04040B"} />
+          <LogoGenerica
+            texto={"PowerFit"}
+            backgroundColor={"#04040B"}
+            rota={rota}
+          />
         </LogoWrapperHeader>
         <BotoesHeader>
           <LinkGenerico

@@ -15,7 +15,7 @@ import ImagemInicio from "../../assets/Imagem_home_sem_login_1.svg";
 export default function Inicio() {
   return (
     <div>
-      <Header />
+      <Header rota="/" />
       <ContentInicio>
         <CaixaTextoInicio>
           <TituloInicio>Mais que uma academia</TituloInicio>

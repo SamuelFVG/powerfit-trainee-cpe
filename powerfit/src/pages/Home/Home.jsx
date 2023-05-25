@@ -9,7 +9,6 @@ import {
 
 import {
   BotaoGenerico,
-  InputGenerico,
   LinhaDaTabelaGenerica,
   Carrossel,
   DropDownGenerico,
@@ -80,7 +79,8 @@ function printaTabela() {
 export default function Home() {
   return (
     <div>
-      <HeaderLogado />
+      <HeaderLogado rota={"/home"} />
+
       <EspacamentoHeaderHome />
       <DivGeralHome>
         <Carrossel />

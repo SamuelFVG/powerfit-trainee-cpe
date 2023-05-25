@@ -53,13 +53,17 @@ export default function Editar() {
 
   return (
     <div>
-      <HeaderLogado />
+      <HeaderLogado rota="/home" />
       <EspacamentoHeaderEditar />
       <DivFakeBody>
         <EditContainer>
           <form onSubmit={salvar}>
             <EditorContainer>
-              <LogoGenerica texto={"Editar"} backgroundColor={"#0A0A16"} />
+              <LogoGenerica
+                texto={"Editar"}
+                backgroundColor={"#0A0A16"}
+                rota="?"
+              />
 
               <DivField>
                 <DivLabel>Nome:</DivLabel>

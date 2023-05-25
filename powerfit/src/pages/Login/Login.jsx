@@ -32,11 +32,17 @@ export default function CadastroPage() {
 
   return (
     <div>
-      <Header />
+      <Header rota="/" />
       <EspacamentoHeaderLogin />
       <SingUpContainer>
         <CadastroContainer>
-          {<LogoGenerica texto={"Login"} backgroundColor={"#0A0A16"} />}
+          {
+            <LogoGenerica
+              texto={"Login"}
+              backgroundColor={"#0A0A16"}
+              rota="?"
+            />
+          }
           <form>
             <Texto>Email:</Texto>
             <InputForm
