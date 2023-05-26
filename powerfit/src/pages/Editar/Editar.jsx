@@ -14,7 +14,6 @@ import {
   DivField,
   DivFakeBody,
   DivFieldBotão,
-  EspacamentoHeaderEditar,
 } from "./Styles";
 
 export default function Editar() {
@@ -52,9 +51,8 @@ export default function Editar() {
   }
 
   return (
-    <div>
+    <>
       <HeaderLogado rota="/home" />
-      <EspacamentoHeaderEditar />
       <DivFakeBody>
         <EditContainer>
           <form onSubmit={salvar}>
@@ -102,6 +100,6 @@ export default function Editar() {
           </form>
         </EditContainer>
       </DivFakeBody>
-    </div>
+    </>
   );
 }

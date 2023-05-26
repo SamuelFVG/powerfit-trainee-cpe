@@ -4,7 +4,7 @@ export const DivFakeBody = styled.div`
   @media (max-width: 500px) {
     display: flex;
     flex-direction: column;
-    justify-content: top;
+    justify-content: center;
     align-items: center;
   }
 `;
@@ -98,10 +98,4 @@ export const DivFieldBotão = styled.div`
     justify-content: center;
     padding: 15%;
   }
-`;
-
-export const EspacamentoHeaderEditar = styled.div`
-  margin-top: 5%;
-  height = 10%;
-  width: 100%;
 `;

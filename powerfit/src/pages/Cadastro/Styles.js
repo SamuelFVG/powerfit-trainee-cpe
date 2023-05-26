@@ -69,34 +69,6 @@ export const SingUpContainer = styled.section`
   background-color: #0a0a16;
 `;
 
-// export const SubmitButton = styled.button`
-//     background: #0A0A16;
-//         border: 2px solid #f2f1fb;
-//         border-radius: 5px;
-//         height: 45px;
-//     color: #f2f1fb;
-//         margin-left: 25%;
-//         margin-bottom: 25px;
-//         margin-top: 10px;
-//     width: 50%;
-//         padding: 0 10px;
-//         font-family: 'Noto sans', sans-serif;
-//         font-size: 15px;
-//         display: flex;
-//         align-items: center;
-//         justify-content: center;
-//         &::placeholder{
-//             font-style: italic;
-//         }
-//         :hover {
-//     border-color: #df5031;
-//     color: #df5031;
-//   }
-/* @media (max-width: 500px) {
-    margin-left: 25%;
-  } */
-//`
-
 export const DivSubmitButton = styled.div`
   width: 100%;
   display: flex;
@@ -117,10 +89,4 @@ export const PalavraLink = styled.div`
 export const Menu = styled.div`
   margin-top: 10px;
   margin-bottom: 25px;
-`;
-
-export const EspacamentoHeaderCadastro = styled.div`
-  margin-top: 5%;
-  height = 10%;
-  width: 100%;
 `;

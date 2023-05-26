@@ -14,7 +14,6 @@ import {
   PalavraLink,
   Menu,
   Texto,
-  EspacamentoHeaderCadastro,
 } from "./Styles";
 
 export default function CadastroPage() {
@@ -53,9 +52,9 @@ export default function CadastroPage() {
   }
 
   return (
-    <div>
+    <>
       <Header rota="/" />
-      <EspacamentoHeaderCadastro />
+      {/* <EspacamentoHeaderCadastro /> */}
       <SingUpContainer>
         <CadastroContainer>
           <LogoGenerica
@@ -113,6 +112,6 @@ export default function CadastroPage() {
           </Link>
         </CadastroContainer>
       </SingUpContainer>
-    </div>
+    </>
   );
 }
