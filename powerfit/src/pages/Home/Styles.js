@@ -1,5 +1,23 @@
 import styled from "styled-components";
-import { DivGenerico } from "../../components/LinhaDaTabelaGenerica/Styles";
+import { DivGenerico } from "../../components/LinhaDaTabelaGenerica/Styles"; //pra facilitar, já importei direto do divgenerico do styles
+
+export const DivGeral = styled(DivGenerico)`
+  flex-direction: column;
+  width: 100%;
+  gap: 1rem;
+`;
+
+export const Inputs = styled.form`
+  margin-top: 5%;
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  gap: 2%;
+  width: 78%;
+  @media (max-width: 500px) {
+    width: 90%;
+  }
+`;
 
 export const Tabela = styled.div`
   border: solid 2px #6e6d9c;
@@ -22,24 +40,6 @@ export const TopoTabela = styled.div`
   justify-content: center;
 `;
 
-export const DivTituloTabelaHome = styled(DivGenerico)`
+export const TituloTabela = styled(DivGenerico)`
   flex-grow: 1;
-`;
-
-export const DivInputsHome = styled.form`
-  margin-top: 5%;
-  display: flex;
-  justify-content: right;
-  align-items: center;
-  gap: 2%;
-  width: 78%;
-  @media (max-width: 500px) {
-    width: 90%;
-  }
-`;
-
-export const DivGeralHome = styled(DivGenerico)`
-  flex-direction: column;
-  width: 100%;
-  gap: 1rem;
 `;

@@ -1,10 +1,4 @@
-import {
-  Tabela,
-  TopoTabela,
-  DivTituloTabelaHome,
-  DivGeralHome,
-  DivInputsHome,
-} from "./Styles";
+import { Tabela, TopoTabela, TituloTabela, DivGeral, Inputs } from "./Styles";
 
 import {
   BotaoGenerico,
@@ -13,8 +7,8 @@ import {
   DropDownGenerico,
   HeaderLogado,
 } from "../../components";
-
-let pessoas = [
+//vetor de objetos que vai ser puxado do back
+const pessoas = [
   {
     nome: "João Maciel",
     cargo: "Atendente",
@@ -44,7 +38,7 @@ let pessoas = [
     horas: "12:07",
   },
 ];
-
+//atividades para o dropdown
 const atividades = [
   "Cardio",
   "Musculação",
@@ -59,39 +53,33 @@ const atividades = [
   "Pagamento de impostos (noite)",
 ];
 
-function printaTabela() {
-  return (
-    <Tabela>
-      <TopoTabela>
-        <DivTituloTabelaHome>Perfil</DivTituloTabelaHome>
-        <DivTituloTabelaHome>Atividade</DivTituloTabelaHome>
-        <DivTituloTabelaHome>Tempo</DivTituloTabelaHome>
-      </TopoTabela>
-
-      {pessoas.map((pessoa) => (
-        <LinhaDaTabelaGenerica dados={pessoa} key={pessoa.nome} />
-      ))}
-    </Tabela>
-  );
-}
-
 export default function Home() {
   return (
     <>
       <HeaderLogado rota={"/home"} />
 
-      <DivGeralHome>
+      <DivGeral>
         <Carrossel />
-        <DivInputsHome>
+        <Inputs>
           <DropDownGenerico
             default="Selecione a atividade"
             options={atividades}
           />
-          <BotaoGenerico texto="Entrar" rota={"---"} />
-        </DivInputsHome>
+          <BotaoGenerico texto="Entrar" rota={"?"} />
+        </Inputs>
 
-        {printaTabela()}
-      </DivGeralHome>
+        <Tabela>
+          <TopoTabela>
+            <TituloTabela>Perfil</TituloTabela>
+            <TituloTabela>Atividade</TituloTabela>
+            <TituloTabela>Tempo</TituloTabela>
+          </TopoTabela>
+          {/*Esse bloco printa cada uma das linhas por meio do map */}
+          {pessoas.map((pessoa) => (
+            <LinhaDaTabelaGenerica dados={pessoa} key={pessoa.nome} />
+          ))}
+        </Tabela>
+      </DivGeral>
     </>
   );
 }
