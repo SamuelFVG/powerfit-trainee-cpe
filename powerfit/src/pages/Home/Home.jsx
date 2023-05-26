@@ -4,7 +4,6 @@ import {
   DivTituloTabelaHome,
   DivGeralHome,
   DivInputsHome,
-  EspacamentoHeaderHome,
 } from "./Styles";
 
 import {
@@ -78,10 +77,9 @@ function printaTabela() {
 
 export default function Home() {
   return (
-    <div>
+    <>
       <HeaderLogado rota={"/home"} />
 
-      <EspacamentoHeaderHome />
       <DivGeralHome>
         <Carrossel />
         <DivInputsHome>
@@ -94,6 +92,6 @@ export default function Home() {
 
         {printaTabela()}
       </DivGeralHome>
-    </div>
+    </>
   );
 }

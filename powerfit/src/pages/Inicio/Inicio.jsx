@@ -14,7 +14,7 @@ import ImagemInicio from "../../assets/Imagem_home_sem_login_1.svg";
 
 export default function Inicio() {
   return (
-    <div>
+    <>
       <Header rota="/" />
       <ContentInicio>
         <CaixaTextoInicio>
@@ -29,6 +29,6 @@ export default function Inicio() {
         </CaixaImagemInicio>
       </ContentInicio>
       {/* <Footer /> */}
-    </div>
+    </>
   );
 }

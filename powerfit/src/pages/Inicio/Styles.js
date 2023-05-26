@@ -1,10 +1,9 @@
 import styled from "styled-components";
 
 export const ContentInicio = styled.div`
-  margin-top: 10%;
+  //margin-top: 10%;
   display: flex;
-  margin-bottom: 14%;
-  //align-items: center;
+  //margin-bottom: 14%;
   @media (max-width: 900px) {
     flex-direction: column;
     align-items: center;

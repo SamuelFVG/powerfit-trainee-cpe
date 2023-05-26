@@ -7,7 +7,6 @@ import {
   DivSubmitButton,
   PalavraLink,
   Texto,
-  EspacamentoHeaderLogin,
 } from "./Styles";
 import { LogoGenerica, BotaoGenerico, Header } from "../../components";
 
@@ -31,9 +30,8 @@ export default function CadastroPage() {
   }
 
   return (
-    <div>
+    <>
       <Header rota="/" />
-      <EspacamentoHeaderLogin />
       <SingUpContainer>
         <CadastroContainer>
           {
@@ -72,6 +70,6 @@ export default function CadastroPage() {
           </Link>
         </CadastroContainer>
       </SingUpContainer>
-    </div>
+    </>
   );
 }

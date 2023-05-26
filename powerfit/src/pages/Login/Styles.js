@@ -110,9 +110,3 @@ export const DivSubmitButton = styled.div`
   margin-bottom: 5%;
   margin-top: 5%;
 `;
-
-export const EspacamentoHeaderLogin = styled.div`
-  margin-top: 5%;
-  height = 10%;
-  width: 100%;
-`;
