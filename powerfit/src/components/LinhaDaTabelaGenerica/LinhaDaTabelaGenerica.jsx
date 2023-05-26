@@ -2,11 +2,11 @@ import {
   LinhaDaTabelaG,
   Perfil,
   InformacoesPerfil,
+  DoodleContainer,
+  ItemDaTabela,
+  Nome,
+  Cargo,
   Doodle,
-  DivGenericoTabela,
-  DivGenericoPerfil,
-  DivGenericoPerfilMenor,
-  PerfilDoodle,
 } from "./Styles";
 import Perfil_doodle from "../../assets/Perfil_doodle.svg";
 
@@ -14,18 +14,20 @@ export default function LinhaDaTabelaGenerica({ dados }) {
   return (
     <LinhaDaTabelaG>
       <Perfil>
-        <Doodle color={dados.cor_doodle}>
-          <PerfilDoodle src={Perfil_doodle} />
-        </Doodle>
+        {/* Container do doodle do perfil. Color = bg*/}
+        <DoodleContainer color={dados.cor_doodle}>
+          {/* Imagem do doodle do perfil */}
+          <Doodle src={Perfil_doodle} />
+        </DoodleContainer>
         <InformacoesPerfil>
-          <DivGenericoPerfil> {dados.nome} </DivGenericoPerfil>
-          <DivGenericoPerfilMenor> {dados.cargo} </DivGenericoPerfilMenor>
+          <Nome> {dados.nome} </Nome>
+          <Cargo> {dados.cargo} </Cargo>
         </InformacoesPerfil>
       </Perfil>
 
-      <DivGenericoTabela>{dados.atividade}</DivGenericoTabela>
+      <ItemDaTabela>{dados.atividade}</ItemDaTabela>
 
-      <DivGenericoTabela>{dados.horas}</DivGenericoTabela>
+      <ItemDaTabela>{dados.horas}</ItemDaTabela>
     </LinhaDaTabelaG>
   );
 }
