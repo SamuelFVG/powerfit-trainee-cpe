@@ -7,7 +7,7 @@ export const LinkG = styled.nav`
   justify-content: center;
   color: #f2f1fb;
   width: 8rem;
-  height: 3.4rem;
+  //height: 3.4rem;
   font-size: 1rem;
   font-family: "Noto Sans", sans-serif;
 

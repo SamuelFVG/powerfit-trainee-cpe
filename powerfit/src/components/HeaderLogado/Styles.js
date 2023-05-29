@@ -11,7 +11,7 @@ export const HeaderLogadoG = styled.div`
 
   @media (max-width: 768px) {
     flex-direction: row;
-    height: auto;
+    //height: auto;
     padding: 1rem;
   }
 `;
@@ -29,6 +29,8 @@ export const LogoWrapperHeaderLogado = styled.div`
 export const BotoesHeaderLogado = styled.div`
   display: flex;
   flex-direction: row;
+  justify-content: center;
+  align-items: center;
   gap: 1.5rem;
   margin-right: 3rem;
 
@@ -42,16 +44,21 @@ export const BotoesHeaderLogado = styled.div`
 
   @media (max-width: 300px) {
     flex-direction: column;
+    justify-content: space-between;
   }
 `;
 
 export const HeaderLogadoImagem = styled.img`
-  height: 7rem;
-  width: 7rem;
+  height: 1.5rem;
+  width: 1.5rem;
+
+  :hover {
+    cursor: pointer;
+  }
 `;
 
 export const LinkWrapperHeaderLogado = styled.div`
-  height: 7rem;
+  //height: 7rem;
   width: 7rem;
   display: flex;
   align-items: center;

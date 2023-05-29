@@ -11,7 +11,7 @@ export const HeaderG = styled.div`
 
   @media (max-width: 768px) {
     flex-direction: row;
-    height: auto;
+    //height: auto;
     padding: 1rem;
   }
 `;
@@ -30,7 +30,6 @@ export const BotoesHeader = styled.div`
   display: flex;
   gap: 1.5rem;
   margin-right: 3rem;
-
   @media (max-width: 768px) {
     display: flex;
     gap: 1rem;
@@ -41,5 +40,6 @@ export const BotoesHeader = styled.div`
 
   @media (max-width: 300px) {
     flex-direction: column;
+    justify-content: space-between;
   }
 `;
