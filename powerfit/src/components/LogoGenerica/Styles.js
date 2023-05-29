@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const LogoG = styled.div`
   display: flex;
-  height: 60px;
+  //height: 60px;
   align-items: center;
 `;
 
