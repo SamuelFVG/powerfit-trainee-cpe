@@ -27,9 +27,18 @@ export default function CadastroPage() {
       console.log(res);
     } catch (error) {
       console.log(error.message);
+    } finally { //Pagina de carregamento
+      setCarregando(false);
     }
   };
 
+  //Usada para pagina de carregamento
+  if (carregando) return (
+  <SingUpContainer>
+      <h1>Carregando...</h1>
+  </SingUpContainer>
+  );
+    //Fim
   return (
     <>
       <Header rota="/" />
