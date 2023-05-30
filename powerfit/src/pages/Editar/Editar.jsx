@@ -75,6 +75,7 @@ export default function Editar() {
                   name="nome"
                   value={formulario.nome}
                   onChange={(event) => entradaDeDados(event)}
+                  onSubmit={(event) => entradaDeDados(event)}
                   required
                 />
               </DivField>
@@ -88,6 +89,7 @@ export default function Editar() {
                   default="Selecione o cargo"
                   options={cargo}
                   onChange={(event) => entradaDeDados(event)}
+                  onSubmit={(event) => entradaDeDados(event)}
                 />
               </DivField>
 
