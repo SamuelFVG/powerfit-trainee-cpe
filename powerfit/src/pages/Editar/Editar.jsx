@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom";
+import {useState} from 'react';
 import React from "react";
 import {
   DropDownGenerico,
@@ -37,12 +38,15 @@ export default function Editar() {
   function entradaDeDados(event) {
     setForm({ ...formulario, [event.target.name]: event.target.value });
   }
-
   function salvar(event) {
     event.preventDefault();
   }
 
-  const dados = { nome: formulario.nome };
+  const dados = { 
+    nome: formulario.nome,
+    cargo: formulario.cargo = document.getElementById("cargo01")?.value,
+    atividade: formulario.atividade = document.getElementById("atividade01")?.value
+   }
 
   console.log(dados);
 
@@ -78,18 +82,24 @@ export default function Editar() {
               <DivField>
                 <DivLabel>Cargo:</DivLabel>
                 <DropDownGenerico
+                  id="cargo01"
+                  name="cargo"
                   required
                   default="Selecione o cargo"
                   options={cargo}
+                  onChange={(event) => entradaDeDados(event)}
                 />
               </DivField>
 
               <DivField>
                 <DivLabel>Atividade:</DivLabel>
                 <DropDownGenerico
+                  id="atividade01"
+                  name="atividade"
                   required
                   default="Selecione a atividade"
                   options={atividades}
+                  onChange={(event) => entradaDeDados (event)}
                 />
               </DivField>
 
