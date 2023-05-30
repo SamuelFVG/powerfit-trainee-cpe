@@ -89,4 +89,8 @@ export const PalavraLink = styled.div`
 export const Menu = styled.div`
   margin-top: 10px;
   margin-bottom: 25px;
+  @media (max-width: 300px) {
+    width: 80% !important;
+    margin-left: 10%;
+  }
 `;
