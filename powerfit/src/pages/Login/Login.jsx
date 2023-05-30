@@ -12,33 +12,43 @@ import { LogoGenerica, BotaoGenerico, Header } from "../../components";
 import { BotaoG } from "../../components/BotaoGenerico/Styles";
 import { useState } from "react";
 import api from "../../services/api";
+import useAuthStore from "../../stores/auth";
 
 export default function CadastroPage() {
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
   const [carregando, setCarregando] = useState(false);
 
+  const setToken = useAuthStore((state) => state.setToken);
+  const usuario = useAuthStore((state) => state.usuario);
+  const token = useAuthStore((state) => state.token);
+
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log({ email, senha });
 
     try {
+      setCarregando(true);
       const res = await api.post("/login", { email, senha });
-      console.log(res);
+      const tokenBackend = res.data.token;
+      setToken(tokenBackend);
+      console.log(token, usuario);
     } catch (error) {
       console.log(error.message);
-    } finally { //Pagina de carregamento
+    } finally {
+      //Pagina de carregamento
       setCarregando(false);
     }
   };
 
   //Usada para pagina de carregamento
-  if (carregando) return (
-  <SingUpContainer>
-      <h1>Carregando...</h1>
-  </SingUpContainer>
-  );
-    //Fim
+  //TODO: TROCAR POR UMA BIBLIOTECA DE SPINNER
+  if (carregando)
+    return (
+      <SingUpContainer>
+        <h1>Carregando...</h1>
+      </SingUpContainer>
+    );
+
   return (
     <>
       <Header rota="/" />
