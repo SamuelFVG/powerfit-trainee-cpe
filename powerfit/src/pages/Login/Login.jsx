@@ -21,8 +21,8 @@ export default function CadastroPage() {
   const setToken = useAuthStore((state) => state.setToken);
   const navigate = useNavigate();
   // const usuario = useAuthStore((state) => state.usuario);
-  // const token = useAuthStore((state) => state.token);
-
+  //const token = useAuthStore((state) => state.token);
+  //console.log(token);
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -31,7 +31,8 @@ export default function CadastroPage() {
       const res = await api.post("/login", { email, senha });
       const tokenBackend = res.data.token;
       setToken(tokenBackend);
-      navigate("/home");
+
+      window.location.assign("/home");
       // console.log(token, usuario);
     } catch (error) {
       alert(error.response.data.message);
