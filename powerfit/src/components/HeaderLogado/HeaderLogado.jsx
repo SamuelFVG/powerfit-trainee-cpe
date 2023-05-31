@@ -14,13 +14,10 @@ import { useNavigate } from "react-router-dom";
 
 export default function HeaderLogado({ rota }) {
   const clearAuth = useAuthStore((state) => state.clearAuth);
-  const navigate = useNavigate;
   const logout = () => {
-
-
-    clearAuth()
-    window.location.assign("/")
-  }
+    clearAuth();
+    window.location.assign("/");
+  };
   //const navigate = useNavigate();
   return (
     <div>
@@ -40,13 +37,9 @@ export default function HeaderLogado({ rota }) {
             />
           </LinkWrapperHeaderLogado>
 
-          <HeaderLogadoImagem
-            src={Icone_sair}
-            onClick={ logout }
-          />
+          <HeaderLogadoImagem src={Icone_sair} onClick={logout} />
         </BotoesHeaderLogado>
       </HeaderLogadoG>
     </div>
   );
 }
-

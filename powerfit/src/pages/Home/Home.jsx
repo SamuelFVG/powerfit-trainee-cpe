@@ -7,6 +7,8 @@ import {
   DropDownGenerico,
   HeaderLogado,
 } from "../../components";
+import { useEffect, useState } from "react";
+import api from "../../services/api";
 //vetor de objetos que vai ser puxado do back
 const pessoas = [
   {
@@ -54,6 +56,27 @@ const atividades = [
 ];
 
 export default function Home() {
+  const [usuarios, setUsuarios] = useState([]);
+  const [carregando, setCarregando] = useState(false);
+  console.log(usuarios);
+  const getUsuarios = async () => {
+    try {
+      setCarregando(true);
+      const res = await api.get("http://localhost:8000/usuarios");
+      setUsuarios(res.data);
+    } catch (error) {
+      console.log(error);
+    } finally {
+      setCarregando(false);
+    }
+  };
+
+  useEffect(() => {
+    getUsuarios();
+  }, []);
+
+  //if (carregando) console.log("Carregando");
+
   return (
     <>
       <HeaderLogado rota={"/home"} />
