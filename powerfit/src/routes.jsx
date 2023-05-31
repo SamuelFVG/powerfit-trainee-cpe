@@ -22,6 +22,7 @@ function Routes() {
             <Route element={<App />}>
               <Route path="home" element={<Home />} />
               <Route path="editar" element={<Editar />} />
+              <Route path="*" element={<Home />} />
             </Route>
           </Route>
         )
@@ -33,6 +34,7 @@ function Routes() {
               <Route index element={<Inicio />} />
               <Route path="login" element={<Login />} />
               <Route path="cadastro" element={<Cadastro />} />
+              <Route path="*" element={<Inicio />} />
             </Route>
           </Route>
         )
