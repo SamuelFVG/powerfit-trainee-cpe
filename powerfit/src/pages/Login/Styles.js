@@ -110,3 +110,12 @@ export const DivSubmitButton = styled.div`
   margin-bottom: 5%;
   margin-top: 5%;
 `;
+
+export const CarregandoContainer = styled.section`
+height: 100%;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+background-color: #0a0a16;
+`;

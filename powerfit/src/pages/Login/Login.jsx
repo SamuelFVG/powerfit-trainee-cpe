@@ -7,23 +7,34 @@ import {
   DivSubmitButton,
   PalavraLink,
   Texto,
+  CarregandoContainer
 } from "./Styles";
 import { LogoGenerica, BotaoGenerico, Header } from "../../components";
 import { BotaoG } from "../../components/BotaoGenerico/Styles";
 import { useState } from "react";
 import api from "../../services/api";
+import useAuthStore from "../../stores/auth";
 
 export default function CadastroPage() {
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
   const [carregando, setCarregando] = useState(false);
+  const token = useAuthStore((state) => state.token);
+  const usuario = useAuthStore((state) => state.usuario);
+  const setToken = useAuthStore((state) => state.setToken);
+
+console.log({token,usuario});
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     console.log({ email, senha });
 
     try {
+      setCarregando(true)
       const res = await api.post("/login", { email, senha });
+      const { token } = res.data;
+
+      setToken(token);
       console.log(res);
     } catch (error) {
       console.log(error.message);
@@ -34,9 +45,9 @@ export default function CadastroPage() {
 
   //Usada para pagina de carregamento
   if (carregando) return (
-  <SingUpContainer>
+  <CarregandoContainer>
       <h1>Carregando...</h1>
-  </SingUpContainer>
+  </CarregandoContainer>
   );
     //Fim
   return (

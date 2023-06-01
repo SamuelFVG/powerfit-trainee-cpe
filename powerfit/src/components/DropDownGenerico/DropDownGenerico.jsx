@@ -8,7 +8,6 @@ import {CustomSelector} from "./Styles"
 function DropDownGenerico(props) {return(
   <CustomSelector>
   <DivSelect 
-    id={props.id}
     name={props.name}
     defaultValue={props.default} 
     required={props.required}

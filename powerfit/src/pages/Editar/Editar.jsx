@@ -16,6 +16,7 @@ import {
   DivFakeBody,
   DivFieldBotão,
 } from "./Styles";
+import api from "../../services/api";
 
 export default function Editar() {
   const atividades = [
@@ -31,35 +32,31 @@ export default function Editar() {
     "Recepção de clientes (noite)",
     "Pagamento de impostos (noite)",
   ];
-  const cargo = ["Cliente", "Personal Trainer", "Contador", "Atendente"];
+  const cargos = ["Cliente", "Personal Trainer", "Contador", "Atendente"];
 
-  const [formulario, setForm] = React.useState({ nome: ""});
-  const navigate = useNavigate();
-  function entradaDeDados(event) {
-    setForm({ ...formulario, [event.target.name]: event.target.value });
-  } 
-  function salvar(event) {
-    event.preventDefault();
-  }
+const [nome,setNome] = useState("");
+const [cargo,setCargo] = useState("");
+const [atividade,setAtividade] = useState("");
 
-  const dados = { 
-    nome: formulario.nome,
-    cargo: formulario.cargo,
-    atividade: formulario.atividade
-   }
+const handleSubmit = async (e) => {
+  e.preventDefault();
+  console.log({nome, cargo, atividade});
 
-  console.log(dados);
+try{
+  const res = await api.put("/usuarios/64743199f203c597f31295dc", {nome, cargo, atividade})
+  console.log(res);
+} catch(error){
+  console.log(error.message);
+}
 
-  function goTo(page) {
-    navigate(page);
-  }
-
+}
   return (
     <>
       <HeaderLogado rota="/home" />
       <DivFakeBody>
         <EditContainer>
-          <form id="editar" onSubmit={salvar}>
+
+          <form onSubmit={handleSubmit} id="editar">
             <EditorContainer>
               <LogoGenerica
                 texto={"Editar"}
@@ -73,8 +70,7 @@ export default function Editar() {
                   placeholder="Nome"
                   type="text"
                   name="nome"
-                  value={formulario.nome}
-                  onChange={(event) => entradaDeDados(event)}
+                  onChange={(e)    => setNome(e.target.value)}
                   required
                 />
               </DivField>
@@ -82,33 +78,29 @@ export default function Editar() {
               <DivField>
                 <DivLabel>Cargo:</DivLabel>
                 <DropDownGenerico
-                  id="cargo01"
                   name="cargo"
-                  required
+                  required={true}
                   default="Selecione o cargo"
                   form="editar"
-                  options={cargo}
-                  value={formulario.cargo}
-                  onChange={(event) => entradaDeDados(event)}
+                  options={cargos}
+                  onChange={(e) => setCargo(e.target.value)}
                 />
               </DivField>
 
               <DivField>
                 <DivLabel>Atividade:</DivLabel>
                 <DropDownGenerico
-                  id="atividade01"
                   name="atividade"
                   required
                   default="Selecione a atividade"
                   form="editar"
                   options={atividades}
-                  value={formulario.cargo}
-                  onChange={(event) => entradaDeDados (event)}
+                  onChange={(e) => setAtividade(e.target.value)}
                 />
               </DivField>
 
               <DivFieldBotão>
-                <BotaoGenerico texto="Salvar" rota={"---"} />
+                <BotaoGenerico type="submit" texto="Salvar" rota={"---"} />
               </DivFieldBotão>
             </EditorContainer>
           </form>
