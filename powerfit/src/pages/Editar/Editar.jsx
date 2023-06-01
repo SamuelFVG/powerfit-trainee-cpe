@@ -15,8 +15,16 @@ import {
   DivFakeBody,
   DivFieldBotão,
 } from "./Styles";
+import api from "../../services/api";
+import { useState } from "react";
+import { BotaoG } from "../../components/BotaoGenerico/Styles";
 
 export default function Editar() {
+  const [nome, setNome] = useState("");
+  const [cargo, setCargo] = useState();
+  const [atividade, setAtividade] = useState();
+  const [carregando, setCarregando] = useState(false);
+  
   const atividades = [
     "Cardio",
     "Musculação",
@@ -30,71 +38,74 @@ export default function Editar() {
     "Recepção de clientes (noite)",
     "Pagamento de impostos (noite)",
   ];
-  const cargo = ["Cliente", "Personal Trainer", "Contador", "Atendente"];
+  const cargos = ["Cliente", "Personal Trainer", "Contador", "Atendente"];
 
-  const [formulario, setForm] = React.useState({ nome: "" });
-  const navigate = useNavigate();
-  function entradaDeDados(event) {
-    setForm({ ...formulario, [event.target.name]: event.target.value });
-  }
+  const handleSubmit = async (e) => {
+    e.preventDefault();
 
-  function salvar(event) {
-    event.preventDefault();
-  }
+    try {
+      setCarregando(true);
+      await api.put("/usuarios", { nome, cargo, atividade});
+  
+      window.location.assign("/home");
+  
+    } catch (error) {
+    alert(error);
+    } finally {
+    //Pagina de carregamento
+    setCarregando(false);
+    }
+}
 
-  const dados = { nome: formulario.nome };
-
-  console.log(dados);
-
-  function goTo(page) {
-    navigate(page);
-  }
-
+  if (carregando)
+  return (
+  <DivFakeBody>
+    <h1>Carregando...</h1>
+  </DivFakeBody>
+  );
   return (
     <>
       <HeaderLogado rota="/home" />
       <DivFakeBody>
         <EditContainer>
-          <form onSubmit={salvar}>
+          <form onSubmit={handleSubmit}>
             <EditorContainer>
               <LogoGenerica
                 texto={"Editar"}
                 backgroundColor={"#0A0A16"}
                 rota="?"
               />
-
               <DivField>
-                <DivLabel>Nome:</DivLabel>
+                <DivLabel>Nome de Usuário:</DivLabel>
                 <Entrada
-                  placeholder="Nome"
+                  placeholder="Nome de Usuário"
                   type="text"
                   name="nome"
-                  value={formulario.nome}
-                  onChange={(event) => entradaDeDados(event)}
+                  id="nome"
+                  onChange={(e) => setNome(e.target.value)}
                   required
                 />
               </DivField>
-
               <DivField>
                 <DivLabel>Cargo:</DivLabel>
                 <DropDownGenerico
                   required
                   default="Selecione o cargo"
-                  options={cargo}
+                  onChange={(e) => setCargo(e.target.value)}
+                  options={cargos}
                 />
               </DivField>
-
               <DivField>
                 <DivLabel>Atividade:</DivLabel>
                 <DropDownGenerico
                   required
                   default="Selecione a atividade"
+                  onChange={(e) => setAtividade(e.target.value)}
                   options={atividades}
                 />
-              </DivField>
-
-              <DivFieldBotão>
-                <BotaoGenerico texto="Salvar" rota={"---"} />
+                </DivField>
+                <DivFieldBotão>
+                <BotaoG type="submit">Salvar</BotaoG>
               </DivFieldBotão>
             </EditorContainer>
           </form>
@@ -103,3 +114,22 @@ export default function Editar() {
     </>
   );
 }
+
+
+// const [formulario, setForm] = React.useState({ nome: "" });
+// const navigate = useNavigate();
+// function entradaDeDados(event) {
+//   setForm({ ...formulario, [event.target.name]: event.target.value });
+// }
+
+// function salvar(event) {
+//   event.preventDefault();
+// }
+
+// const dados = { nome: formulario.nome };
+
+// console.log(dados);
+
+// function goTo(page) {
+//   navigate(page);
+// }

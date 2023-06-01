@@ -110,7 +110,7 @@ return (
             <Menu>
             <DropDownGenerico
               required
-              default="Selecione a atividade"
+              default="Selecione o cargo"
               onChange={(e) => setCargo(e.target.value)}
               options={cargos}
             ></DropDownGenerico>
@@ -129,37 +129,3 @@ return (
 }
 
 
-// const [form, setForm] = React.useState({
-  //   nome: "",
-  //   email: "",
-  //   senha: "",
-  //   x: "",
-  //   cargo: "",
-  // });
-  // const navigate = useNavigate();
-  
-
-  // function atualizaForm(event) {
-  //   setForm({ ...form, [event.target.name]: event.target.value });
-  // }
-
-  // function efetuarCadastro(event) {
-  //   event.preventDefault();
-
-  //   if (form.senha !== form.confirmaSenha) {
-  //     return alert("Senhas diferentes!");
-  //   }
-  // }
-
-  // const body = {
-  //   email: form.email,
-  //   nome: form.nome,
-  //   senha: form.senha,
-  //   cargo: form.cargo,
-  // };
-
-  // console.log(body);
-
-  // function goTo(page) {
-  //   navigate(page);
-  // }
