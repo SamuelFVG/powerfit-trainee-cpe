@@ -15,14 +15,15 @@ import {
   DivFakeBody,
   DivFieldBotão,
 } from "./Styles";
+import {SingUpContainer} from "../Cadastro/Styles.js";
 import api from "../../services/api";
 import { useState } from "react";
 import { BotaoG } from "../../components/BotaoGenerico/Styles";
 
 export default function Editar() {
   const [nome, setNome] = useState("");
-  const [cargo, setCargo] = useState();
-  const [atividade, setAtividade] = useState();
+  const [cargo, setCargo] = useState("");
+  const [atividade, setAtividade] = useState("");
   const [carregando, setCarregando] = useState(false);
   
   const atividades = [
@@ -45,12 +46,12 @@ export default function Editar() {
 
     try {
       setCarregando(true);
-      await api.put("/usuarios", { nome, cargo, atividade});
-  
+      await api.put("/usuarios/6478f6614ddd292d0e71a6d5", { nome, cargo, atividade });
+
       window.location.assign("/home");
   
     } catch (error) {
-    alert(error);
+    alert(error.menssage);
     } finally {
     //Pagina de carregamento
     setCarregando(false);
@@ -59,9 +60,9 @@ export default function Editar() {
 
   if (carregando)
   return (
-  <DivFakeBody>
+  <SingUpContainer>
     <h1>Carregando...</h1>
-  </DivFakeBody>
+  </SingUpContainer>
   );
   return (
     <>
@@ -116,20 +117,3 @@ export default function Editar() {
 }
 
 
-// const [formulario, setForm] = React.useState({ nome: "" });
-// const navigate = useNavigate();
-// function entradaDeDados(event) {
-//   setForm({ ...formulario, [event.target.name]: event.target.value });
-// }
-
-// function salvar(event) {
-//   event.preventDefault();
-// }
-
-// const dados = { nome: formulario.nome };
-
-// console.log(dados);
-
-// function goTo(page) {
-//   navigate(page);
-// }
