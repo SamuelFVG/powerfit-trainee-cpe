@@ -10,8 +10,19 @@ import { LinkGenerico } from "../../components";
 //import { BotaoGenerico } from "../../components";
 
 import Icone_sair from "../../assets/Icone_sair.svg";
+import useAuthStore from "../../stores/auth";
+import { useNavigate } from "react-router-dom";
 
 export default function HeaderLogado({ rota }) {
+
+  const usuario = useAuthStore((state) => state.usuario);
+  const clearAuth = useAuthStore((state) => state.clearAuth);
+  const navigate = useNavigate()
+
+  const logout = () => {
+    clearAuth();
+    navigate("/")
+  }
   //const navigate = useNavigate();
   return (
     <div>
@@ -33,7 +44,7 @@ export default function HeaderLogado({ rota }) {
 
           <HeaderLogadoImagem
             src={Icone_sair}
-            onClick={() => window.location.assign("/")}
+            onClick={logout}  
           />
         </BotoesHeaderLogado>
       </HeaderLogadoG>

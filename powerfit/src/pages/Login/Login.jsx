@@ -38,6 +38,7 @@ console.log({token,usuario});
       console.log(res);
     } catch (error) {
       console.log(error.message);
+      alert(error.response.data.message);
     } finally { //Pagina de carregamento
       setCarregando(false);
     }
