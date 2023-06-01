@@ -15,41 +15,46 @@ import {
   Menu,
   Texto,
 } from "./Styles";
+import api from "../../services/api";
+import { useState } from "react";
+import { BotaoG } from "../../components/BotaoGenerico/Styles";
 
 export default function CadastroPage() {
-  const [form, setForm] = React.useState({
-    nome: "",
-    email: "",
-    senha: "",
-    x: "",
-    cargo: "",
-  });
-  const navigate = useNavigate();
-  const cargo = ["Cliente", "Personal Trainer", "Contador", "Atendente"];
+  const [email, setEmail] = useState("");
+  const [nome, setNome] = useState("");
+  const [senha, setSenha] = useState("");
+  const [cargo, setCargo] = useState("");
+  const [confirmarsenha, setConfirmarSenha] = useState("");
+  const [carregando, setCarregando] = useState(false);
+  
+  const handleSubmit = async (e) => {
+    e.preventDefault();
 
-  function atualizaForm(event) {
-    setForm({ ...form, [event.target.name]: event.target.value });
+  if (senha!== confirmarsenha) {
+        return alert("Senhas diferentes!");
+      }
+
+  try {
+    setCarregando(true);
+    await api.post("/usuarios", { email, nome, senha, cargo});
+    
+    
+    window.location.assign("/login");
+    
+  } catch (error) {
+    alert(error);
+  } finally {
+    //Pagina de carregamento
+    setCarregando(false);
   }
+}
 
-  function efetuarCadastro(event) {
-    event.preventDefault();
-
-    if (form.senha !== form.confirmaSenha) {
-      return alert("Senhas diferentes!");
-    }
-  }
-
-  const body = {
-    email: form.email,
-    nome: form.nome,
-    senha: form.senha,
-  };
-
-  console.log(body);
-
-  function goTo(page) {
-    navigate(page);
-  }
+if (carregando)
+return (
+  <SingUpContainer>
+    <h1>Carregando...</h1>
+  </SingUpContainer>
+);
 
   return (
     <>
@@ -62,14 +67,14 @@ export default function CadastroPage() {
             backgroundColor={"#0A0A16"}
             rota="?"
           />
-          <form onSubmit={efetuarCadastro}>
+          <form onSubmit={handleSubmit}>
             <Texto>Email:</Texto>
             <InputForm
               placeholder="exemplo@*****.com"
               type="email"
               name="email"
-              value={form.email}
-              onChange={(event) => atualizaForm(event)}
+              id="email"
+              onChange={(e) => setEmail(e.target.value)}
               required
             ></InputForm>
             <Texto>Nome de Usuário:</Texto>
@@ -77,8 +82,8 @@ export default function CadastroPage() {
               placeholder="Nome de Usuário"
               type="text"
               name="nome"
-              value={form.nome}
-              onChange={(event) => atualizaForm(event)}
+              id="nome"
+              onChange={(e) => setNome(e.target.value)}
               required
             ></InputForm>
             <Texto>Senha:</Texto>
@@ -86,25 +91,32 @@ export default function CadastroPage() {
               placeholder="********"
               type="password"
               name="senha"
-              value={form.senha}
-              onChange={(event) => atualizaForm(event)}
+              id="senha"
+              onChange={(e) => setSenha(e.target.value)}
               required
             ></InputForm>
             <Texto>Confirme sua senha:</Texto>
             <InputForm
               placeholder="********"
               type="password"
-              name="confirmaSenha"
-              value={form.confirmaSenha}
-              onChange={(event) => atualizaForm(event)}
+              name="confirmarsenha"
+              id="confirmarsenha"
+              onChange={(e) => setConfirmarSenha(e.target.value)}
               required
             ></InputForm>
             <Texto>Cargo:</Texto>
             <Menu>
-              <DropDownGenerico default="Selecione o cargo" options={cargo} />
+            <InputForm
+              placeholder="Cargo"
+              type="text"
+              name="cargo"
+              id="cargo"
+              onChange={(e) => setCargo(e.target.value)}
+              required
+            ></InputForm>
             </Menu>
             <DivSubmitButton>
-              <BotaoGenerico texto="Cadastrar" rota={"---"} />
+             <BotaoG type="submit">Cadastrar</BotaoG>
             </DivSubmitButton>
           </form>
           <Link to={"/login"}>
@@ -115,3 +127,39 @@ export default function CadastroPage() {
     </>
   );
 }
+
+
+// const [form, setForm] = React.useState({
+  //   nome: "",
+  //   email: "",
+  //   senha: "",
+  //   x: "",
+  //   cargo: "",
+  // });
+  // const navigate = useNavigate();
+  
+
+  // function atualizaForm(event) {
+  //   setForm({ ...form, [event.target.name]: event.target.value });
+  // }
+
+  // function efetuarCadastro(event) {
+  //   event.preventDefault();
+
+  //   if (form.senha !== form.confirmaSenha) {
+  //     return alert("Senhas diferentes!");
+  //   }
+  // }
+
+  // const body = {
+  //   email: form.email,
+  //   nome: form.nome,
+  //   senha: form.senha,
+  //   cargo: form.cargo,
+  // };
+
+  // console.log(body);
+
+  // function goTo(page) {
+  //   navigate(page);
+  // }
