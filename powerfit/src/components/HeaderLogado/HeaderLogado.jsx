@@ -17,7 +17,7 @@ export default function HeaderLogado({ rota }) {
 
   const usuario = useAuthStore((state) => state.usuario);
   const clearAuth = useAuthStore((state) => state.clearAuth);
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const logout = () => {
     clearAuth();

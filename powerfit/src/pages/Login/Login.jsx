@@ -22,6 +22,7 @@ export default function CadastroPage() {
   const token = useAuthStore((state) => state.token);
   const usuario = useAuthStore((state) => state.usuario);
   const setToken = useAuthStore((state) => state.setToken);
+  const navigate = useNavigate();
 
 console.log({token,usuario});
 
@@ -41,6 +42,7 @@ console.log({token,usuario});
       alert(error.response.data.message);
     } finally { //Pagina de carregamento
       setCarregando(false);
+      navigate("/home");
     }
   };
 
