@@ -12,12 +12,13 @@ function DropDownGenerico(props) {return(
     name={props.name}
     defaultValue={props.default} 
     required={props.required}
+    form={props.form}
+    onChange={props.onChange}
     >
-    <DivDefault hidden invalid id="default" value={props.default}>{props.default}</DivDefault>
+    <DivDefault hidden invalid>{props.default}</DivDefault>
   {props.options.map((item, index) =>   {
     return(
-        <DivOption key={index}value={item}>{item}</DivOption>
-        
+        <DivOption key={index}value={item}>{item}</DivOption>      
     )
   ;}
 )}

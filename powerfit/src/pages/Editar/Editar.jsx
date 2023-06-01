@@ -33,19 +33,19 @@ export default function Editar() {
   ];
   const cargo = ["Cliente", "Personal Trainer", "Contador", "Atendente"];
 
-  const [formulario, setForm] = React.useState({ nome: "" });
+  const [formulario, setForm] = React.useState({ nome: ""});
   const navigate = useNavigate();
   function entradaDeDados(event) {
     setForm({ ...formulario, [event.target.name]: event.target.value });
-  }
+  } 
   function salvar(event) {
     event.preventDefault();
   }
 
   const dados = { 
     nome: formulario.nome,
-    cargo: formulario.cargo = document.getElementById("cargo01")?.value,
-    atividade: formulario.atividade = document.getElementById("atividade01")?.value
+    cargo: formulario.cargo,
+    atividade: formulario.atividade
    }
 
   console.log(dados);
@@ -59,7 +59,7 @@ export default function Editar() {
       <HeaderLogado rota="/home" />
       <DivFakeBody>
         <EditContainer>
-          <form onSubmit={salvar}>
+          <form id="editar" onSubmit={salvar}>
             <EditorContainer>
               <LogoGenerica
                 texto={"Editar"}
@@ -75,7 +75,6 @@ export default function Editar() {
                   name="nome"
                   value={formulario.nome}
                   onChange={(event) => entradaDeDados(event)}
-                  onSubmit={(event) => entradaDeDados(event)}
                   required
                 />
               </DivField>
@@ -87,9 +86,10 @@ export default function Editar() {
                   name="cargo"
                   required
                   default="Selecione o cargo"
+                  form="editar"
                   options={cargo}
+                  value={formulario.cargo}
                   onChange={(event) => entradaDeDados(event)}
-                  onSubmit={(event) => entradaDeDados(event)}
                 />
               </DivField>
 
@@ -100,7 +100,9 @@ export default function Editar() {
                   name="atividade"
                   required
                   default="Selecione a atividade"
+                  form="editar"
                   options={atividades}
+                  value={formulario.cargo}
                   onChange={(event) => entradaDeDados (event)}
                 />
               </DivField>
