@@ -23,10 +23,12 @@ export default function CadastroPage() {
   const [email, setEmail] = useState("");
   const [nome, setNome] = useState("");
   const [senha, setSenha] = useState("");
-  const [cargo, setCargo] = useState("");
+  const [cargo, setCargo] = useState();
   const [confirmarsenha, setConfirmarSenha] = useState("");
   const [carregando, setCarregando] = useState(false);
   
+  const cargos = ["Cliente", "Personal Trainer", "Contador", "Atendente"];
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -106,14 +108,12 @@ return (
             ></InputForm>
             <Texto>Cargo:</Texto>
             <Menu>
-            <InputForm
-              placeholder="Cargo"
-              type="text"
-              name="cargo"
-              id="cargo"
-              onChange={(e) => setCargo(e.target.value)}
+            <DropDownGenerico
               required
-            ></InputForm>
+              default="Selecione a atividade"
+              onChange={(e) => setCargo(e.target.value)}
+              options={cargos}
+            ></DropDownGenerico>
             </Menu>
             <DivSubmitButton>
              <BotaoG type="submit">Cadastrar</BotaoG>

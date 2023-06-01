@@ -7,7 +7,7 @@ import {CustomSelector} from "./Styles"
 function DropDownGenerico(props) {return(
   <CustomSelector>
   <DivSelect 
-    defaultValue={props.default} required>
+    defaultValue={props.default} required onChange={props.onChange}>
     <DivDefault hidden invalid id="default" value={props.default}>{props.default}</DivDefault>
   {props.options.map((item, index) =>   {
     return(
