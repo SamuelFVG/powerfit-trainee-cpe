@@ -56,7 +56,7 @@ export default function Home() {
       nome: usuario.id_usuario.nome,
       email: usuario.id_usuario.email,
       cargo: usuario.id_usuario.cargo,
-      cor_doodle: randomColor,
+      cor_doodle: usuario.id_usuario.cor_doodle,
       atividade: usuario.id_usuario.atividade,
       horas: resultadoTempo,
     };
@@ -83,7 +83,7 @@ export default function Home() {
     const interval = setInterval(() => {
       getSessoes();
       console.log("GET");
-    }, 10000);
+    }, 500);
 
     return () => clearInterval(interval);
   }, []);
