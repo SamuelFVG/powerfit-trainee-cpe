@@ -55,15 +55,39 @@ const atividades = [
   "Pagamento de impostos (noite)",
 ];
 
+let usuariosLogados = [];
+
 export default function Home() {
-  const [usuarios, setUsuarios] = useState([]);
+  const [sessoes, setSessoes] = useState([]);
   const [carregando, setCarregando] = useState(false);
+
+  let usuarios = sessoes.map(function (usuario) {
+    console.log(usuario);
+    var randomColor = Math.floor(Math.random() * 16777215).toString(16);
+
+    const data = new Date();
+    const dataCriacao = new Date(usuario.createdAt);
+    const horas = Math.floor((data - dataCriacao) / (1000 * 60 * 60));
+    const minutos = Math.floor((data - dataCriacao) / (1000 * 60)) - horas * 60;
+    const segundos = Math.floor((data - dataCriacao) / 1000) - minutos * 60;
+    const resultadoTempo = horas + ":" + minutos + ":" + segundos;
+
+    return {
+      nome: usuario.id_usuario.nome,
+      email: usuario.id_usuario.email,
+      cargo: usuario.id_usuario.cargo,
+      cor_doodle: "#" + randomColor,
+      atividade: usuario.id_usuario.atividade,
+      horas: resultadoTempo,
+    };
+  });
+
   console.log(usuarios);
-  const getUsuarios = async () => {
+  const getSessoes = async () => {
     try {
       setCarregando(true);
-      const res = await api.get("http://localhost:8000/usuarios");
-      setUsuarios(res.data);
+      const res = await api.get("http://localhost:8000/sessoes");
+      setSessoes(res.data);
     } catch (error) {
       console.log(error);
     } finally {
@@ -72,10 +96,10 @@ export default function Home() {
   };
 
   useEffect(() => {
-    getUsuarios();
+    getSessoes();
   }, []);
 
-  //if (carregando) console.log("Carregando");
+  if (carregando) console.log("Carregando");
 
   return (
     <>
