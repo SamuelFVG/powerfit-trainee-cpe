@@ -21,12 +21,14 @@ import { useState } from "react";
 import { BotaoG } from "../../components/BotaoGenerico/Styles";
 import useAuthStore from "../../stores/auth";
 
+
 export default function Editar() {
   const [nome, setNome] = useState("");
   const [cargo, setCargo] = useState("");
   const [atividade, setAtividade] = useState("");
   const [carregando, setCarregando] = useState(false);
   const usuario = useAuthStore((state) => state.usuario);
+  const updateUsuario = useAuthStore((state) => state.setUsuario);
 
   const atividades = [
     "Cardio",
@@ -49,8 +51,14 @@ export default function Editar() {
     try {
       setCarregando(true);
       const res = await api.put("/usuarios/"+usuario._id, {nome, cargo, atividade}); 
+      usuario.nome = res.data.nome;
+      usuario.cargo = res.data.cargo;
+      usuario.atividade = res.data.atividade;
+      updateUsuario(usuario);
+
+      console.log(usuario);
       
-      window.location.assign("/home");
+      //window.location.assign("/home");
     } catch (error) {
     alert(error);
     } finally {
@@ -80,7 +88,7 @@ export default function Editar() {
               <DivField>
                 <DivLabel>Nome de Usuário:</DivLabel>
                 <Entrada
-                  placeholder="Nome de Usuário"
+                  placeholder={usuario.nome}
                   type="text"
                   name="nome"
                   id="nome"
@@ -92,7 +100,7 @@ export default function Editar() {
                 <DivLabel>Cargo:</DivLabel>
                 <DropDownGenerico
                   required
-                  default="Selecione o cargo"
+                  default={usuario.cargo}
                   onChange={(e) => setCargo(e.target.value)}
                   options={cargos}
                 />
@@ -101,7 +109,7 @@ export default function Editar() {
                 <DivLabel>Atividade:</DivLabel>
                 <DropDownGenerico
                   required
-                  default="Selecione a atividade"
+                  default={usuario.atividade}
                   onChange={(e) => setAtividade(e.target.value)}
                   options={atividades}
                 />

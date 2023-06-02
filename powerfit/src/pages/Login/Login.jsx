@@ -30,6 +30,7 @@ export default function CadastroPage() {
       setCarregando(true);
       const res = await api.post("/login", { email, senha });
       const tokenBackend = res.data.token;
+      console.log(tokenBackend)
       setToken(tokenBackend);
 
       window.location.assign("/home");
