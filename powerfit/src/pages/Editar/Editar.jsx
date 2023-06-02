@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import React from "react";
 import {
   DropDownGenerico,
@@ -14,9 +14,30 @@ import {
   DivField,
   DivFakeBody,
   DivFieldBotão,
+  DivFieldConfirma,
+  PalavraLink
 } from "./Styles";
+import {SingUpContainer} from "../Cadastro/Styles.js";
+import api from "../../services/api";
+import { useState } from "react";
+import { BotaoG } from "../../components/BotaoGenerico/Styles";
+import useAuthStore from "../../stores/auth";
+
 
 export default function Editar() {
+  const [nome, setNome] = useState("");
+  const [cargo, setCargo] = useState("");
+  const [atividade, setAtividade] = useState("");
+  const [carregando, setCarregando] = useState(false);
+  const usuario = useAuthStore((state) => state.usuario);
+  const updateUsuario = useAuthStore((state) => state.setUsuario);
+  const clearAuth = useAuthStore((state) => state.clearAuth);
+  const [confirma,setConfirma] = useState(false);
+  const logout = () => {
+    clearAuth();
+    window.location.assign("/");
+  };
+
   const atividades = [
     "Cardio",
     "Musculação",
@@ -30,72 +51,121 @@ export default function Editar() {
     "Recepção de clientes (noite)",
     "Pagamento de impostos (noite)",
   ];
-  const cargo = ["Cliente", "Personal Trainer", "Contador", "Atendente"];
+  const cargos = ["Cliente", "Personal Trainer", "Contador", "Atendente"];
 
-  const [formulario, setForm] = React.useState({ nome: "" });
-  const navigate = useNavigate();
-  function entradaDeDados(event) {
-    setForm({ ...formulario, [event.target.name]: event.target.value });
+const deletarConta = async (e) => {
+  try {
+    setCarregando(true);
+    const res = await api.delete("/usuarios/"+usuario._id); 
+    logout();     
+    window.location.assign("/");
+
+  } catch (error) {
+  alert(error);
+
+  } finally {
+  //Pagina de carregamento
+  setCarregando(false);
   }
+};
 
-  function salvar(event) {
-    event.preventDefault();
-  }
+  const handleSubmit = async (e) => {
+    e.preventDefault();
 
-  const dados = { nome: formulario.nome };
+      try {        
+      setCarregando(true);
+      const res = await api.put("/usuarios/"+usuario._id, {nome, cargo, atividade}); 
+      usuario.nome = res.data.nome;
+      if(!res.data.cargo=="") usuario.cargo = res.data.cargo;      
+      if(!res.data.atividade=="") usuario.atividade = res.data.atividade;
+      updateUsuario(usuario);
+      
+      window.location.assign("/home");
+    } catch (error) {
+    alert(error);
+    } finally {
+    //Pagina de carregamento
+    setCarregando(false);
+    }
+}
 
-  console.log(dados);
-
-  function goTo(page) {
-    navigate(page);
-  }
-
+  if (carregando)
+  return (
+  <SingUpContainer>
+    <h1>Carregando...</h1>
+  </SingUpContainer>
+  );
+  if(confirma)
   return (
     <>
       <HeaderLogado rota="/home" />
       <DivFakeBody>
         <EditContainer>
-          <form onSubmit={salvar}>
+          <form>
+            <EditorContainer>
+            <LogoGenerica
+                texto={"Tem Certeza?"}
+                backgroundColor={"#0A0A16"}
+                rota="?"
+              />
+               <DivFieldConfirma>
+               <BotaoG onClick={()=>deletarConta()} type="buttom">Sim</BotaoG>
+                <BotaoG onClick={()=>setConfirma(false)} type="buttom">Não</BotaoG>
+              </DivFieldConfirma>
+            </EditorContainer>
+          </form>
+        </EditContainer>
+      </DivFakeBody>
+    </>
+
+  );
+  return (
+    <>
+      <HeaderLogado rota="/home" />
+      <DivFakeBody>
+        <EditContainer>
+          <form onSubmit={handleSubmit}>
             <EditorContainer>
               <LogoGenerica
                 texto={"Editar"}
                 backgroundColor={"#0A0A16"}
                 rota="?"
               />
-
               <DivField>
-                <DivLabel>Nome:</DivLabel>
+                <DivLabel>Nome de Usuário:</DivLabel>
                 <Entrada
-                  placeholder="Nome"
+                  placeholder={usuario.nome}
                   type="text"
                   name="nome"
-                  value={formulario.nome}
-                  onChange={(event) => entradaDeDados(event)}
+                  id="nome"
+                  onChange={(e) => setNome(e.target.value)}
                   required
                 />
               </DivField>
-
               <DivField>
                 <DivLabel>Cargo:</DivLabel>
                 <DropDownGenerico
                   required
-                  default="Selecione o cargo"
-                  options={cargo}
+                  default={usuario.cargo}
+                  onChange={(e) => setCargo(e.target.value)}
+                  options={cargos}
                 />
               </DivField>
-
               <DivField>
                 <DivLabel>Atividade:</DivLabel>
                 <DropDownGenerico
                   required
-                  default="Selecione a atividade"
+                  default={usuario.atividade}
+                  onChange={(e) => setAtividade(e.target.value)}
                   options={atividades}
                 />
-              </DivField>
-
-              <DivFieldBotão>
-                <BotaoGenerico texto="Salvar" rota={"---"} />
+                </DivField>
+                <DivFieldBotão>
+                <BotaoG type="submit">Salvar</BotaoG>
               </DivFieldBotão>
+              <Link onClick={()=>setConfirma(true)}>
+            <PalavraLink>Deletar conta</PalavraLink>
+          </Link>
             </EditorContainer>
           </form>
         </EditContainer>
@@ -103,3 +173,5 @@ export default function Editar() {
     </>
   );
 }
+
+
