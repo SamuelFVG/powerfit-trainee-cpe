@@ -33,22 +33,22 @@ export default function Home() {
   const [atividade, setAtividade] = useState("");
 
   let usuarios = sessoes.map(function (usuario) {
-    console.log(usuario);
+    //console.log(usuario);
 
     const data = new Date();
     const dataCriacao = new Date(usuario.createdAt);
 
     let milliseconds = data - dataCriacao;
-    let seconds = Math.floor((milliseconds / 1000) % 60);
+    //let seconds = Math.floor((milliseconds / 1000) % 60);
     let minutes = Math.floor((milliseconds / (1000 * 60)) % 60);
     let hours = Math.floor(milliseconds / (1000 * 60 * 60));
 
     let resultadoTempo =
       hours.toString().padStart(2, "0") +
       ":" +
-      minutes.toString().padStart(2, "0") +
-      ":" +
-      seconds.toString().padStart(2, "0");
+      minutes.toString().padStart(2, "0");
+    // ":" +
+    // seconds.toString().padStart(2, "0");
 
     return {
       nome: usuario.id_usuario.nome,
@@ -74,16 +74,14 @@ export default function Home() {
 
   useEffect(() => {
     getSessoes();
-    console.log("GET");
     const interval = setInterval(() => {
       getSessoes();
-      console.log("GET");
-    }, 500);
+    }, 500 * 2 * 10);
 
     return () => clearInterval(interval);
   }, []);
 
-  if (carregando) console.log("Carregando");
+  //if (carregando) console.log("Carregando");
 
   return (
     <>
