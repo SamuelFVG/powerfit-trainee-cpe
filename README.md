@@ -1,4 +1,4 @@
-# Ponto Eletrônico - Sistema Web para Academia
+# PowerFit - Sistema de Ponto Eletrônico para Academia
 
 Este é o repositório do projeto de sistema web de ponto eletrônico para clientes e usuários de uma academia, desenvolvido como parte do processo seletivo da CPEJR e chamado de **_PowerFit_**
 
@@ -64,7 +64,7 @@ Para executar o projeto localmente, siga as instruções abaixo:
 1. Clone este repositório em sua máquina local.
 2. Certifique-se de ter o ambiente de desenvolvimento configurado corretamente (incluindo Node.js e npm).
 3. Navegue para a página **./powerfit** e execute o comando npm install para instalar as dependências do projeto.
-4. Execute o comando **npm run dev** para iniciar o front-end e **npm start** para iniciar o servidor local, do qual o código pode ser encontrado no repositório [Powerfit Trainee CPE](https://github.com/SamuelFVG/powerfit-trainee-cpe-backend).
+4. Execute o comando **npm run dev** para iniciar o front-end e **npm start** para iniciar o servidor local, do qual o código pode ser encontrado no repositório [Powerfit Backend](https://github.com/SamuelFVG/powerfit-trainee-cpe-backend).
 5. Acesse o sistema no seu navegador através do endereço especificado pelo comando **npm run dev**.
 
 ## Tecnologias Utilizadas
