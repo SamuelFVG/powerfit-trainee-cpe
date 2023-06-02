@@ -19,13 +19,15 @@ import {SingUpContainer} from "../Cadastro/Styles.js";
 import api from "../../services/api";
 import { useState } from "react";
 import { BotaoG } from "../../components/BotaoGenerico/Styles";
+import useAuthStore from "../../stores/auth";
 
 export default function Editar() {
   const [nome, setNome] = useState("");
   const [cargo, setCargo] = useState("");
   const [atividade, setAtividade] = useState("");
   const [carregando, setCarregando] = useState(false);
-  
+  const usuario = useAuthStore((state) => state.usuario);
+
   const atividades = [
     "Cardio",
     "Musculação",
@@ -46,12 +48,11 @@ export default function Editar() {
 
     try {
       setCarregando(true);
-      await api.put("/usuarios/64792796f4fa4fd1b2b8903c", { nome, cargo, atividade });
-
+      const res = await api.put("/usuarios/"+usuario._id, {nome, cargo, atividade}); 
+      
       window.location.assign("/home");
-  
     } catch (error) {
-    alert(error.menssage);
+    alert(error);
     } finally {
     //Pagina de carregamento
     setCarregando(false);
