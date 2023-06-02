@@ -27,7 +27,7 @@ export const EditContainer = styled.section`
 
 export const EditorContainer = styled.div`
   width: 450px;
-  height: 680px;
+  height: 650px;
   border: 2px solid white;
   display: flex;
   flex-direction: column;
@@ -90,13 +90,12 @@ export const DivFieldBotão = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 2%;
+  padding: 5%;
   @media (max-width: 500px) {
     display: flex;
     flex-direction: column;
     align-items: stretch;
     justify-content: center;
-    padding: 15%;
   }
 `;
 export const DivFieldConfirma = styled.div`
@@ -108,15 +107,15 @@ export const DivFieldConfirma = styled.div`
   padding: 5%;
   @media (max-width: 500px) {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: stretch;
     justify-content: center;
-    padding: 15%;
+    padding: 2%;
   }
 `;
 
 export const PalavraLink = styled.div`
-  margin-bottom: 2%;
+  margin-bottom: 15%;
   color: #df5031;
 
   @media (max-width: 300px) {

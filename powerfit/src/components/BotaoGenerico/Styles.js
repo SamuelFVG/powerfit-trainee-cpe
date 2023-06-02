@@ -24,7 +24,7 @@ export const BotaoG = styled.button`
 
   @media (max-width: 400px) {
     font-size: 11px;
-    width: fit-content;
+    width: 8rem;
   }
 
   @media (max-width: 300px) {

@@ -31,7 +31,12 @@ export default function Editar() {
   const [carregando, setCarregando] = useState(false);
   const usuario = useAuthStore((state) => state.usuario);
   const updateUsuario = useAuthStore((state) => state.setUsuario);
+  const clearAuth = useAuthStore((state) => state.clearAuth);
   const [confirma,setConfirma] = useState(false);
+  const logout = () => {
+    clearAuth();
+    window.location.assign("/");
+  };
 
   const atividades = [
     "Cardio",
@@ -48,15 +53,31 @@ export default function Editar() {
   ];
   const cargos = ["Cliente", "Personal Trainer", "Contador", "Atendente"];
 
+const deletarConta = async (e) => {
+  try {
+    setCarregando(true);
+    const res = await api.delete("/usuarios/"+usuario._id); 
+    logout();     
+    window.location.assign("/");
+
+  } catch (error) {
+  alert(error);
+
+  } finally {
+  //Pagina de carregamento
+  setCarregando(false);
+  }
+};
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    try {
+      try {        
       setCarregando(true);
       const res = await api.put("/usuarios/"+usuario._id, {nome, cargo, atividade}); 
       usuario.nome = res.data.nome;
-      usuario.cargo = res.data.cargo;
-      usuario.atividade = res.data.atividade;
+      if(!res.data.cargo=="") usuario.cargo = res.data.cargo;      
+      if(!res.data.atividade=="") usuario.atividade = res.data.atividade;
       updateUsuario(usuario);
       
       window.location.assign("/home");
@@ -88,7 +109,7 @@ export default function Editar() {
                 rota="?"
               />
                <DivFieldConfirma>
-               <BotaoG type="buttom">Sim</BotaoG>
+               <BotaoG onClick={()=>deletarConta()} type="buttom">Sim</BotaoG>
                 <BotaoG onClick={()=>setConfirma(false)} type="buttom">Não</BotaoG>
               </DivFieldConfirma>
             </EditorContainer>
