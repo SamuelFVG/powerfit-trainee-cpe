@@ -10,6 +10,8 @@ import {
 import { useEffect, useState } from "react";
 import api from "../../services/api";
 import { BotaoG } from "../../components/BotaoGenerico/Styles";
+import useAuthStore from "../../stores/auth";
+
 //atividades para o dropdown
 const atividades = [
   "Cardio",
@@ -31,15 +33,13 @@ export default function Home() {
   const [sessoes, setSessoes] = useState([]);
   const [carregando, setCarregando] = useState(false);
   const [atividade, setAtividade] = useState("");
+  const usuarioLogado = useAuthStore((state) => state.usuario);
 
   let usuarios = sessoes.map(function (usuario) {
-    //console.log(usuario);
-
     const data = new Date();
     const dataCriacao = new Date(usuario.createdAt);
 
     let milliseconds = data - dataCriacao;
-    //let seconds = Math.floor((milliseconds / 1000) % 60);
     let minutes = Math.floor((milliseconds / (1000 * 60)) % 60);
     let hours = Math.floor(milliseconds / (1000 * 60 * 60));
 
@@ -47,8 +47,6 @@ export default function Home() {
       hours.toString().padStart(2, "0") +
       ":" +
       minutes.toString().padStart(2, "0");
-    // ":" +
-    // seconds.toString().padStart(2, "0");
 
     return {
       nome: usuario.id_usuario.nome,
@@ -81,7 +79,22 @@ export default function Home() {
     return () => clearInterval(interval);
   }, []);
 
-  //if (carregando) console.log("Carregando");
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+      setCarregando(true);
+      const res = await api.put("/usuarios/" + usuario._id, {
+        atividade,
+      });
+    } catch (error) {
+      alert(error);
+    } finally {
+      setCarregando(false);
+    }
+  };
+
+  if (carregando) console.log("Carregando");
 
   return (
     <>
@@ -89,7 +102,7 @@ export default function Home() {
 
       <DivGeral>
         <Carrossel />
-        <Inputs>
+        <Inputs onSubmit={handleSubmit}>
           <DropDownGenerico
             required
             default="Selecione a atividade"
