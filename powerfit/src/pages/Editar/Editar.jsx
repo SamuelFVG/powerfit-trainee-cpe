@@ -46,7 +46,7 @@ export default function Editar() {
 
     try {
       setCarregando(true);
-      await api.put("/usuarios/6478f6614ddd292d0e71a6d5", { nome, cargo, atividade });
+      await api.put("/usuarios/64792796f4fa4fd1b2b8903c", { nome, cargo, atividade });
 
       window.location.assign("/home");
   
