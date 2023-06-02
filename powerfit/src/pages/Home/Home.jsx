@@ -34,6 +34,7 @@ export default function Home() {
   const [carregando, setCarregando] = useState(false);
   const [atividade, setAtividade] = useState("");
   const usuarioLogado = useAuthStore((state) => state.usuario);
+  const updateUsuario = useAuthStore((state) => state.setUsuario);
 
   let usuarios = sessoes.map(function (usuario) {
     const data = new Date();
@@ -92,6 +93,8 @@ export default function Home() {
       const res = await api.put("/usuarios/" + usuarioLogado._id, {
         atividade,
       });
+      usuarioLogado.atividade=atividade;
+      updateUsuario(usuarioLogado);
 
       if (!usuarios.find((usuario) => usuario.nome == usuarioLogado.nome)) {
         const res2 = await api.post("/sessoes", {
