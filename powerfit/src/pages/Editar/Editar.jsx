@@ -82,9 +82,14 @@ export default function Editar() {
         <EditContainer>
           <form>
             <EditorContainer>
+            <LogoGenerica
+                texto={"Tem Certeza?"}
+                backgroundColor={"#0A0A16"}
+                rota="?"
+              />
                <DivFieldConfirma>
                <BotaoG type="buttom">Sim</BotaoG>
-                <BotaoG onClick={setConfirma(false)} type="buttom">Não</BotaoG>
+                <BotaoG onClick={()=>setConfirma(false)} type="buttom">Não</BotaoG>
               </DivFieldConfirma>
             </EditorContainer>
           </form>
@@ -137,7 +142,7 @@ export default function Editar() {
                 <DivFieldBotão>
                 <BotaoG type="submit">Salvar</BotaoG>
               </DivFieldBotão>
-              <Link to="">
+              <Link onClick={()=>setConfirma(true)}>
             <PalavraLink>Deletar conta</PalavraLink>
           </Link>
             </EditorContainer>
