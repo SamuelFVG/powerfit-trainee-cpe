@@ -55,8 +55,6 @@ export default function Editar() {
       usuario.cargo = res.data.cargo;
       usuario.atividade = res.data.atividade;
       updateUsuario(usuario);
-
-      console.log(usuario);
       
       //window.location.assign("/home");
     } catch (error) {
