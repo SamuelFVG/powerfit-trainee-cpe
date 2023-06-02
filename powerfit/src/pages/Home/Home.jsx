@@ -75,12 +75,16 @@ export default function Home() {
     getSessoes();
     const interval = setInterval(() => {
       getSessoes();
-    }, 500 * 2 * 10);
+    }, 500 * 2);
 
     return () => clearInterval(interval);
   }, []);
 
-  const handleSubmit = async (e) => {
+  function usuarioLogadoSessoes() {
+    return;
+  }
+
+  const handleSubmitLogin = async (e) => {
     e.preventDefault();
 
     try {
@@ -89,11 +93,7 @@ export default function Home() {
         atividade,
       });
 
-      const usuarioEncontrado = usuarios.find(
-        (usuario) => usuario.nome == usuarioLogado.nome
-      );
-
-      if (!usuarioEncontrado) {
+      if (!usuarios.find((usuario) => usuario.nome == usuarioLogado.nome)) {
         const res2 = await api.post("/sessoes", {
           id_usuario: usuarioLogado._id,
         });
@@ -106,15 +106,24 @@ export default function Home() {
     }
   };
 
-  if (carregando) console.log("Carregando");
+  const handleSubmitLogout = async (e) => {
+    e.preventDefault();
+    const res = await api.delete("/sessoes/" + usuarioLogado._id);
+    try {
+      setCarregando(true);
+      getSessoes();
+    } catch (error) {
+      alert(error);
+    } finally {
+      setCarregando(false);
+    }
+  };
 
-  return (
-    <>
-      <HeaderLogado rota={"/home"} />
-
-      <DivGeral>
-        <Carrossel />
-        <Inputs onSubmit={handleSubmit}>
+  //if (carregando) console.log("Carregando");
+  function retornaInputs() {
+    if (!usuarios.find((usuario) => usuario.nome == usuarioLogado.nome))
+      return (
+        <Inputs onSubmit={handleSubmitLogin}>
           <DropDownGenerico
             required
             default="Selecione a atividade"
@@ -123,6 +132,23 @@ export default function Home() {
           />
           <BotaoG type="submit">Entrar</BotaoG>
         </Inputs>
+      );
+    else
+      return (
+        <Inputs onSubmit={handleSubmitLogout}>
+          <BotaoG type="submit">Sair</BotaoG>
+        </Inputs>
+      );
+  }
+
+  return (
+    <>
+      <HeaderLogado rota={"/home"} />
+
+      <DivGeral>
+        <Carrossel />
+
+        {retornaInputs()}
 
         <Tabela>
           <TopoTabela>
