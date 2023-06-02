@@ -56,7 +56,7 @@ export default function Editar() {
       usuario.atividade = res.data.atividade;
       updateUsuario(usuario);
       
-      //window.location.assign("/home");
+      window.location.assign("/home");
     } catch (error) {
     alert(error);
     } finally {
