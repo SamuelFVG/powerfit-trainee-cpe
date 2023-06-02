@@ -15,24 +15,24 @@ import {
   DivFakeBody,
   DivFieldBotão,
   DivFieldConfirma,
-  PalavraLink
+  PalavraLink,
 } from "./Styles";
-import {SingUpContainer} from "../Cadastro/Styles.js";
+import { SingUpContainer } from "../Cadastro/Styles.js";
 import api from "../../services/api";
 import { useState } from "react";
 import { BotaoG } from "../../components/BotaoGenerico/Styles";
 import useAuthStore from "../../stores/auth";
 
-
 export default function Editar() {
-  const [nome, setNome] = useState("");
-  const [cargo, setCargo] = useState("");
-  const [atividade, setAtividade] = useState("");
-  const [carregando, setCarregando] = useState(false);
   const usuario = useAuthStore((state) => state.usuario);
   const updateUsuario = useAuthStore((state) => state.setUsuario);
   const clearAuth = useAuthStore((state) => state.clearAuth);
-  const [confirma,setConfirma] = useState(false);
+  const [nome, setNome] = useState(usuario.nome);
+  const [cargo, setCargo] = useState(usuario.cargo);
+  const [atividade, setAtividade] = useState(usuario.atividade);
+  const [carregando, setCarregando] = useState(false);
+
+  const [confirma, setConfirma] = useState(false);
   const logout = () => {
     clearAuth();
     window.location.assign("/");
@@ -53,72 +53,77 @@ export default function Editar() {
   ];
   const cargos = ["Cliente", "Personal Trainer", "Contador", "Atendente"];
 
-const deletarConta = async (e) => {
-  try {
-    setCarregando(true);
-    const res = await api.delete("/usuarios/"+usuario._id); 
-    logout();     
-    window.location.assign("/");
-
-  } catch (error) {
-  alert(error);
-
-  } finally {
-  //Pagina de carregamento
-  setCarregando(false);
-  }
-};
+  const deletarConta = async (e) => {
+    try {
+      setCarregando(true);
+      const res = await api.delete("/usuarios/" + usuario._id);
+      logout();
+      window.location.assign("/");
+    } catch (error) {
+      alert(error);
+    } finally {
+      //Pagina de carregamento
+      setCarregando(false);
+    }
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-      try {        
+    try {
       setCarregando(true);
-      const res = await api.put("/usuarios/"+usuario._id, {nome, cargo, atividade}); 
+      const res = await api.put("/usuarios/" + usuario._id, {
+        nome,
+        cargo,
+        atividade,
+      });
       usuario.nome = res.data.nome;
-      if(!res.data.cargo=="") usuario.cargo = res.data.cargo;      
-      if(!res.data.atividade=="") usuario.atividade = res.data.atividade;
+      if (!res.data.cargo == "") usuario.cargo = res.data.cargo;
+      if (!res.data.atividade == "") usuario.atividade = res.data.atividade;
       updateUsuario(usuario);
-      
+
       window.location.assign("/home");
     } catch (error) {
-    alert(error);
+      alert(error);
     } finally {
-    //Pagina de carregamento
-    setCarregando(false);
+      //Pagina de carregamento
+      setCarregando(false);
     }
-}
+  };
 
   if (carregando)
-  return (
-  <SingUpContainer>
-    <h1>Carregando...</h1>
-  </SingUpContainer>
-  );
-  if(confirma)
-  return (
-    <>
-      <HeaderLogado rota="/home" />
-      <DivFakeBody>
-        <EditContainer>
-          <form>
-            <EditorContainer>
-            <LogoGenerica
-                texto={"Tem Certeza?"}
-                backgroundColor={"#0A0A16"}
-                rota="?"
-              />
-               <DivFieldConfirma>
-               <BotaoG onClick={()=>deletarConta()} type="buttom">Sim</BotaoG>
-                <BotaoG onClick={()=>setConfirma(false)} type="buttom">Não</BotaoG>
-              </DivFieldConfirma>
-            </EditorContainer>
-          </form>
-        </EditContainer>
-      </DivFakeBody>
-    </>
-
-  );
+    return (
+      <SingUpContainer>
+        <h1>Carregando...</h1>
+      </SingUpContainer>
+    );
+  if (confirma)
+    return (
+      <>
+        <HeaderLogado rota="/home" />
+        <DivFakeBody>
+          <EditContainer>
+            <form>
+              <EditorContainer>
+                <LogoGenerica
+                  texto={"Tem Certeza?"}
+                  backgroundColor={"#0A0A16"}
+                  rota="?"
+                />
+                <DivFieldConfirma>
+                  <BotaoG onClick={() => deletarConta()} type="buttom">
+                    Sim
+                  </BotaoG>
+                  <BotaoG onClick={() => setConfirma(false)} type="buttom">
+                    Não
+                  </BotaoG>
+                </DivFieldConfirma>
+              </EditorContainer>
+            </form>
+          </EditContainer>
+        </DivFakeBody>
+      </>
+    );
   return (
     <>
       <HeaderLogado rota="/home" />
@@ -139,13 +144,11 @@ const deletarConta = async (e) => {
                   name="nome"
                   id="nome"
                   onChange={(e) => setNome(e.target.value)}
-                  required
                 />
               </DivField>
               <DivField>
                 <DivLabel>Cargo:</DivLabel>
                 <DropDownGenerico
-                  required
                   default={usuario.cargo}
                   onChange={(e) => setCargo(e.target.value)}
                   options={cargos}
@@ -154,18 +157,17 @@ const deletarConta = async (e) => {
               <DivField>
                 <DivLabel>Atividade:</DivLabel>
                 <DropDownGenerico
-                  required
                   default={usuario.atividade}
                   onChange={(e) => setAtividade(e.target.value)}
                   options={atividades}
                 />
-                </DivField>
-                <DivFieldBotão>
+              </DivField>
+              <DivFieldBotão>
                 <BotaoG type="submit">Salvar</BotaoG>
               </DivFieldBotão>
-              <Link onClick={()=>setConfirma(true)}>
-            <PalavraLink>Deletar conta</PalavraLink>
-          </Link>
+              <Link onClick={() => setConfirma(true)}>
+                <PalavraLink>Deletar conta</PalavraLink>
+              </Link>
             </EditorContainer>
           </form>
         </EditContainer>
@@ -173,5 +175,3 @@ const deletarConta = async (e) => {
     </>
   );
 }
-
-
