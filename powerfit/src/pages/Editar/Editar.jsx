@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import React from "react";
 import {
   DropDownGenerico,
@@ -14,6 +14,8 @@ import {
   DivField,
   DivFakeBody,
   DivFieldBotão,
+  DivFieldConfirma,
+  PalavraLink
 } from "./Styles";
 import {SingUpContainer} from "../Cadastro/Styles.js";
 import api from "../../services/api";
@@ -21,12 +23,15 @@ import { useState } from "react";
 import { BotaoG } from "../../components/BotaoGenerico/Styles";
 import useAuthStore from "../../stores/auth";
 
+
 export default function Editar() {
   const [nome, setNome] = useState("");
   const [cargo, setCargo] = useState("");
   const [atividade, setAtividade] = useState("");
   const [carregando, setCarregando] = useState(false);
   const usuario = useAuthStore((state) => state.usuario);
+  const updateUsuario = useAuthStore((state) => state.setUsuario);
+  const [confirma,setConfirma] = useState(false);
 
   const atividades = [
     "Cardio",
@@ -49,6 +54,10 @@ export default function Editar() {
     try {
       setCarregando(true);
       const res = await api.put("/usuarios/"+usuario._id, {nome, cargo, atividade}); 
+      usuario.nome = res.data.nome;
+      usuario.cargo = res.data.cargo;
+      usuario.atividade = res.data.atividade;
+      updateUsuario(usuario);
       
       window.location.assign("/home");
     } catch (error) {
@@ -65,6 +74,30 @@ export default function Editar() {
     <h1>Carregando...</h1>
   </SingUpContainer>
   );
+  if(confirma)
+  return (
+    <>
+      <HeaderLogado rota="/home" />
+      <DivFakeBody>
+        <EditContainer>
+          <form>
+            <EditorContainer>
+            <LogoGenerica
+                texto={"Tem Certeza?"}
+                backgroundColor={"#0A0A16"}
+                rota="?"
+              />
+               <DivFieldConfirma>
+               <BotaoG type="buttom">Sim</BotaoG>
+                <BotaoG onClick={()=>setConfirma(false)} type="buttom">Não</BotaoG>
+              </DivFieldConfirma>
+            </EditorContainer>
+          </form>
+        </EditContainer>
+      </DivFakeBody>
+    </>
+
+  );
   return (
     <>
       <HeaderLogado rota="/home" />
@@ -80,7 +113,7 @@ export default function Editar() {
               <DivField>
                 <DivLabel>Nome de Usuário:</DivLabel>
                 <Entrada
-                  placeholder="Nome de Usuário"
+                  placeholder={usuario.nome}
                   type="text"
                   name="nome"
                   id="nome"
@@ -92,7 +125,7 @@ export default function Editar() {
                 <DivLabel>Cargo:</DivLabel>
                 <DropDownGenerico
                   required
-                  default="Selecione o cargo"
+                  default={usuario.cargo}
                   onChange={(e) => setCargo(e.target.value)}
                   options={cargos}
                 />
@@ -101,7 +134,7 @@ export default function Editar() {
                 <DivLabel>Atividade:</DivLabel>
                 <DropDownGenerico
                   required
-                  default="Selecione a atividade"
+                  default={usuario.atividade}
                   onChange={(e) => setAtividade(e.target.value)}
                   options={atividades}
                 />
@@ -109,6 +142,9 @@ export default function Editar() {
                 <DivFieldBotão>
                 <BotaoG type="submit">Salvar</BotaoG>
               </DivFieldBotão>
+              <Link onClick={()=>setConfirma(true)}>
+            <PalavraLink>Deletar conta</PalavraLink>
+          </Link>
             </EditorContainer>
           </form>
         </EditContainer>

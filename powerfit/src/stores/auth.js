@@ -11,8 +11,10 @@ const useAuthStore = create(
         const usuario = jwtDecode(token).usuarioSemSenha;
         set({ token, usuario });
       },
-      setUsuario: (token) => set({ usuario }),
-      clearAuth: () => set({ token: null, usuario: null }),
+      setUsuario: (usuario) => {
+        set({ usuario });
+      },
+      clearAuth: () => set({ token: null, usuario: null })
     }),
     {
       name: "auth", // name of the item in the storage (must be unique)

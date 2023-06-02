@@ -46,7 +46,7 @@ export const InputForm = styled.input`
 export const CadastroContainer = styled.div`
   padding-top: 30px;
   width: 400px;
-  height: 50%;
+  height: 60%;
   border: 2px solid white;
   display: flex;
   flex-direction: column;
