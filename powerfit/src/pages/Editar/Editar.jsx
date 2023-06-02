@@ -140,6 +140,7 @@ export default function Editar() {
                 <DivLabel>Nome de Usuário:</DivLabel>
                 <Entrada
                   placeholder={usuario.nome}
+                  defaultValue={usuario.nome}
                   type="text"
                   name="nome"
                   id="nome"
