@@ -9,7 +9,7 @@ import {
 } from "../../components";
 import { useEffect, useState } from "react";
 import api from "../../services/api";
-
+import { BotaoG } from "../../components/BotaoGenerico/Styles";
 //atividades para o dropdown
 const atividades = [
   "Cardio",
@@ -30,27 +30,25 @@ let usuariosLogados = [];
 export default function Home() {
   const [sessoes, setSessoes] = useState([]);
   const [carregando, setCarregando] = useState(false);
+  const [atividade, setAtividade] = useState("");
 
   let usuarios = sessoes.map(function (usuario) {
-    console.log(usuario);
-    let randomColor = `rgb(${Math.floor(Math.random() * 256) + 70}, 
-      ${Math.floor(Math.random() * 256) + 70}, 
-      ${Math.floor(Math.random() * 256) + 70})`;
+    //console.log(usuario);
 
     const data = new Date();
     const dataCriacao = new Date(usuario.createdAt);
 
     let milliseconds = data - dataCriacao;
-    let seconds = Math.floor((milliseconds / 1000) % 60);
+    //let seconds = Math.floor((milliseconds / 1000) % 60);
     let minutes = Math.floor((milliseconds / (1000 * 60)) % 60);
     let hours = Math.floor(milliseconds / (1000 * 60 * 60));
 
     let resultadoTempo =
       hours.toString().padStart(2, "0") +
       ":" +
-      minutes.toString().padStart(2, "0") +
-      ":" +
-      seconds.toString().padStart(2, "0");
+      minutes.toString().padStart(2, "0");
+    // ":" +
+    // seconds.toString().padStart(2, "0");
 
     return {
       nome: usuario.id_usuario.nome,
@@ -74,21 +72,16 @@ export default function Home() {
     }
   };
 
-  // useEffect(() => {
-  //   getSessoes();
-  // }, []);
   useEffect(() => {
     getSessoes();
-    console.log("GET");
     const interval = setInterval(() => {
       getSessoes();
-      console.log("GET");
-    }, 500);
+    }, 500 * 2 * 10);
 
     return () => clearInterval(interval);
   }, []);
 
-  if (carregando) console.log("Carregando");
+  //if (carregando) console.log("Carregando");
 
   return (
     <>
@@ -98,10 +91,12 @@ export default function Home() {
         <Carrossel />
         <Inputs>
           <DropDownGenerico
+            required
             default="Selecione a atividade"
+            onChange={(e) => setAtividade(e.target.value)}
             options={atividades}
           />
-          <BotaoGenerico texto="Entrar" rota={"?"} />
+          <BotaoG type="submit">Entrar</BotaoG>
         </Inputs>
 
         <Tabela>
@@ -119,13 +114,6 @@ export default function Home() {
     </>
   );
 }
-
-// const horas = Math.floor((data - dataCriacao) / (1000 * 60 * 60));
-// const resto = (data - dataCriacao) % (1000 * 60 * 60);
-// const minutos = Math.floor(resto / (1000 * 60));
-// //Math.floor((data - dataCriacao) / (1000 * 60)) - horas * 60;
-// const segundos = Math.floor((minutos % (1000 * 60)) / 1000);
-// //const resultadoTempo = horas + ":" + minutos + ":" + segundos;
 
 // const pessoas = [
 //   {
