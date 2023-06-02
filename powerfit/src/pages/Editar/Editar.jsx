@@ -72,12 +72,12 @@ const deletarConta = async (e) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    try {
+      try {        
       setCarregando(true);
       const res = await api.put("/usuarios/"+usuario._id, {nome, cargo, atividade}); 
       usuario.nome = res.data.nome;
-      usuario.cargo = res.data.cargo;
-      usuario.atividade = res.data.atividade;
+      if(!res.data.cargo=="") usuario.cargo = res.data.cargo;      
+      if(!res.data.atividade=="") usuario.atividade = res.data.atividade;
       updateUsuario(usuario);
       
       window.location.assign("/home");
