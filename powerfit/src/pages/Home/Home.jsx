@@ -9,7 +9,7 @@ import {
 } from "../../components";
 import { useEffect, useState } from "react";
 import api from "../../services/api";
-
+import { BotaoG } from "../../components/BotaoGenerico/Styles";
 //atividades para o dropdown
 const atividades = [
   "Cardio",
@@ -30,12 +30,10 @@ let usuariosLogados = [];
 export default function Home() {
   const [sessoes, setSessoes] = useState([]);
   const [carregando, setCarregando] = useState(false);
+  const [atividade, setAtividade] = useState("");
 
   let usuarios = sessoes.map(function (usuario) {
     console.log(usuario);
-    let randomColor = `rgb(${Math.floor(Math.random() * 256) + 70}, 
-      ${Math.floor(Math.random() * 256) + 70}, 
-      ${Math.floor(Math.random() * 256) + 70})`;
 
     const data = new Date();
     const dataCriacao = new Date(usuario.createdAt);
@@ -74,9 +72,6 @@ export default function Home() {
     }
   };
 
-  // useEffect(() => {
-  //   getSessoes();
-  // }, []);
   useEffect(() => {
     getSessoes();
     console.log("GET");
@@ -98,10 +93,12 @@ export default function Home() {
         <Carrossel />
         <Inputs>
           <DropDownGenerico
+            required
             default="Selecione a atividade"
+            onChange={(e) => setAtividade(e.target.value)}
             options={atividades}
           />
-          <BotaoGenerico texto="Entrar" rota={"?"} />
+          <BotaoG type="submit">Entrar</BotaoG>
         </Inputs>
 
         <Tabela>
@@ -119,13 +116,6 @@ export default function Home() {
     </>
   );
 }
-
-// const horas = Math.floor((data - dataCriacao) / (1000 * 60 * 60));
-// const resto = (data - dataCriacao) % (1000 * 60 * 60);
-// const minutos = Math.floor(resto / (1000 * 60));
-// //Math.floor((data - dataCriacao) / (1000 * 60)) - horas * 60;
-// const segundos = Math.floor((minutos % (1000 * 60)) / 1000);
-// //const resultadoTempo = horas + ":" + minutos + ":" + segundos;
 
 // const pessoas = [
 //   {
