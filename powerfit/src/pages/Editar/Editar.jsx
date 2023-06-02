@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import React from "react";
 import {
   DropDownGenerico,
@@ -14,6 +14,8 @@ import {
   DivField,
   DivFakeBody,
   DivFieldBotão,
+  DivFieldConfirma,
+  PalavraLink
 } from "./Styles";
 import {SingUpContainer} from "../Cadastro/Styles.js";
 import api from "../../services/api";
@@ -29,6 +31,7 @@ export default function Editar() {
   const [carregando, setCarregando] = useState(false);
   const usuario = useAuthStore((state) => state.usuario);
   const updateUsuario = useAuthStore((state) => state.setUsuario);
+  const [confirma,setConfirma] = useState(false);
 
   const atividades = [
     "Cardio",
@@ -70,6 +73,25 @@ export default function Editar() {
   <SingUpContainer>
     <h1>Carregando...</h1>
   </SingUpContainer>
+  );
+  if(confirma)
+  return (
+    <>
+      <HeaderLogado rota="/home" />
+      <DivFakeBody>
+        <EditContainer>
+          <form>
+            <EditorContainer>
+               <DivFieldConfirma>
+               <BotaoG type="buttom">Sim</BotaoG>
+                <BotaoG onClick={setConfirma(false)} type="buttom">Não</BotaoG>
+              </DivFieldConfirma>
+            </EditorContainer>
+          </form>
+        </EditContainer>
+      </DivFakeBody>
+    </>
+
   );
   return (
     <>
@@ -115,6 +137,9 @@ export default function Editar() {
                 <DivFieldBotão>
                 <BotaoG type="submit">Salvar</BotaoG>
               </DivFieldBotão>
+              <Link to="">
+            <PalavraLink>Deletar conta</PalavraLink>
+          </Link>
             </EditorContainer>
           </form>
         </EditContainer>
