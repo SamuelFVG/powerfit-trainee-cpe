@@ -158,7 +158,7 @@ export default function Editar() {
               <DivField>
                 <DivLabel>Atividade:</DivLabel>
                 <DropDownGenerico
-                  default={usuario.atividade}
+                  default={usuario.atividade?usuario.atividade:"Selecione a atividade"}
                   onChange={(e) => setAtividade(e.target.value)}
                   options={atividades}
                 />
