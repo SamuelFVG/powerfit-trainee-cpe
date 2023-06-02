@@ -57,6 +57,7 @@ export default function Home() {
       horas: resultadoTempo,
     };
   });
+  usuarios = usuarios.reverse();
 
   const getSessoes = async () => {
     try {
@@ -87,6 +88,17 @@ export default function Home() {
       const res = await api.put("/usuarios/" + usuarioLogado._id, {
         atividade,
       });
+
+      const usuarioEncontrado = usuarios.find(
+        (usuario) => usuario.nome == usuarioLogado.nome
+      );
+
+      if (!usuarioEncontrado) {
+        const res2 = await api.post("/sessoes", {
+          id_usuario: usuarioLogado._id,
+        });
+      }
+      getSessoes();
     } catch (error) {
       alert(error);
     } finally {
