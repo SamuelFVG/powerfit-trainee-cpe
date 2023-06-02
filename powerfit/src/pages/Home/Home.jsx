@@ -84,7 +84,7 @@ export default function Home() {
 
     try {
       setCarregando(true);
-      const res = await api.put("/usuarios/" + usuario._id, {
+      const res = await api.put("/usuarios/" + usuarioLogado._id, {
         atividade,
       });
     } catch (error) {
