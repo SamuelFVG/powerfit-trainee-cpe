@@ -1,7 +1,7 @@
 import axios from "axios";
 import useAuthStore from "../stores/auth";
 
-const api = axios.create({ baseURL: "http://localhost:8000" });
+const api = axios.create({ baseURL: "https://powerfit-7lph.onrender.com" });
 
 api.interceptors.request.use(
   (req) => {

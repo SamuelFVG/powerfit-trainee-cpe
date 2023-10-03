@@ -63,7 +63,7 @@ export default function Home() {
   const getSessoes = async () => {
     try {
       setCarregando(true);
-      const res = await api.get("http://localhost:8000/sessoes");
+      const res = await api.get("https://powerfit-7lph.onrender.com/sessoes");
       setSessoes(res.data);
     } catch (error) {
       console.log(error);
@@ -93,7 +93,7 @@ export default function Home() {
       const res = await api.put("/usuarios/" + usuarioLogado._id, {
         atividade,
       });
-      usuarioLogado.atividade=atividade;
+      usuarioLogado.atividade = atividade;
       updateUsuario(usuarioLogado);
 
       if (!usuarios.find((usuario) => usuario.nome == usuarioLogado.nome)) {
